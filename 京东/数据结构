@@ -1,0 +1,1638 @@
+{
+    "code": "0",
+    "result": {
+        "floors": [
+            {
+                "floorId": "flo_11096",
+                "type": "eCustom",
+                "mId": "commentlist-ratestar",
+                "cf": {
+                    "st": {
+                        "bgc": "#fff"
+                    }
+                },
+                "data": {
+                    "headBackgroundImgInfo": {
+                        "goodRateBackgroundImg": "https://img13.360buyimg.com/imagetools/jfs/t1/212825/31/18931/3272/6294a02eEb831d49a/5c9ed577ca40c51f.png",
+                        "wholeBackgroundImg": "https://img14.360buyimg.com/imagetools/jfs/t1/72040/8/18511/26003/6294a02eEc8922a71/d58c27d0b725c81c.png"
+                    }
+                },
+                "subFloors": [
+                    {
+                        "floorId": "flo_11099",
+                        "type": "eCustom",
+                        "mId": "commentlist-label",
+                        "cf": {
+                            "st": {
+                                "bgc": "#fff"
+                            }
+                        },
+                        "data": {},
+                        "subFloors": [
+                            {
+                                "floorId": "flo_11100",
+                                "type": "eCustom",
+                                "mId": "commentlist-commonlabel",
+                                "cf": {
+                                    "st": {
+                                        "bgc": "#fff"
+                                    }
+                                },
+                                "data": {
+                                    "generalTagList": [
+                                        {
+                                            "name": "全部",
+                                            "identification": "ALL",
+                                            "exposureEventId": "",
+                                            "count": "2000",
+                                            "type": "0",
+                                            "sort": "1",
+                                            "isShowZeroTag": false,
+                                            "isDefaultTag": true,
+                                            "countStr": "97%好评",
+                                            "supportDefaultSort": true,
+                                            "supportNewSort": true,
+                                            "showTopBar": true,
+                                            "showFoldComment": true,
+                                            "tagDesc": {
+                                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                                "icon": "",
+                                                "dialogTitle": "京东评价原则",
+                                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                                "dialogBtn": "我知道了",
+                                                "clerk_type": "1",
+                                                "desc": "京东鼓励真实、有用的评价"
+                                            }
+                                        },
+                                        {
+                                            "name": "图/视频",
+                                            "identification": "SHAITU",
+                                            "exposureEventId": "",
+                                            "count": "100",
+                                            "type": "102",
+                                            "sort": "3",
+                                            "isShowZeroTag": false,
+                                            "isDefaultTag": false,
+                                            "countStr": "100+",
+                                            "supportDefaultSort": true,
+                                            "supportNewSort": true,
+                                            "showTopBar": true,
+                                            "showFoldComment": false
+                                        },
+                                        {
+                                            "name": "图/视频",
+                                            "identification": "YOUTU",
+                                            "exposureEventId": "",
+                                            "count": "100",
+                                            "type": "4",
+                                            "sort": "4",
+                                            "isShowZeroTag": false,
+                                            "isDefaultTag": true,
+                                            "countStr": "100+",
+                                            "supportDefaultSort": true,
+                                            "supportNewSort": true,
+                                            "showTopBar": true,
+                                            "showFoldComment": true
+                                        },
+                                        {
+                                            "name": "追评",
+                                            "identification": "ZHUIPING",
+                                            "exposureEventId": "CommentsShare_CommentListLabelExpo",
+                                            "count": "7",
+                                            "type": "5",
+                                            "sort": "5",
+                                            "isShowZeroTag": false,
+                                            "isDefaultTag": true,
+                                            "countStr": "7",
+                                            "supportDefaultSort": true,
+                                            "supportNewSort": true,
+                                            "showTopBar": true,
+                                            "showFoldComment": true
+                                        },
+                                        {
+                                            "name": "好评",
+                                            "identification": "GOOD",
+                                            "exposureEventId": "",
+                                            "count": "200",
+                                            "type": "3",
+                                            "sort": "6",
+                                            "isShowZeroTag": false,
+                                            "isDefaultTag": true,
+                                            "countStr": "200+",
+                                            "supportDefaultSort": true,
+                                            "supportNewSort": true,
+                                            "showTopBar": true,
+                                            "showFoldComment": true
+                                        },
+                                        {
+                                            "name": "中评",
+                                            "identification": "NORMAL",
+                                            "exposureEventId": "",
+                                            "count": "5",
+                                            "type": "2",
+                                            "sort": "7",
+                                            "isShowZeroTag": false,
+                                            "isDefaultTag": true,
+                                            "countStr": "5",
+                                            "supportDefaultSort": true,
+                                            "supportNewSort": true,
+                                            "showTopBar": true,
+                                            "showFoldComment": true
+                                        },
+                                        {
+                                            "name": "差评",
+                                            "identification": "BAD",
+                                            "exposureEventId": "",
+                                            "count": "6",
+                                            "type": "1",
+                                            "sort": "8",
+                                            "isShowZeroTag": false,
+                                            "isDefaultTag": true,
+                                            "countStr": "6",
+                                            "supportDefaultSort": true,
+                                            "supportNewSort": true,
+                                            "showTopBar": true,
+                                            "showFoldComment": true
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "floorId": "flo_11101",
+                                "type": "eCustom",
+                                "mId": "commentlist-semanticslabel",
+                                "cf": {
+                                    "st": {
+                                        "bgc": "#fff"
+                                    }
+                                },
+                                "data": {
+                                    "currentSkuInfo": {
+                                        "selectEntranceTxt": "选择款式",
+                                        "currentSkuStatus": "2",
+                                        "selectEntrance": "1"
+                                    },
+                                    "semanticsTagList": [
+                                        {
+                                            "id": "9879b7205fa0e0ac26e2cc13a4c57c82##V10003T38",
+                                            "name": "用料非常扎实",
+                                            "count": "11",
+                                            "tagId": "9879b7205fa0e0ac26e2cc13a4c57c82##V10003T38",
+                                            "type": "4",
+                                            "canBeFiltered": true,
+                                            "stand": "1",
+                                            "ckeKeyWordBury": ""
+                                        },
+                                        {
+                                            "id": "a0fab06e45d36bd084022e71176fac71##V10003T38",
+                                            "name": "调节超方便",
+                                            "count": "3",
+                                            "tagId": "a0fab06e45d36bd084022e71176fac71##V10003T38",
+                                            "type": "4",
+                                            "canBeFiltered": true,
+                                            "stand": "1",
+                                            "ckeKeyWordBury": ""
+                                        },
+                                        {
+                                            "id": "5c32fed0558e753fc626f7f89647cc94##V10003T38",
+                                            "name": "尺寸刚好合适",
+                                            "count": "3",
+                                            "tagId": "5c32fed0558e753fc626f7f89647cc94##V10003T38",
+                                            "type": "4",
+                                            "canBeFiltered": true,
+                                            "stand": "1",
+                                            "ckeKeyWordBury": ""
+                                        },
+                                        {
+                                            "id": "518a5b5912adc36a3c6a8f730ea91b03##V10003T38",
+                                            "name": "使用很舒服",
+                                            "count": "3",
+                                            "tagId": "518a5b5912adc36a3c6a8f730ea91b03##V10003T38",
+                                            "type": "4",
+                                            "canBeFiltered": true,
+                                            "stand": "1",
+                                            "ckeKeyWordBury": ""
+                                        },
+                                        {
+                                            "id": "9bf6684dd979b32c310a925de6eb8bf8##V10003T38",
+                                            "name": "零件很齐全",
+                                            "count": "4",
+                                            "tagId": "9bf6684dd979b32c310a925de6eb8bf8##V10003T38",
+                                            "type": "4",
+                                            "canBeFiltered": true,
+                                            "stand": "1",
+                                            "ckeKeyWordBury": ""
+                                        },
+                                        {
+                                            "id": "4efffe75bc1ba650929f3debba920151##V10003T38",
+                                            "name": "多场景适用",
+                                            "count": "3",
+                                            "tagId": "4efffe75bc1ba650929f3debba920151##V10003T38",
+                                            "type": "4",
+                                            "canBeFiltered": true,
+                                            "stand": "1",
+                                            "ckeKeyWordBury": ""
+                                        },
+                                        {
+                                            "id": "5d03e77e1a52040df3946a5fa97671a3##V10003T38",
+                                            "name": "适配床高度",
+                                            "count": "1",
+                                            "tagId": "5d03e77e1a52040df3946a5fa97671a3##V10003T38",
+                                            "type": "4",
+                                            "canBeFiltered": true,
+                                            "stand": "1",
+                                            "ckeKeyWordBury": ""
+                                        },
+                                        {
+                                            "id": "a9298a8ff8952a488a11ced2bc4deda0##V10003T38",
+                                            "name": "做工精细",
+                                            "count": "15",
+                                            "tagId": "a9298a8ff8952a488a11ced2bc4deda0##V10003T38",
+                                            "type": "4",
+                                            "canBeFiltered": true,
+                                            "stand": "1",
+                                            "ckeKeyWordBury": ""
+                                        },
+                                        {
+                                            "id": "ef2a0637185d3336d08fbf7b9ad9b0f5##V10003T38",
+                                            "name": "桌面超光滑",
+                                            "count": "1",
+                                            "tagId": "ef2a0637185d3336d08fbf7b9ad9b0f5##V10003T38",
+                                            "type": "4",
+                                            "canBeFiltered": true,
+                                            "stand": "1",
+                                            "ckeKeyWordBury": ""
+                                        },
+                                        {
+                                            "id": "59169d4040e7edefffb8050d7a21b8b9##V10003T38",
+                                            "name": "桌面超厚实",
+                                            "count": "3",
+                                            "tagId": "59169d4040e7edefffb8050d7a21b8b9##V10003T38",
+                                            "type": "4",
+                                            "canBeFiltered": true,
+                                            "stand": "1",
+                                            "ckeKeyWordBury": ""
+                                        },
+                                        {
+                                            "id": "42661573070e0aba005410b5d8afcf85##V10003T38",
+                                            "name": "小户型适用",
+                                            "count": "1",
+                                            "tagId": "42661573070e0aba005410b5d8afcf85##V10003T38",
+                                            "type": "4",
+                                            "canBeFiltered": true,
+                                            "stand": "1",
+                                            "ckeKeyWordBury": ""
+                                        },
+                                        {
+                                            "id": "de6233e86acd507d28adca98dddce7f0##V10003T38",
+                                            "name": "使用无异味",
+                                            "count": "10",
+                                            "tagId": "de6233e86acd507d28adca98dddce7f0##V10003T38",
+                                            "type": "4",
+                                            "canBeFiltered": true,
+                                            "stand": "1",
+                                            "ckeKeyWordBury": ""
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "floorId": "flo_11102",
+                "type": "eCustom",
+                "mId": "commentlist-sort",
+                "cf": {
+                    "st": {
+                        "bgc": "#fff"
+                    }
+                },
+                "data": {}
+            },
+            {
+                "floorId": "flo_11103",
+                "type": "eCustom",
+                "mId": "commentlist-list",
+                "cf": {
+                    "st": {
+                        "bgc": "#fff"
+                    }
+                },
+                "data": [
+                    {
+                        "commentInfo": {
+                            "userNickName": "窦***好",
+                            "userImgURL": "https://storage.360buyimg.com/i.imageUpload/c8cbbce4b9d6cade31373136303831343136343438_sma.jpg",
+                            "commentId": "20162531870",
+                            "commentShareUrl": "https://share.m.jd.com/shareOrder/showSharePage.action?productId=100048692808&commentId=054159203ca2bf53b5800496ab3057c1",
+                            "wareAttribute": [
+                                {
+                                    "颜色": "【胡桃木色】BG048-C升降边桌"
+                                }
+                            ],
+                            "afterComment": {},
+                            "noCommentMessage": "用户未及时作出评价哦~",
+                            "haveLiked": "0",
+                            "imageStatusText": "",
+                            "iconList": [
+                                {
+                                    "iconId": "member",
+                                    "iconType": "0",
+                                    "iconTagId": "tab_3841",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                },
+                                {
+                                    "iconId": "shoppingBoss",
+                                    "iconType": "4",
+                                    "iconTagId": "tab_3834",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                }
+                            ],
+                            "tagCommentContent": "",
+                            "carTagInfo": "",
+                            "ownerStatus": "0",
+                            "productId": "100048692808",
+                            "buyCount": 1,
+                            "buyCountText": "",
+                            "commentDate": "2023-11-20 13:41:33",
+                            "commentScore": "5",
+                            "commentScoreText": "超赞",
+                            "praiseCnt": "1",
+                            "praiseText": "有用",
+                            "beforePraiseIcon": "https://img11.360buyimg.com/imagetools/jfs/t1/230919/21/2961/1669/6551f925Fd0b7b52d/d58d93a9f2a6a486.png",
+                            "afterPraiseIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225107/2/3274/4306/6551f925Fe5873551/6236a511983b6cd0.png",
+                            "replyText": "回复",
+                            "replyIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225614/12/1508/705/6551f925Fc2990067/ef456e65cae02b91.png",
+                            "replyCnt": "0",
+                            "commentData": "京东忠实粉丝，衣食住行全靠京东！这款电脑桌使用方便，\uD83C\uDE51️随意升降，滑轮流畅，四个高度\uD83C\uDE51️调节，最低档位刚好配合床的高度，最高档位可以站着办公！",
+                            "pictureInfoList": [
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/199503/38/39637/95241/655af18cFd4a1e4c7/818b6549c14f0f2e.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/199503/38/39637/95241/655af18cFd4a1e4c7/818b6549c14f0f2e.jpg.dpg",
+                                    "mediaType": "1",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/151186/25/34986/105799/655af18cF20d08f4a/c8df613b4d35cfaf.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/151186/25/34986/105799/655af18cF20d08f4a/c8df613b4d35cfaf.jpg.dpg",
+                                    "mediaType": "1",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/224427/36/3667/114269/655af18cFc19bcacc/86c50d26af401acc.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/224427/36/3667/114269/655af18cFc19bcacc/86c50d26af401acc.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "646168659",
+                                    "liveShooting": ""
+                                }
+                            ],
+                            "guid": "054159203ca2bf53b5800496ab3057c1",
+                            "maidianInfo": "9847;9851;11973_100214216975_全部_4_1_054159203ca2bf53b5800496ab3057c1_-100__-100",
+                            "testId": "cmt",
+                            "imageStatus": "1",
+                            "excellentCommentIcon": "",
+                            "officerLevel": "1",
+                            "productSpecifications": "已购 【胡桃木色】BG048-C升降边桌",
+                            "newCommentDate": "2023-11-20 13:41:33",
+                            "repurchaseInfo": "",
+                            "plusUrl": "https://img13.360buyimg.com/img/jfs/t1/401729/39/15386/4039/69b37ce0F74f0a3e7/0276060060dfbd27.png",
+                            "highlightList": [],
+                            "carOwner": "",
+                            "showQuestion": "1",
+                            "pageIndex": "4"
+                        }
+                    },
+                    {
+                        "commentInfo": {
+                            "userNickName": "j***1",
+                            "userImgURL": "https://storage.360buyimg.com/default.image/6a645f6465665f696d675f393836313831373632333134353936363836_sma.jpg",
+                            "commentId": "21935518563",
+                            "commentShareUrl": "https://share.m.jd.com/shareOrder/showSharePage.action?productId=100048692826&commentId=e697a7b3e1ea385d2baf60f0e7ffd700",
+                            "wareAttribute": [
+                                {
+                                    "颜色": "【原木色】BG048-A升降边桌"
+                                }
+                            ],
+                            "afterComment": {},
+                            "noCommentMessage": "用户未及时作出评价哦~",
+                            "haveLiked": "0",
+                            "imageStatusText": "",
+                            "iconList": [
+                                {
+                                    "iconId": "member",
+                                    "iconType": "0",
+                                    "iconTagId": "tab_3842",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                },
+                                {
+                                    "iconId": "shopBought",
+                                    "iconType": "3",
+                                    "iconTagId": "tab_3845",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                }
+                            ],
+                            "tagCommentContent": "",
+                            "carTagInfo": "",
+                            "ownerStatus": "0",
+                            "productId": "100048692826",
+                            "buyCount": 3,
+                            "buyCountText": "该店铺购买≥2次",
+                            "commentDate": "2024-12-12 21:08:34",
+                            "commentScore": "5",
+                            "commentScoreText": "超赞",
+                            "praiseCnt": "0",
+                            "praiseText": "有用",
+                            "beforePraiseIcon": "https://img11.360buyimg.com/imagetools/jfs/t1/230919/21/2961/1669/6551f925Fd0b7b52d/d58d93a9f2a6a486.png",
+                            "afterPraiseIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225107/2/3274/4306/6551f925Fe5873551/6236a511983b6cd0.png",
+                            "replyText": "回复",
+                            "replyIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225614/12/1508/705/6551f925Fc2990067/ef456e65cae02b91.png",
+                            "replyCnt": "0",
+                            "commentData": "林氏木业的升降小桌，非常适合居家办公。小桌下面有轮子，可以随意推动，不占地方，实用性很好。在卧室，在客厅都可以用。做工也很不错。",
+                            "pictureInfoList": [
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/225790/2/27941/130185/675ae051F6f398687/2031cebec06b489b.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/225790/2/27941/130185/675ae051F6f398687/2031cebec06b489b.jpg.dpg",
+                                    "mediaType": "1",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/171955/27/50908/80913/675ae051Fdbe6b41c/d689cf780f2799ef.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/171955/27/50908/80913/675ae051Fdbe6b41c/d689cf780f2799ef.jpg.dpg",
+                                    "mediaType": "1",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/245452/25/28292/117696/675ae051F700963b6/30ed26e73bc02329.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/245452/25/28292/117696/675ae051F700963b6/30ed26e73bc02329.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "525126708",
+                                    "liveShooting": ""
+                                }
+                            ],
+                            "guid": "e697a7b3e1ea385d2baf60f0e7ffd700",
+                            "maidianInfo": "9847;9851;11973_100214216975_全部_4_2_e697a7b3e1ea385d2baf60f0e7ffd700_-100__-100",
+                            "testId": "cmt",
+                            "imageStatus": "1",
+                            "excellentCommentIcon": "",
+                            "officerLevel": "3",
+                            "productSpecifications": "已购 【原木色】BG048-A升降边桌",
+                            "newCommentDate": "2024-12-12 21:08:34",
+                            "repurchaseInfo": "该店铺购买≥2次",
+                            "plusUrl": "https://img13.360buyimg.com/img/jfs/t1/401729/39/15386/4039/69b37ce0F74f0a3e7/0276060060dfbd27.png",
+                            "highlightList": [],
+                            "carOwner": "",
+                            "showQuestion": "1",
+                            "pageIndex": "4"
+                        }
+                    },
+                    {
+                        "commentInfo": {
+                            "userNickName": "4***y",
+                            "userImgURL": "https://storage.360buyimg.com/i.imageUpload/6a645f3464333363346331346133386231363835333236333939393335_sma.jpg",
+                            "commentId": "21057293176",
+                            "commentShareUrl": "https://share.m.jd.com/shareOrder/showSharePage.action?productId=100048692808&commentId=ea1f74369557987f787deaed22b9aaf8",
+                            "wareAttribute": [
+                                {
+                                    "颜色": "【胡桃木色】BG048-C升降边桌"
+                                }
+                            ],
+                            "afterComment": {},
+                            "noCommentMessage": "用户未及时作出评价哦~",
+                            "haveLiked": "0",
+                            "imageStatusText": "",
+                            "iconList": [
+                                {
+                                    "iconId": "member",
+                                    "iconType": "0",
+                                    "iconTagId": "tab_3841",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                }
+                            ],
+                            "tagCommentContent": "",
+                            "carTagInfo": "",
+                            "ownerStatus": "0",
+                            "productId": "100048692808",
+                            "buyCount": 1,
+                            "buyCountText": "",
+                            "commentDate": "2024-07-13 09:48:18",
+                            "commentScore": "5",
+                            "commentScoreText": "超赞",
+                            "praiseCnt": "0",
+                            "praiseText": "有用",
+                            "beforePraiseIcon": "https://img11.360buyimg.com/imagetools/jfs/t1/230919/21/2961/1669/6551f925Fd0b7b52d/d58d93a9f2a6a486.png",
+                            "afterPraiseIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225107/2/3274/4306/6551f925Fe5873551/6236a511983b6cd0.png",
+                            "replyText": "回复",
+                            "replyIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225614/12/1508/705/6551f925Fc2990067/ef456e65cae02b91.png",
+                            "replyCnt": "0",
+                            "commentData": "对于一个女生来讲不好组装，费了半天劲给搞好的\uD83D\uDC4C这个颜值和独到好处的作用不枉费我出的汗，很推荐，性价比也高，放在卧室刚好用，移动功能也是很赞",
+                            "pictureInfoList": [
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/242485/31/13328/69714/6691dce2F676d3355/37f69432d33a1ff1.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/242485/31/13328/69714/6691dce2F676d3355/37f69432d33a1ff1.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "1122335868",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/36784/4/21995/50807/6691dce2Fecaa8bee/81b06ec7e3b188a6.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/36784/4/21995/50807/6691dce2Fecaa8bee/81b06ec7e3b188a6.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "489180351",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/22262/15/21213/53408/6691dce2Fce9dc331/525eeb281025804b.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/22262/15/21213/53408/6691dce2Fce9dc331/525eeb281025804b.jpg.dpg",
+                                    "mediaType": "1",
+                                    "liveShooting": ""
+                                }
+                            ],
+                            "guid": "ea1f74369557987f787deaed22b9aaf8",
+                            "maidianInfo": "9847;9851;11973_100214216975_全部_4_3_ea1f74369557987f787deaed22b9aaf8_-100__-100",
+                            "testId": "cmt",
+                            "imageStatus": "1",
+                            "excellentCommentIcon": "",
+                            "officerLevel": "1",
+                            "productSpecifications": "已购 【胡桃木色】BG048-C升降边桌",
+                            "newCommentDate": "2024-07-13 09:48:18",
+                            "repurchaseInfo": "",
+                            "plusUrl": "https://img13.360buyimg.com/img/jfs/t1/401729/39/15386/4039/69b37ce0F74f0a3e7/0276060060dfbd27.png",
+                            "highlightList": [],
+                            "carOwner": "",
+                            "showQuestion": "1",
+                            "pageIndex": "4"
+                        }
+                    },
+                    {
+                        "commentInfo": {
+                            "userNickName": "季***晨",
+                            "userImgURL": "https://storage.360buyimg.com/i.imageUpload/6a645f3432663934653365396162643431353533353332343738393137_sma.jpg",
+                            "commentId": "20219571766",
+                            "commentShareUrl": "https://share.m.jd.com/shareOrder/showSharePage.action?productId=100048692808&commentId=15e71114dfec08fa8e2eda0a843a0138",
+                            "wareAttribute": [
+                                {
+                                    "颜色": "【胡桃木色】BG048-C升降边桌"
+                                }
+                            ],
+                            "afterComment": {},
+                            "noCommentMessage": "用户未及时作出评价哦~",
+                            "haveLiked": "0",
+                            "imageStatusText": "",
+                            "iconList": [
+                                {
+                                    "iconId": "member",
+                                    "iconType": "0",
+                                    "iconTagId": "tab_3841",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                }
+                            ],
+                            "tagCommentContent": "",
+                            "carTagInfo": "",
+                            "ownerStatus": "0",
+                            "productId": "100048692808",
+                            "buyCount": 1,
+                            "buyCountText": "",
+                            "commentDate": "2023-12-06 21:34:36",
+                            "commentScore": "5",
+                            "commentScoreText": "超赞",
+                            "praiseCnt": "0",
+                            "praiseText": "有用",
+                            "beforePraiseIcon": "https://img11.360buyimg.com/imagetools/jfs/t1/230919/21/2961/1669/6551f925Fd0b7b52d/d58d93a9f2a6a486.png",
+                            "afterPraiseIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225107/2/3274/4306/6551f925Fe5873551/6236a511983b6cd0.png",
+                            "replyText": "回复",
+                            "replyIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225614/12/1508/705/6551f925Fc2990067/ef456e65cae02b91.png",
+                            "replyCnt": "0",
+                            "commentData": "除了快递慢意外别的都不错  东西大厂商品不错的包装也够好 就是安排的快递很慢胡桃木质感不错 装了十来分钟就装好了每个档位也不错",
+                            "pictureInfoList": [
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/229399/8/5405/30715/6570786aF827ef2eb/17f13bf6ace3eb3d.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/229399/8/5405/30715/6570786aF827ef2eb/17f13bf6ace3eb3d.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "73456474",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/232069/1/6449/355212/6570786bF1e94181e/1b1387d86ac8481c.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/232069/1/6449/355212/6570786bF1e94181e/1b1387d86ac8481c.jpg.dpg",
+                                    "mediaType": "1",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/228730/23/6518/230525/6570786bF554709db/89e1a53c5b6fe420.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/228730/23/6518/230525/6570786bF554709db/89e1a53c5b6fe420.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "1055497495",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/227881/24/6361/202226/6570786bF9a0ae0d6/e58fba800a350758.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/227881/24/6361/202226/6570786bF9a0ae0d6/e58fba800a350758.jpg.dpg",
+                                    "mediaType": "1",
+                                    "liveShooting": ""
+                                }
+                            ],
+                            "guid": "15e71114dfec08fa8e2eda0a843a0138",
+                            "maidianInfo": "9847;9851;11973_100214216975_全部_4_4_15e71114dfec08fa8e2eda0a843a0138_-100__-100",
+                            "testId": "cmt",
+                            "imageStatus": "1",
+                            "excellentCommentIcon": "",
+                            "officerLevel": "3",
+                            "productSpecifications": "已购 【胡桃木色】BG048-C升降边桌",
+                            "newCommentDate": "2023-12-06 21:34:36",
+                            "repurchaseInfo": "",
+                            "plusUrl": "https://img13.360buyimg.com/img/jfs/t1/401729/39/15386/4039/69b37ce0F74f0a3e7/0276060060dfbd27.png",
+                            "highlightList": [],
+                            "carOwner": "",
+                            "showQuestion": "1",
+                            "pageIndex": "4"
+                        }
+                    },
+                    {
+                        "commentInfo": {
+                            "userNickName": "j***q",
+                            "userImgURL": "https://storage.360buyimg.com/default.image/6a645f6465665f696d675f393836323231373632333134353936353430_sma.jpg",
+                            "commentId": "19927597151",
+                            "commentShareUrl": "https://share.m.jd.com/shareOrder/showSharePage.action?productId=100048692808&commentId=2ec9e442eb42f64b388335b86dbeb536",
+                            "wareAttribute": [
+                                {
+                                    "颜色": "【胡桃木色】BG048-C升降边桌"
+                                }
+                            ],
+                            "afterComment": {},
+                            "noCommentMessage": "用户未及时作出评价哦~",
+                            "haveLiked": "0",
+                            "imageStatusText": "",
+                            "iconList": [],
+                            "tagCommentContent": "{$%&外观样式：&%$}新颖、丝滑流畅\n{$%&产品质量：&%$}好\n{$%&使用感受：&%$}无异味，亲肤，老少皆宜",
+                            "carTagInfo": "",
+                            "ownerStatus": "0",
+                            "productId": "100048692808",
+                            "buyCount": 1,
+                            "buyCountText": "",
+                            "commentDate": "2023-10-06 11:41:39",
+                            "commentScore": "5",
+                            "commentScoreText": "超赞",
+                            "praiseCnt": "0",
+                            "praiseText": "有用",
+                            "beforePraiseIcon": "https://img11.360buyimg.com/imagetools/jfs/t1/230919/21/2961/1669/6551f925Fd0b7b52d/d58d93a9f2a6a486.png",
+                            "afterPraiseIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225107/2/3274/4306/6551f925Fe5873551/6236a511983b6cd0.png",
+                            "replyText": "回复",
+                            "replyIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225614/12/1508/705/6551f925Fc2990067/ef456e65cae02b91.png",
+                            "replyCnt": "0",
+                            "commentData": "外观样式：新颖、丝滑流畅\n产品质量：好\n使用感受：无异味，亲肤，老少皆宜",
+                            "pictureInfoList": [
+                                {
+                                    "picURL": "https://jvod.300hu.com/img/2023/404417642/1/img2.jpg",
+                                    "picWidth": "720",
+                                    "picHeight": "960",
+                                    "mediaType": "2",
+                                    "mediaId": "1199122502",
+                                    "mediaLength": "13",
+                                    "sharePicUrl": "https://jvod.300hu.com/img/2023/404417642/1/img2.jpg",
+                                    "videoPlayUrl": "https://jvod.300hu.com/vod/product/64d2d375-6679-48b9-91ae-938ce1597fd7/5c70c67331f44c0580a410b1bc18c4d3.mp4?info=35291-1101396-h264-aac",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/112591/37/40807/172043/651f81f3F03048669/fe0ad8bad65070c1.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/112591/37/40807/172043/651f81f3F03048669/fe0ad8bad65070c1.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "1601293025",
+                                    "liveShooting": ""
+                                }
+                            ],
+                            "guid": "2ec9e442eb42f64b388335b86dbeb536",
+                            "maidianInfo": "9847;9851;11973_100214216975_全部_4_5_2ec9e442eb42f64b388335b86dbeb536_-100__-100",
+                            "testId": "cmt",
+                            "imageStatus": "1",
+                            "excellentCommentIcon": "",
+                            "officerLevel": "0",
+                            "productSpecifications": "已购 【胡桃木色】BG048-C升降边桌",
+                            "newCommentDate": "2023-10-06 11:41:39",
+                            "repurchaseInfo": "",
+                            "highlightList": [],
+                            "carOwner": "",
+                            "showQuestion": "1",
+                            "pageIndex": "4"
+                        }
+                    },
+                    {
+                        "commentInfo": {
+                            "userNickName": "j***r",
+                            "userImgURL": "https://storage.360buyimg.com/default.image/6a645f6465665f696d675f393836323231373632333134353936353430_sma.jpg",
+                            "commentId": "20926144000",
+                            "commentShareUrl": "https://share.m.jd.com/shareOrder/showSharePage.action?productId=100048692826&commentId=0f5be30513ad04bc267c2809266261b8",
+                            "wareAttribute": [
+                                {
+                                    "颜色": "【原木色】BG048-A升降边桌"
+                                }
+                            ],
+                            "afterComment": {},
+                            "noCommentMessage": "用户未及时作出评价哦~",
+                            "haveLiked": "0",
+                            "imageStatusText": "",
+                            "iconList": [],
+                            "tagCommentContent": "",
+                            "carTagInfo": "",
+                            "ownerStatus": "0",
+                            "productId": "100048692826",
+                            "buyCount": 1,
+                            "buyCountText": "",
+                            "commentDate": "2024-06-12 14:11:37",
+                            "commentScore": "5",
+                            "commentScoreText": "超赞",
+                            "praiseCnt": "0",
+                            "praiseText": "有用",
+                            "beforePraiseIcon": "https://img11.360buyimg.com/imagetools/jfs/t1/230919/21/2961/1669/6551f925Fd0b7b52d/d58d93a9f2a6a486.png",
+                            "afterPraiseIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225107/2/3274/4306/6551f925Fe5873551/6236a511983b6cd0.png",
+                            "replyText": "回复",
+                            "replyIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225614/12/1508/705/6551f925Fc2990067/ef456e65cae02b91.png",
+                            "replyCnt": "0",
+                            "commentData": "这个小桌子质量真是不错，再长一点就超级好了，非常满意，容易安装，包装一看就是和普通商品不一样，螺丝钉都是独立包装，都有备用零件，不错",
+                            "pictureInfoList": [
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/226387/18/19907/36092/66693c16Ff86202e0/580a10118dfe179a.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/226387/18/19907/36092/66693c16Ff86202e0/580a10118dfe179a.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "2147216551",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/116438/32/44475/78561/66693c17F9067c4b1/f1fb877602fb0d03.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/116438/32/44475/78561/66693c17F9067c4b1/f1fb877602fb0d03.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "1354880549",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/238252/16/19070/61798/66693c18F4f99d016/b1aef417a9151be5.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/238252/16/19070/61798/66693c18F4f99d016/b1aef417a9151be5.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "1037241945",
+                                    "liveShooting": ""
+                                }
+                            ],
+                            "guid": "0f5be30513ad04bc267c2809266261b8",
+                            "maidianInfo": "9847;9851;11973_100214216975_全部_4_6_0f5be30513ad04bc267c2809266261b8_-100__-100",
+                            "testId": "cmt",
+                            "imageStatus": "1",
+                            "excellentCommentIcon": "",
+                            "officerLevel": "0",
+                            "productSpecifications": "已购 【原木色】BG048-A升降边桌",
+                            "newCommentDate": "2024-06-12 14:11:37",
+                            "repurchaseInfo": "",
+                            "highlightList": [],
+                            "carOwner": "",
+                            "showQuestion": "1",
+                            "pageIndex": "4"
+                        }
+                    },
+                    {
+                        "commentInfo": {
+                            "userNickName": "j***海",
+                            "userImgURL": "https://storage.360buyimg.com/default.image/6a645f6465665f696d675f393836313831373632333134353936363836_sma.jpg",
+                            "commentId": "21614737156",
+                            "commentShareUrl": "https://share.m.jd.com/shareOrder/showSharePage.action?productId=100048692826&commentId=a773857531f0a8f82163a51e862315a6",
+                            "wareAttribute": [
+                                {
+                                    "颜色": "【原木色】BG048-A升降边桌"
+                                }
+                            ],
+                            "afterComment": {},
+                            "noCommentMessage": "用户未及时作出评价哦~",
+                            "haveLiked": "0",
+                            "imageStatusText": "",
+                            "iconList": [
+                                {
+                                    "iconId": "member",
+                                    "iconType": "0",
+                                    "iconTagId": "tab_3841",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                },
+                                {
+                                    "iconId": "shoppingBoss",
+                                    "iconType": "4",
+                                    "iconTagId": "tab_3832",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                }
+                            ],
+                            "tagCommentContent": "",
+                            "carTagInfo": "",
+                            "ownerStatus": "0",
+                            "productId": "100048692826",
+                            "buyCount": 1,
+                            "buyCountText": "",
+                            "commentDate": "2024-10-23 09:02:07",
+                            "commentScore": "5",
+                            "commentScoreText": "超赞",
+                            "praiseCnt": "0",
+                            "praiseText": "有用",
+                            "beforePraiseIcon": "https://img11.360buyimg.com/imagetools/jfs/t1/230919/21/2961/1669/6551f925Fd0b7b52d/d58d93a9f2a6a486.png",
+                            "afterPraiseIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225107/2/3274/4306/6551f925Fe5873551/6236a511983b6cd0.png",
+                            "replyText": "回复",
+                            "replyIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225614/12/1508/705/6551f925Fc2990067/ef456e65cae02b91.png",
+                            "replyCnt": "0",
+                            "commentData": "桌子自己拼的，还是比较简单的，桌面比较大还是够用的，能移动比较方便，没啥味道材质看着是还可以的，升降可能没那么方便，总体还是可以的",
+                            "pictureInfoList": [
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/242820/36/14132/189983/67184b0eF12f8e8ea/ae20b138e38926b4.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/242820/36/14132/189983/67184b0eF12f8e8ea/ae20b138e38926b4.jpg.dpg",
+                                    "mediaType": "1",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/202043/3/47008/256771/67184b0eF8f270a98/d46b81e133a874ef.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/202043/3/47008/256771/67184b0eF8f270a98/d46b81e133a874ef.jpg.dpg",
+                                    "mediaType": "1",
+                                    "liveShooting": ""
+                                }
+                            ],
+                            "guid": "a773857531f0a8f82163a51e862315a6",
+                            "maidianInfo": "9847;9851;11973_100214216975_全部_4_7_a773857531f0a8f82163a51e862315a6_-100__-100",
+                            "testId": "cmt",
+                            "imageStatus": "1",
+                            "excellentCommentIcon": "",
+                            "officerLevel": "3",
+                            "productSpecifications": "已购 【原木色】BG048-A升降边桌",
+                            "newCommentDate": "2024-10-23 09:02:07",
+                            "repurchaseInfo": "",
+                            "plusUrl": "https://img13.360buyimg.com/img/jfs/t1/401729/39/15386/4039/69b37ce0F74f0a3e7/0276060060dfbd27.png",
+                            "highlightList": [],
+                            "carOwner": "",
+                            "showQuestion": "1",
+                            "pageIndex": "4"
+                        }
+                    },
+                    {
+                        "commentInfo": {
+                            "userNickName": "j***x",
+                            "userImgURL": "https://storage.360buyimg.com/i.imageUpload/6a645f3561376263353562343836383531353339353136393439333733_sma.jpg",
+                            "commentId": "21684844345",
+                            "commentShareUrl": "https://share.m.jd.com/shareOrder/showSharePage.action?productId=100048692808&commentId=a2c3309acf4a4e9b28f9f8d2731d6743",
+                            "wareAttribute": [
+                                {
+                                    "颜色": "【胡桃木色】BG048-C升降边桌"
+                                }
+                            ],
+                            "afterComment": {},
+                            "noCommentMessage": "用户未及时作出评价哦~",
+                            "haveLiked": "0",
+                            "imageStatusText": "",
+                            "iconList": [
+                                {
+                                    "iconId": "member",
+                                    "iconType": "0",
+                                    "iconTagId": "tab_3841",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                },
+                                {
+                                    "iconId": "shopBought",
+                                    "iconType": "3",
+                                    "iconTagId": "tab_3845",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                }
+                            ],
+                            "tagCommentContent": "",
+                            "carTagInfo": "",
+                            "ownerStatus": "0",
+                            "productId": "100048692808",
+                            "buyCount": 2,
+                            "buyCountText": "该店铺购买≥2次",
+                            "commentDate": "2024-11-02 00:30:02",
+                            "commentScore": "5",
+                            "commentScoreText": "超赞",
+                            "praiseCnt": "0",
+                            "praiseText": "有用",
+                            "beforePraiseIcon": "https://img11.360buyimg.com/imagetools/jfs/t1/230919/21/2961/1669/6551f925Fd0b7b52d/d58d93a9f2a6a486.png",
+                            "afterPraiseIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225107/2/3274/4306/6551f925Fe5873551/6236a511983b6cd0.png",
+                            "replyText": "回复",
+                            "replyIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225614/12/1508/705/6551f925Fc2990067/ef456e65cae02b91.png",
+                            "replyCnt": "0",
+                            "commentData": "外观干净漂亮，做工很不错，没发现什么瑕疵，个人感觉大小也挺合适，找了很久选的这款，大爱！用起来还是挺不错的，使用起来挺好的。",
+                            "pictureInfoList": [
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/174750/39/51908/2404615/67250207Fc4c3adaa/724c4d802a7ab264.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/174750/39/51908/2404615/67250207Fc4c3adaa/724c4d802a7ab264.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "2135082926",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/164746/17/48425/4067422/67250209F53673563/a66dc68fc75cf1e3.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/164746/17/48425/4067422/67250209F53673563/a66dc68fc75cf1e3.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "1572270673",
+                                    "liveShooting": ""
+                                }
+                            ],
+                            "guid": "a2c3309acf4a4e9b28f9f8d2731d6743",
+                            "maidianInfo": "9847;9851;11973_100214216975_全部_4_8_a2c3309acf4a4e9b28f9f8d2731d6743_-100__-100",
+                            "testId": "cmt",
+                            "imageStatus": "1",
+                            "excellentCommentIcon": "",
+                            "officerLevel": "3",
+                            "productSpecifications": "已购 【胡桃木色】BG048-C升降边桌",
+                            "newCommentDate": "2024-11-02 00:30:02",
+                            "repurchaseInfo": "该店铺购买≥2次",
+                            "plusUrl": "https://img13.360buyimg.com/img/jfs/t1/401729/39/15386/4039/69b37ce0F74f0a3e7/0276060060dfbd27.png",
+                            "highlightList": [],
+                            "carOwner": "",
+                            "showQuestion": "1",
+                            "pageIndex": "4"
+                        }
+                    },
+                    {
+                        "commentInfo": {
+                            "userNickName": "S***m",
+                            "userImgURL": "https://storage.360buyimg.com/i.imageUpload/6a645f3732323931643336373062306531373537363535363335373638_sma.jpg",
+                            "commentId": "20958336940",
+                            "commentShareUrl": "https://share.m.jd.com/shareOrder/showSharePage.action?productId=100048692808&commentId=c99ae9b1312db2ee685ee2f0bbada1f4",
+                            "wareAttribute": [
+                                {
+                                    "颜色": "【胡桃木色】BG048-C升降边桌"
+                                }
+                            ],
+                            "afterComment": {},
+                            "noCommentMessage": "用户未及时作出评价哦~",
+                            "haveLiked": "0",
+                            "imageStatusText": "",
+                            "iconList": [
+                                {
+                                    "iconId": "member",
+                                    "iconType": "0",
+                                    "iconTagId": "tab_3841",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                },
+                                {
+                                    "iconId": "shoppingBoss",
+                                    "iconType": "4",
+                                    "iconTagId": "tab_3832",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                }
+                            ],
+                            "tagCommentContent": "",
+                            "carTagInfo": "",
+                            "ownerStatus": "0",
+                            "productId": "100048692808",
+                            "buyCount": 1,
+                            "buyCountText": "",
+                            "commentDate": "2024-06-18 21:40:26",
+                            "commentScore": "5",
+                            "commentScoreText": "超赞",
+                            "praiseCnt": "0",
+                            "praiseText": "有用",
+                            "beforePraiseIcon": "https://img11.360buyimg.com/imagetools/jfs/t1/230919/21/2961/1669/6551f925Fd0b7b52d/d58d93a9f2a6a486.png",
+                            "afterPraiseIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225107/2/3274/4306/6551f925Fe5873551/6236a511983b6cd0.png",
+                            "replyText": "回复",
+                            "replyIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225614/12/1508/705/6551f925Fc2990067/ef456e65cae02b91.png",
+                            "replyCnt": "0",
+                            "commentData": "发货速度快，板子质感看起来非常不错(՞ਊ՞)\uD83D\uDC4D，滚轮移动也非常顺畅！！！自己动手安装也非常便捷！味道也不重！\uD83D\uDE01\uD83D\uDE01\uD83D\uDE01",
+                            "pictureInfoList": [
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/233641/34/18101/125987/66718e49Fd8c81c3c/8b541e6bce7f55bb.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/233641/34/18101/125987/66718e49Fd8c81c3c/8b541e6bce7f55bb.jpg.dpg",
+                                    "mediaType": "1",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/206683/8/44382/62319/66718e49F2797ec55/aa5bb9920345e4b9.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/206683/8/44382/62319/66718e49F2797ec55/aa5bb9920345e4b9.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "1011314400",
+                                    "liveShooting": ""
+                                }
+                            ],
+                            "guid": "c99ae9b1312db2ee685ee2f0bbada1f4",
+                            "maidianInfo": "9847;9851;11973_100214216975_全部_4_9_c99ae9b1312db2ee685ee2f0bbada1f4_-100__-100",
+                            "testId": "cmt",
+                            "imageStatus": "1",
+                            "excellentCommentIcon": "",
+                            "officerLevel": "1",
+                            "productSpecifications": "已购 【胡桃木色】BG048-C升降边桌",
+                            "newCommentDate": "2024-06-18 21:40:26",
+                            "repurchaseInfo": "",
+                            "plusUrl": "https://img13.360buyimg.com/img/jfs/t1/401729/39/15386/4039/69b37ce0F74f0a3e7/0276060060dfbd27.png",
+                            "highlightList": [],
+                            "carOwner": "",
+                            "showQuestion": "1",
+                            "pageIndex": "4"
+                        }
+                    },
+                    {
+                        "commentInfo": {
+                            "userNickName": "晓***4",
+                            "userImgURL": "https://storage.360buyimg.com/i.imageUpload/6878663139373431363233303539333533333438_sma.jpg",
+                            "commentId": "19531348984",
+                            "commentShareUrl": "https://share.m.jd.com/shareOrder/showSharePage.action?productId=100048692808&commentId=32977e9623eac771bc062a8ef7c8adc0",
+                            "wareAttribute": [
+                                {
+                                    "颜色": "【胡桃木色】BG048-C升降边桌"
+                                }
+                            ],
+                            "afterComment": {},
+                            "noCommentMessage": "用户未及时作出评价哦~",
+                            "haveLiked": "0",
+                            "imageStatusText": "",
+                            "iconList": [
+                                {
+                                    "iconId": "member",
+                                    "iconType": "0",
+                                    "iconTagId": "tab_3841",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                },
+                                {
+                                    "iconId": "shoppingBoss",
+                                    "iconType": "4",
+                                    "iconTagId": "tab_3836",
+                                    "iconJumpUrl": "",
+                                    "iconTagType": "",
+                                    "iconHigh": "14"
+                                }
+                            ],
+                            "tagCommentContent": "",
+                            "carTagInfo": "",
+                            "ownerStatus": "0",
+                            "productId": "100048692808",
+                            "buyCount": 1,
+                            "buyCountText": "",
+                            "commentDate": "2023-08-13 15:36:36",
+                            "commentScore": "5",
+                            "commentScoreText": "超赞",
+                            "praiseCnt": "0",
+                            "praiseText": "有用",
+                            "beforePraiseIcon": "https://img11.360buyimg.com/imagetools/jfs/t1/230919/21/2961/1669/6551f925Fd0b7b52d/d58d93a9f2a6a486.png",
+                            "afterPraiseIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225107/2/3274/4306/6551f925Fe5873551/6236a511983b6cd0.png",
+                            "replyText": "回复",
+                            "replyIcon": "https://img10.360buyimg.com/imagetools/jfs/t1/225614/12/1508/705/6551f925Fc2990067/ef456e65cae02b91.png",
+                            "replyCnt": "0",
+                            "commentData": "大品牌，口啤好，送货入户，服务好！性价比高，价格便宜，质量好，手感好，无毛刺，稳固，建议日常加购物车，搞活动时买更便宜，还可经常一键价格保护。",
+                            "pictureInfoList": [
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/141321/35/38895/46296/64d88802Fe04204fa/b0caba0cbf15d9a5.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/141321/35/38895/46296/64d88802Fe04204fa/b0caba0cbf15d9a5.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "1262816968",
+                                    "liveShooting": ""
+                                },
+                                {
+                                    "picURL": "https://img30.360buyimg.com/shaidan/s300x300_jfs/t1/180643/22/36340/87832/64d88803F82be5edd/e55b4aa58dea7048.jpg.dpg",
+                                    "largePicURL": "https://img30.360buyimg.com/shaidan/s1080x1080_jfs/t1/180643/22/36340/87832/64d88803F82be5edd/e55b4aa58dea7048.jpg.dpg",
+                                    "mediaType": "1",
+                                    "showOrderMediaId": "489606970",
+                                    "liveShooting": ""
+                                }
+                            ],
+                            "guid": "32977e9623eac771bc062a8ef7c8adc0",
+                            "maidianInfo": "9847;9851;11973_100214216975_全部_4_10_32977e9623eac771bc062a8ef7c8adc0_-100__-100",
+                            "testId": "cmt",
+                            "imageStatus": "1",
+                            "excellentCommentIcon": "",
+                            "officerLevel": "4",
+                            "productSpecifications": "已购 【胡桃木色】BG048-C升降边桌",
+                            "newCommentDate": "2023-08-13 15:36:36",
+                            "repurchaseInfo": "",
+                            "plusUrl": "https://img13.360buyimg.com/img/jfs/t1/401729/39/15386/4039/69b37ce0F74f0a3e7/0276060060dfbd27.png",
+                            "highlightList": [],
+                            "carOwner": "",
+                            "showQuestion": "1",
+                            "pageIndex": "4"
+                        }
+                    }
+                ]
+            },
+            {
+                "floorId": "flo_15000",
+                "type": "eCustom",
+                "mId": "commentlist-mixlabel",
+                "tmpId": "Mixlabel",
+                "cf": {
+                    "st": {
+                        "bgc": "#fff"
+                    }
+                },
+                "data": {
+                    "mixTagList": [
+                        {
+                            "name": "全部",
+                            "identification": "ALL",
+                            "exposureEventId": "",
+                            "count": "2000",
+                            "type": "0",
+                            "sort": "1",
+                            "isShowZeroTag": false,
+                            "isDefaultTag": true,
+                            "countStr": "97%好评",
+                            "countText": "97%好评",
+                            "supportDefaultSort": true,
+                            "supportNewSort": true,
+                            "showTopBar": true,
+                            "showFoldComment": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": false
+                        },
+                        {
+                            "name": "图/视频",
+                            "identification": "SHAITU",
+                            "exposureEventId": "",
+                            "count": "100",
+                            "type": "102",
+                            "sort": "3",
+                            "isShowZeroTag": false,
+                            "isDefaultTag": false,
+                            "countStr": "100+",
+                            "countText": "100+",
+                            "supportDefaultSort": true,
+                            "supportNewSort": true,
+                            "showTopBar": true,
+                            "showFoldComment": false,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": false
+                        },
+                        {
+                            "name": "图/视频",
+                            "identification": "YOUTU",
+                            "exposureEventId": "",
+                            "count": "100",
+                            "type": "4",
+                            "sort": "4",
+                            "isShowZeroTag": false,
+                            "isDefaultTag": true,
+                            "countStr": "100+",
+                            "countText": "100+",
+                            "supportDefaultSort": true,
+                            "supportNewSort": true,
+                            "showTopBar": true,
+                            "showFoldComment": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": false
+                        },
+                        {
+                            "name": "追评",
+                            "identification": "ZHUIPING",
+                            "exposureEventId": "CommentsShare_CommentListLabelExpo",
+                            "count": "7",
+                            "type": "5",
+                            "sort": "5",
+                            "isShowZeroTag": false,
+                            "isDefaultTag": true,
+                            "countStr": "7",
+                            "countText": "7",
+                            "supportDefaultSort": true,
+                            "supportNewSort": true,
+                            "showTopBar": true,
+                            "showFoldComment": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": false
+                        },
+                        {
+                            "id": "9879b7205fa0e0ac26e2cc13a4c57c82##V10003T38",
+                            "tagId": "9879b7205fa0e0ac26e2cc13a4c57c82##V10003T38",
+                            "name": "用料非常扎实",
+                            "count": "11",
+                            "type": "0",
+                            "tagType": "4",
+                            "countText": "11",
+                            "showTopBar": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": true,
+                            "stand": "1",
+                            "ckeKeyWordBury": ""
+                        },
+                        {
+                            "id": "a0fab06e45d36bd084022e71176fac71##V10003T38",
+                            "tagId": "a0fab06e45d36bd084022e71176fac71##V10003T38",
+                            "name": "调节超方便",
+                            "count": "3",
+                            "type": "0",
+                            "tagType": "4",
+                            "countText": "3",
+                            "showTopBar": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": true,
+                            "stand": "1",
+                            "ckeKeyWordBury": ""
+                        },
+                        {
+                            "id": "5c32fed0558e753fc626f7f89647cc94##V10003T38",
+                            "tagId": "5c32fed0558e753fc626f7f89647cc94##V10003T38",
+                            "name": "尺寸刚好合适",
+                            "count": "3",
+                            "type": "0",
+                            "tagType": "4",
+                            "countText": "3",
+                            "showTopBar": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": true,
+                            "stand": "1",
+                            "ckeKeyWordBury": ""
+                        },
+                        {
+                            "id": "518a5b5912adc36a3c6a8f730ea91b03##V10003T38",
+                            "tagId": "518a5b5912adc36a3c6a8f730ea91b03##V10003T38",
+                            "name": "使用很舒服",
+                            "count": "3",
+                            "type": "0",
+                            "tagType": "4",
+                            "countText": "3",
+                            "showTopBar": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": true,
+                            "stand": "1",
+                            "ckeKeyWordBury": ""
+                        },
+                        {
+                            "id": "9bf6684dd979b32c310a925de6eb8bf8##V10003T38",
+                            "tagId": "9bf6684dd979b32c310a925de6eb8bf8##V10003T38",
+                            "name": "零件很齐全",
+                            "count": "4",
+                            "type": "0",
+                            "tagType": "4",
+                            "countText": "4",
+                            "showTopBar": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": true,
+                            "stand": "1",
+                            "ckeKeyWordBury": ""
+                        },
+                        {
+                            "id": "4efffe75bc1ba650929f3debba920151##V10003T38",
+                            "tagId": "4efffe75bc1ba650929f3debba920151##V10003T38",
+                            "name": "多场景适用",
+                            "count": "3",
+                            "type": "0",
+                            "tagType": "4",
+                            "countText": "3",
+                            "showTopBar": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": true,
+                            "stand": "1",
+                            "ckeKeyWordBury": ""
+                        },
+                        {
+                            "id": "5d03e77e1a52040df3946a5fa97671a3##V10003T38",
+                            "tagId": "5d03e77e1a52040df3946a5fa97671a3##V10003T38",
+                            "name": "适配床高度",
+                            "count": "1",
+                            "type": "0",
+                            "tagType": "4",
+                            "countText": "1",
+                            "showTopBar": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": true,
+                            "stand": "1",
+                            "ckeKeyWordBury": ""
+                        },
+                        {
+                            "id": "a9298a8ff8952a488a11ced2bc4deda0##V10003T38",
+                            "tagId": "a9298a8ff8952a488a11ced2bc4deda0##V10003T38",
+                            "name": "做工精细",
+                            "count": "15",
+                            "type": "0",
+                            "tagType": "4",
+                            "countText": "15",
+                            "showTopBar": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": true,
+                            "stand": "1",
+                            "ckeKeyWordBury": ""
+                        },
+                        {
+                            "id": "ef2a0637185d3336d08fbf7b9ad9b0f5##V10003T38",
+                            "tagId": "ef2a0637185d3336d08fbf7b9ad9b0f5##V10003T38",
+                            "name": "桌面超光滑",
+                            "count": "1",
+                            "type": "0",
+                            "tagType": "4",
+                            "countText": "1",
+                            "showTopBar": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": true,
+                            "stand": "1",
+                            "ckeKeyWordBury": ""
+                        },
+                        {
+                            "id": "59169d4040e7edefffb8050d7a21b8b9##V10003T38",
+                            "tagId": "59169d4040e7edefffb8050d7a21b8b9##V10003T38",
+                            "name": "桌面超厚实",
+                            "count": "3",
+                            "type": "0",
+                            "tagType": "4",
+                            "countText": "3",
+                            "showTopBar": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": true,
+                            "stand": "1",
+                            "ckeKeyWordBury": ""
+                        },
+                        {
+                            "id": "42661573070e0aba005410b5d8afcf85##V10003T38",
+                            "tagId": "42661573070e0aba005410b5d8afcf85##V10003T38",
+                            "name": "小户型适用",
+                            "count": "1",
+                            "type": "0",
+                            "tagType": "4",
+                            "countText": "1",
+                            "showTopBar": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": true,
+                            "stand": "1",
+                            "ckeKeyWordBury": ""
+                        },
+                        {
+                            "id": "de6233e86acd507d28adca98dddce7f0##V10003T38",
+                            "tagId": "de6233e86acd507d28adca98dddce7f0##V10003T38",
+                            "name": "使用无异味",
+                            "count": "10",
+                            "type": "0",
+                            "tagType": "4",
+                            "countText": "10",
+                            "showTopBar": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": true,
+                            "stand": "1",
+                            "ckeKeyWordBury": ""
+                        },
+                        {
+                            "name": "好评",
+                            "identification": "GOOD",
+                            "exposureEventId": "",
+                            "count": "200",
+                            "type": "3",
+                            "sort": "6",
+                            "isShowZeroTag": false,
+                            "isDefaultTag": true,
+                            "countStr": "200+",
+                            "countText": "200+",
+                            "supportDefaultSort": true,
+                            "supportNewSort": true,
+                            "showTopBar": true,
+                            "showFoldComment": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": false
+                        },
+                        {
+                            "name": "中评",
+                            "identification": "NORMAL",
+                            "exposureEventId": "",
+                            "count": "5",
+                            "type": "2",
+                            "sort": "7",
+                            "isShowZeroTag": false,
+                            "isDefaultTag": true,
+                            "countStr": "5",
+                            "countText": "5",
+                            "supportDefaultSort": true,
+                            "supportNewSort": true,
+                            "showTopBar": true,
+                            "showFoldComment": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": false
+                        },
+                        {
+                            "name": "差评",
+                            "identification": "BAD",
+                            "exposureEventId": "",
+                            "count": "6",
+                            "type": "1",
+                            "sort": "8",
+                            "isShowZeroTag": false,
+                            "isDefaultTag": true,
+                            "countStr": "6",
+                            "countText": "6",
+                            "supportDefaultSort": true,
+                            "supportNewSort": true,
+                            "showTopBar": true,
+                            "showFoldComment": true,
+                            "tagDesc": {
+                                "dialogDesc": "京东致力于为您提供合法、公正、客观、真实的评价晒单，将采取技术手段对恶意、虚假等不当评价进行处理，以便为您消费决策提供有效参考。",
+                                "icon": "",
+                                "dialogTitle": "京东评价原则",
+                                "jumpUrl": "https://comment.m.jd.com/m-rate/rate-rule",
+                                "dialogBtn": "我知道了",
+                                "clerk_type": "1",
+                                "desc": "京东鼓励真实、有用的评价"
+                            },
+                            "canBeFiltered": false
+                        }
+                    ],
+                    "tagRow": 2
+                }
+            }
+        ],
+        "pageInfo": {
+            "pageId": "tem_11095",
+            "name": "评价列表楼层化",
+            "data": {
+                "contentFoldRowNum": "6",
+                "shopReplyFoldRowNum": "2",
+                "testId": "cmt",
+                "isCloseCommentReply": "0",
+                "likeAnimation": "0",
+                "deepPageId": "a7c1726f2c3ca5ac3af8a08ec9632326",
+                "isShowQuestion": true,
+                "isShowRectangleBubble": false,
+                "rectangleBubbleText": "没找到有用的？戳这里求助买过的人",
+                "timeoutNoClick": "2",
+                "pageNumShowBubble": "10",
+                "showPicCnt": "100+",
+                "shaituCnt": "17",
+                "videoAutoPlaySwitch": "1",
+                "defaultGoodCountText": "MTAwMOS4queUqOaIt+m7mOiupOivhOS7t+S6huivpeWVhuWTgQ==",
+                "defaultGoodLogo": "https://m.360buyimg.com/mobilecms/jfs/t10447/176/1359340654/2177/9ceed2ba/59df1d27N55b368df.png",
+                "reportEntrance": "",
+                "tagStyle": "B",
+                "isShowRaderInfo": false,
+                "maxPage": "18",
+                "touchstone": {
+                    "touchstone_expids": [
+                        null,
+                        "tsabtest|base64|ZnJvbnRwcm9jZWR1cmVfMzE3MjJ8YmFzZQ|tsabtest",
+                        null,
+                        "tsabtest|base64|VUdDcHJvZHVjdF85MzQ1OXxUZXN0UHJlMzg6VUdDcHJvZHVjdF82MDE4OHxUZXN0OkFQUFNYXzgzMDQzfFRlc3Q|tsabtest"
+                    ],
+                    "cid3": "11973",
+                    "skuid": "100214216975"
+                },
+                "bottomBtnStyle": "b",
+                "cardStyle": "b",
+                "replyTextWordLimit": "800",
+                "selectEntranceTxt": "选择款式",
+                "currentSkuStatus": "2",
+                "selectEntrance": "1",
+                "style": "1",
+                "hasNextPage": true
+            }
+        }
+    }
+}
