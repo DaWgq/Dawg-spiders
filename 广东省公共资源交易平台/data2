@@ -1,0 +1,45 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "id": "2043533005481828354",
+        "title": "关于新增CA机构接入茂名市公共资源交易平台的通知",
+        "format": 1,
+        "infoSource": "茂名市公共资源交易中心",
+        "publishTime": "20260413113400",
+        "content": "<p style=\"line-height: 1.5;\">各交易主体：</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">为进一步优化营商环境，提升CA数字证书服务质量，方便市场主体自主、便捷选择CA数字证书服务，保障公共资源交易活动安全、高效、有序开展，我市公共资源交易平台在原有CA数字证书服务基础上，已完成新增CA机构系统对接、联调联测及业务验证，现正式开放使用。有关事项通知如下：</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\"><strong>一、新增CA机构及上线时间</strong></p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">（一）新增接入数字证书认证机构（排名不分先后）</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">中金金融认证中心有限公司（简称“CFCA”）</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">广东省电子商务认证有限公司（简称“网证通”）</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">（二）上线时间</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">自2026年4月13日起，上述CA证书在茂名市公共资源交易平台正式上线使用。</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\"><strong>二、证书办理与使用</strong></p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">（一）新增CA证书办理</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">1.在线办理地址：https://web.zsignyun.com/d/pj/ZmmmqZ</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">2.办理指南地址：https://www.zsignyun.com/docs/seal/</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">3.客服咨询电话：400-8296882、19538525695（陈工）</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">（二）证书使用</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">1.本次新增CA体系仅兼容在茂名市公共资源交易平台办理的CA数字证书，不兼容其他交易平台办理的同品牌CA服务商数字证书。办理数字证书后，需安装知笺云客户端并与交易平台绑定使用。</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">2.原已对接的数字证书不受影响，交易主体可继续选择原有数字证书登录茂名市公共资源交易平台参与我市公共资源交易活动。</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">特此通知。</p>\n<p style=\"line-height: 1.5;\"><br></p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">附件：1.zsignyun-client_x86_v5.0.0.314_茂名公共资源CA客户端驱动（网证通&amp;CFCA）</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.茂名公共资源交易平台CA数字证书及电子 印章办理指引手册-CFCA</p>\n<p style=\"text-indent: 2em; line-height: 1.5;\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.茂名公共资源交易平台CA数字证书及电子印章办理指引手册-网证通</p>\n<p style=\"line-height: 1.5;\"><br></p>\n<p style=\"text-align: right; line-height: 1.5;\"><br></p>\n<p style=\"text-align: right; line-height: 1.5;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;茂名市公共资源交易中心</p>\n<p style=\"text-align: right; line-height: 1.5;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2026年4月13日</p>",
+        "organization": null,
+        "refNo": null,
+        "implementDate": null,
+        "policyPublishDate": null,
+        "fileList": [
+            {
+                "fileId": "677477280666337280",
+                "fileName": "附件1.zsignyun-client_x86_v5.0.0.314_茂名公共资源CA客户端驱动（网证通&CFCA）.zip",
+                "fileUrl": null,
+                "ext": null,
+                "contentType": null,
+                "fileSize": null,
+                "base64": null
+            },
+            {
+                "fileId": "677477324857524224",
+                "fileName": "附件2.茂名公共资源交易平台CA数字证书及电子印章办理指引手册-CFCA.docx",
+                "fileUrl": null,
+                "ext": null,
+                "contentType": null,
+                "fileSize": null,
+                "base64": null
+            },
+            {
+                "fileId": "677477344126156800",
+                "fileName": "附件3.茂名公共资源交易平台CA数字证书及电子印章办理指引手册-网证通.docx",
+                "fileUrl": null,
+                "ext": null,
+                "contentType": null,
+                "fileSize": null,
+                "base64": null
+            }
+        ]
+    }
+}

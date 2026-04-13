@@ -9,7 +9,7 @@ os.makedirs('data', exist_ok=True)
 page = ChromiumPage()
 page.listen.start('client.action')
 # 目标商品的链接
-page.get('https://item.jd.com/100214216975.html?extension_id=eyJhZCI6IjY3OTQwIiwiY2giOiIyIiwic2t1IjoiMTAwMjE0MjE2OTc1IiwidHMiOiIxNzc0MDg0ODU0IiwidW5pcWlkIjoie1wiY2xpY2tfaWRcIjpcIjUzMWM5ZGRiLWFmOWItNDQ4Yi1iODIxLTExNjlkNmRkMTY5ZFwiLFwibWF0ZXJpYWxfaWRcIjpcIjgxMzcyNjgyNzI0NzA5NzEwNTNcIixcInBvc19pZFwiOlwiNjc5NDBcIixcInNpZFwiOlwiYmI5ZTUxZTUtYmVlNi00Y2QxLWJjODItNzU4ZGIxOGQzNTgwXCJ9In0%3D&jd_pop=531c9ddb-af9b-448b-b821-1169d6dd169d&abt=0')
+page.get('https://item.jd.com/10096961713154.html?spmTag=YTAyMTkuYjAwMjM1Ni5jMDAwMDQ2ODkuc2VhcmNoX2NvbmZpcm0lMkNhMDI0MC5iMDAyNDkzLmMwMDAwNDAyNy4xMiUyM3NrdV9jYXJk')
 page.wait.doc_loaded()
 page.ele('text:全部评价').click()
 page.wait.doc_loaded()
