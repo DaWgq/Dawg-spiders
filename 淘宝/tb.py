@@ -21,7 +21,7 @@ for ele in elements:
         break
 
 if target_box:
-    print("✅ 成功找到肉眼可见的评论框真身！")
+    print("成功找到肉眼可见的评论框真身！")
 
     # 尝试方式 1：直接让这个元素内部向下滑动 1000 像素
     target_box.scroll.down(1000)
@@ -34,4 +34,4 @@ if target_box:
     # page.run_js('arguments[0].scrollTop = arguments[0].scrollHeight;', target_box)
 
 else:
-    print("❌ 没找到可见的评论框，请确认右侧弹窗是否已打开")
+    print("没找到可见的评论框，请确认右侧弹窗是否已打开")
