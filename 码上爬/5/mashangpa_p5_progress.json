@@ -1,0 +1,922 @@
+{
+  "1": {
+    "page": 1,
+    "current_array": [
+      562,
+      762,
+      248,
+      174,
+      604,
+      882,
+      428,
+      991,
+      577,
+      986
+    ],
+    "page_sum": 6214,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": false,
+        "previous_page_number": null,
+        "number": 1,
+        "has_next": true,
+        "next_page_number": 2,
+        "num_pages": 20
+      },
+      "current_array": [
+        562,
+        762,
+        248,
+        174,
+        604,
+        882,
+        428,
+        991,
+        577,
+        986
+      ]
+    }
+  },
+  "2": {
+    "page": 2,
+    "current_array": [
+      873,
+      556,
+      726,
+      963,
+      503,
+      223,
+      306,
+      490,
+      301,
+      319
+    ],
+    "page_sum": 5260,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 1,
+        "number": 2,
+        "has_next": true,
+        "next_page_number": 3,
+        "num_pages": 20
+      },
+      "current_array": [
+        873,
+        556,
+        726,
+        963,
+        503,
+        223,
+        306,
+        490,
+        301,
+        319
+      ]
+    }
+  },
+  "3": {
+    "page": 3,
+    "current_array": [
+      596,
+      265,
+      621,
+      645,
+      150,
+      526,
+      844,
+      593,
+      139,
+      822
+    ],
+    "page_sum": 5201,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 2,
+        "number": 3,
+        "has_next": true,
+        "next_page_number": 4,
+        "num_pages": 20
+      },
+      "current_array": [
+        596,
+        265,
+        621,
+        645,
+        150,
+        526,
+        844,
+        593,
+        139,
+        822
+      ]
+    }
+  },
+  "4": {
+    "page": 4,
+    "current_array": [
+      49,
+      836,
+      981,
+      976,
+      208,
+      910,
+      907,
+      762,
+      900,
+      548
+    ],
+    "page_sum": 7077,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 3,
+        "number": 4,
+        "has_next": true,
+        "next_page_number": 5,
+        "num_pages": 20
+      },
+      "current_array": [
+        49,
+        836,
+        981,
+        976,
+        208,
+        910,
+        907,
+        762,
+        900,
+        548
+      ]
+    }
+  },
+  "5": {
+    "page": 5,
+    "current_array": [
+      59,
+      269,
+      486,
+      227,
+      369,
+      466,
+      398,
+      292,
+      577,
+      142
+    ],
+    "page_sum": 3285,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 4,
+        "number": 5,
+        "has_next": true,
+        "next_page_number": 6,
+        "num_pages": 20
+      },
+      "current_array": [
+        59,
+        269,
+        486,
+        227,
+        369,
+        466,
+        398,
+        292,
+        577,
+        142
+      ]
+    }
+  },
+  "6": {
+    "page": 6,
+    "current_array": [
+      596,
+      613,
+      37,
+      621,
+      82,
+      0,
+      314,
+      784,
+      44,
+      649
+    ],
+    "page_sum": 3740,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 5,
+        "number": 6,
+        "has_next": true,
+        "next_page_number": 7,
+        "num_pages": 20
+      },
+      "current_array": [
+        596,
+        613,
+        37,
+        621,
+        82,
+        0,
+        314,
+        784,
+        44,
+        649
+      ]
+    }
+  },
+  "7": {
+    "page": 7,
+    "current_array": [
+      174,
+      232,
+      650,
+      127,
+      141,
+      166,
+      931,
+      794,
+      74,
+      657
+    ],
+    "page_sum": 3946,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 6,
+        "number": 7,
+        "has_next": true,
+        "next_page_number": 8,
+        "num_pages": 20
+      },
+      "current_array": [
+        174,
+        232,
+        650,
+        127,
+        141,
+        166,
+        931,
+        794,
+        74,
+        657
+      ]
+    }
+  },
+  "8": {
+    "page": 8,
+    "current_array": [
+      920,
+      930,
+      976,
+      821,
+      732,
+      962,
+      474,
+      650,
+      50,
+      407
+    ],
+    "page_sum": 6922,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 7,
+        "number": 8,
+        "has_next": true,
+        "next_page_number": 9,
+        "num_pages": 20
+      },
+      "current_array": [
+        920,
+        930,
+        976,
+        821,
+        732,
+        962,
+        474,
+        650,
+        50,
+        407
+      ]
+    }
+  },
+  "9": {
+    "page": 9,
+    "current_array": [
+      46,
+      937,
+      463,
+      543,
+      605,
+      986,
+      718,
+      340,
+      352,
+      196
+    ],
+    "page_sum": 5186,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 8,
+        "number": 9,
+        "has_next": true,
+        "next_page_number": 10,
+        "num_pages": 20
+      },
+      "current_array": [
+        46,
+        937,
+        463,
+        543,
+        605,
+        986,
+        718,
+        340,
+        352,
+        196
+      ]
+    }
+  },
+  "10": {
+    "page": 10,
+    "current_array": [
+      204,
+      402,
+      672,
+      562,
+      626,
+      551,
+      411,
+      194,
+      214,
+      892
+    ],
+    "page_sum": 4728,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 9,
+        "number": 10,
+        "has_next": true,
+        "next_page_number": 11,
+        "num_pages": 20
+      },
+      "current_array": [
+        204,
+        402,
+        672,
+        562,
+        626,
+        551,
+        411,
+        194,
+        214,
+        892
+      ]
+    }
+  },
+  "11": {
+    "page": 11,
+    "current_array": [
+      680,
+      722,
+      760,
+      798,
+      310,
+      795,
+      380,
+      995,
+      341,
+      174
+    ],
+    "page_sum": 5955,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 10,
+        "number": 11,
+        "has_next": true,
+        "next_page_number": 12,
+        "num_pages": 20
+      },
+      "current_array": [
+        680,
+        722,
+        760,
+        798,
+        310,
+        795,
+        380,
+        995,
+        341,
+        174
+      ]
+    }
+  },
+  "12": {
+    "page": 12,
+    "current_array": [
+      862,
+      168,
+      239,
+      78,
+      520,
+      758,
+      176,
+      306,
+      524,
+      106
+    ],
+    "page_sum": 3737,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 11,
+        "number": 12,
+        "has_next": true,
+        "next_page_number": 13,
+        "num_pages": 20
+      },
+      "current_array": [
+        862,
+        168,
+        239,
+        78,
+        520,
+        758,
+        176,
+        306,
+        524,
+        106
+      ]
+    }
+  },
+  "13": {
+    "page": 13,
+    "current_array": [
+      898,
+      59,
+      174,
+      932,
+      682,
+      628,
+      224,
+      928,
+      166,
+      174
+    ],
+    "page_sum": 4865,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 12,
+        "number": 13,
+        "has_next": true,
+        "next_page_number": 14,
+        "num_pages": 20
+      },
+      "current_array": [
+        898,
+        59,
+        174,
+        932,
+        682,
+        628,
+        224,
+        928,
+        166,
+        174
+      ]
+    }
+  },
+  "14": {
+    "page": 14,
+    "current_array": [
+      797,
+      597,
+      905,
+      267,
+      835,
+      568,
+      946,
+      795,
+      406,
+      503
+    ],
+    "page_sum": 6619,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 13,
+        "number": 14,
+        "has_next": true,
+        "next_page_number": 15,
+        "num_pages": 20
+      },
+      "current_array": [
+        797,
+        597,
+        905,
+        267,
+        835,
+        568,
+        946,
+        795,
+        406,
+        503
+      ]
+    }
+  },
+  "15": {
+    "page": 15,
+    "current_array": [
+      349,
+      703,
+      479,
+      846,
+      245,
+      774,
+      398,
+      581,
+      489,
+      868
+    ],
+    "page_sum": 5732,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 14,
+        "number": 15,
+        "has_next": true,
+        "next_page_number": 16,
+        "num_pages": 20
+      },
+      "current_array": [
+        349,
+        703,
+        479,
+        846,
+        245,
+        774,
+        398,
+        581,
+        489,
+        868
+      ]
+    }
+  },
+  "16": {
+    "page": 16,
+    "current_array": [
+      641,
+      310,
+      618,
+      209,
+      611,
+      746,
+      627,
+      224,
+      710,
+      592
+    ],
+    "page_sum": 5288,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 15,
+        "number": 16,
+        "has_next": true,
+        "next_page_number": 17,
+        "num_pages": 20
+      },
+      "current_array": [
+        641,
+        310,
+        618,
+        209,
+        611,
+        746,
+        627,
+        224,
+        710,
+        592
+      ]
+    }
+  },
+  "17": {
+    "page": 17,
+    "current_array": [
+      22,
+      404,
+      132,
+      428,
+      337,
+      958,
+      588,
+      127,
+      58,
+      690
+    ],
+    "page_sum": 3744,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 16,
+        "number": 17,
+        "has_next": true,
+        "next_page_number": 18,
+        "num_pages": 20
+      },
+      "current_array": [
+        22,
+        404,
+        132,
+        428,
+        337,
+        958,
+        588,
+        127,
+        58,
+        690
+      ]
+    }
+  },
+  "18": {
+    "page": 18,
+    "current_array": [
+      953,
+      808,
+      933,
+      502,
+      409,
+      601,
+      513,
+      557,
+      276,
+      186
+    ],
+    "page_sum": 5738,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 17,
+        "number": 18,
+        "has_next": true,
+        "next_page_number": 19,
+        "num_pages": 20
+      },
+      "current_array": [
+        953,
+        808,
+        933,
+        502,
+        409,
+        601,
+        513,
+        557,
+        276,
+        186
+      ]
+    }
+  },
+  "19": {
+    "page": 19,
+    "current_array": [
+      636,
+      952,
+      763,
+      21,
+      318,
+      793,
+      547,
+      155,
+      739,
+      551
+    ],
+    "page_sum": 5475,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 18,
+        "number": 19,
+        "has_next": true,
+        "next_page_number": 20,
+        "num_pages": 20
+      },
+      "current_array": [
+        636,
+        952,
+        763,
+        21,
+        318,
+        793,
+        547,
+        155,
+        739,
+        551
+      ]
+    }
+  },
+  "20": {
+    "page": 20,
+    "current_array": [
+      526,
+      647,
+      786,
+      310,
+      394,
+      121,
+      633,
+      339,
+      26,
+      755
+    ],
+    "page_sum": 4537,
+    "raw": {
+      "problem": {
+        "title": "题五：屠龙刀",
+        "description": "请求参数经过特殊处理，适合JavaScript逆向入门练习",
+        "difficulty": "简单",
+        "tags": [
+          "js加密"
+        ]
+      },
+      "pagination": {
+        "has_previous": true,
+        "previous_page_number": 19,
+        "number": 20,
+        "has_next": false,
+        "next_page_number": null,
+        "num_pages": 20
+      },
+      "current_array": [
+        526,
+        647,
+        786,
+        310,
+        394,
+        121,
+        633,
+        339,
+        26,
+        755
+      ]
+    }
+  }
+}

@@ -98,8 +98,8 @@ def scrape_taobao_pages(keyword, start_page=1, end_page=3):
     # 旧的肯定已经过期了
     cookies = {
         "mtop_partitioned_detect": "1",
-        "_m_h5_tk": "df86c2085ed32a1cc02145dc76aa5eae_1777012594987",
-        "_m_h5_tk_enc": "b43e91add7dc99aed1f6ab43209a351b",
+        "_m_h5_tk": "b65f5aeb78146aa0257320671ddc4baa_1777899077892",
+        "_m_h5_tk_enc": "40f854e95e6c7af3b819edc037283082",
         "xlly_s": "1",
         "t": "6878bc5521b1a890bc9175e0cc65a788",
         "_tb_token_": "07bf34b97eee",
@@ -243,8 +243,8 @@ def scrape_taobao_pages(keyword, start_page=1, end_page=3):
                 all_items.extend(page_items)
                 print(f"\n第 {page} 页共处理 {len(page_items)} 条商品数据")
             else:
-                print(f"请求失败，接口返回信息: {json_data.get('ret')}")
-
+                print(f"请求失败，接口返回信息: {json_data.get('ret')}","请更新cookie")
+                return
         except Exception as e:
             print(f"发生异常: {e}")
 
@@ -288,5 +288,6 @@ def save_to_csv(items, keyword):
 
 
 if __name__ == "__main__":
+    item = str(input("请输入要搜索的商品关键词："))
     # 请先在上方填入最新的 Cookie！！！
-    scrape_taobao_pages("手机", start_page=1, end_page=3)
+    scrape_taobao_pages(item, start_page=1, end_page=3)

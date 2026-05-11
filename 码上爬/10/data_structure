@@ -1,0 +1,31 @@
+{
+    "problem": {
+        "title": "\u9898\u5341\uff1a\u9b54\u6539\u7b97\u6cd5",
+        "description": "\u8be5\u9898\u914d\u7f6e\u4e86\u9b54\u6539\u7b97\u6cd5\u5e76\u4e14\u505a\u4e86\u6df7\u6dc6\uff0c\u9002\u5408JavaScript\u9006\u5411\u6263\u4ee3\u7801\u80fd\u529b\u63d0\u5347",
+        "difficulty": "\u4e2d\u7b49",
+        "tags": [
+            "js\u52a0\u5bc6",
+            "js\u6df7\u6dc6"
+        ]
+    },
+    "pagination": {
+        "has_previous": true,
+        "previous_page_number": 1,
+        "number": 2,
+        "has_next": true,
+        "next_page_number": 3,
+        "num_pages": 20
+    },
+    "current_array": [
+        409,
+        571,
+        245,
+        11,
+        97,
+        567,
+        471,
+        862,
+        295,
+        369
+    ]
+}

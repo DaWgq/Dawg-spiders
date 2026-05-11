@@ -1,0 +1,30 @@
+{
+    "problem": {
+        "title": "\u9898\u4e5d\uff1awebpack\u8c03\u8bd5",
+        "description": "\u8be5\u9898\u4f7f\u7528\u4e86webpack\u6280\u672f\u6253\u5305\u5e76\u914d\u6709\u8f7b\u5ea6OB\u6df7\u6dc6\u3001\u9002\u5408\u6a21\u5757\u5316\u6263JavaScript\u4ee3\u7801\u7ec3\u4e60",
+        "difficulty": "\u4e2d\u7b49",
+        "tags": [
+            "webpack"
+        ]
+    },
+    "pagination": {
+        "has_previous": true,
+        "previous_page_number": 1,
+        "number": 2,
+        "has_next": true,
+        "next_page_number": 3,
+        "num_pages": 20
+    },
+    "current_array": [
+        480,
+        21,
+        110,
+        228,
+        936,
+        307,
+        395,
+        259,
+        347,
+        852
+    ]
+}

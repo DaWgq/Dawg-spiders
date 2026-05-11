@@ -1,0 +1,622 @@
+{
+  "1": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": false,
+      "previous_page_number": null,
+      "number": 1,
+      "has_next": true,
+      "next_page_number": 2,
+      "num_pages": 20
+    },
+    "current_array": [
+      662,
+      911,
+      325,
+      973,
+      84,
+      30,
+      395,
+      950,
+      327,
+      939
+    ]
+  },
+  "2": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 1,
+      "number": 2,
+      "has_next": true,
+      "next_page_number": 3,
+      "num_pages": 20
+    },
+    "current_array": [
+      810,
+      76,
+      719,
+      412,
+      599,
+      463,
+      430,
+      413,
+      138,
+      373
+    ]
+  },
+  "3": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 2,
+      "number": 3,
+      "has_next": true,
+      "next_page_number": 4,
+      "num_pages": 20
+    },
+    "current_array": [
+      29,
+      40,
+      414,
+      409,
+      983,
+      24,
+      177,
+      433,
+      601,
+      999
+    ]
+  },
+  "4": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 3,
+      "number": 4,
+      "has_next": true,
+      "next_page_number": 5,
+      "num_pages": 20
+    },
+    "current_array": [
+      700,
+      977,
+      182,
+      738,
+      854,
+      309,
+      256,
+      430,
+      996,
+      363
+    ]
+  },
+  "5": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 4,
+      "number": 5,
+      "has_next": true,
+      "next_page_number": 6,
+      "num_pages": 20
+    },
+    "current_array": [
+      758,
+      819,
+      109,
+      504,
+      174,
+      750,
+      749,
+      635,
+      213,
+      512
+    ]
+  },
+  "6": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 5,
+      "number": 6,
+      "has_next": true,
+      "next_page_number": 7,
+      "num_pages": 20
+    },
+    "current_array": [
+      850,
+      699,
+      574,
+      627,
+      782,
+      317,
+      323,
+      732,
+      824,
+      459
+    ]
+  },
+  "7": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 6,
+      "number": 7,
+      "has_next": true,
+      "next_page_number": 8,
+      "num_pages": 20
+    },
+    "current_array": [
+      106,
+      941,
+      150,
+      540,
+      161,
+      769,
+      673,
+      400,
+      19,
+      629
+    ]
+  },
+  "8": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 7,
+      "number": 8,
+      "has_next": true,
+      "next_page_number": 9,
+      "num_pages": 20
+    },
+    "current_array": [
+      745,
+      291,
+      528,
+      836,
+      232,
+      989,
+      984,
+      339,
+      267,
+      474
+    ]
+  },
+  "9": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 8,
+      "number": 9,
+      "has_next": true,
+      "next_page_number": 10,
+      "num_pages": 20
+    },
+    "current_array": [
+      196,
+      468,
+      669,
+      104,
+      184,
+      932,
+      596,
+      156,
+      773,
+      871
+    ]
+  },
+  "10": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 9,
+      "number": 10,
+      "has_next": true,
+      "next_page_number": 11,
+      "num_pages": 20
+    },
+    "current_array": [
+      542,
+      571,
+      901,
+      438,
+      550,
+      562,
+      749,
+      172,
+      35,
+      636
+    ]
+  },
+  "11": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 10,
+      "number": 11,
+      "has_next": true,
+      "next_page_number": 12,
+      "num_pages": 20
+    },
+    "current_array": [
+      286,
+      493,
+      742,
+      175,
+      100,
+      546,
+      983,
+      69,
+      127,
+      519
+    ]
+  },
+  "12": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 11,
+      "number": 12,
+      "has_next": true,
+      "next_page_number": 13,
+      "num_pages": 20
+    },
+    "current_array": [
+      222,
+      223,
+      433,
+      158,
+      14,
+      670,
+      840,
+      937,
+      374,
+      943
+    ]
+  },
+  "13": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 12,
+      "number": 13,
+      "has_next": true,
+      "next_page_number": 14,
+      "num_pages": 20
+    },
+    "current_array": [
+      382,
+      404,
+      161,
+      4,
+      494,
+      518,
+      872,
+      91,
+      791,
+      518
+    ]
+  },
+  "14": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 13,
+      "number": 14,
+      "has_next": true,
+      "next_page_number": 15,
+      "num_pages": 20
+    },
+    "current_array": [
+      957,
+      499,
+      442,
+      798,
+      265,
+      79,
+      743,
+      708,
+      372,
+      604
+    ]
+  },
+  "15": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 14,
+      "number": 15,
+      "has_next": true,
+      "next_page_number": 16,
+      "num_pages": 20
+    },
+    "current_array": [
+      945,
+      585,
+      770,
+      919,
+      901,
+      671,
+      376,
+      455,
+      774,
+      456
+    ]
+  },
+  "16": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 15,
+      "number": 16,
+      "has_next": true,
+      "next_page_number": 17,
+      "num_pages": 20
+    },
+    "current_array": [
+      939,
+      878,
+      605,
+      260,
+      195,
+      761,
+      127,
+      665,
+      658,
+      677
+    ]
+  },
+  "17": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 16,
+      "number": 17,
+      "has_next": true,
+      "next_page_number": 18,
+      "num_pages": 20
+    },
+    "current_array": [
+      326,
+      847,
+      703,
+      198,
+      622,
+      372,
+      404,
+      503,
+      505,
+      517
+    ]
+  },
+  "18": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 17,
+      "number": 18,
+      "has_next": true,
+      "next_page_number": 19,
+      "num_pages": 20
+    },
+    "current_array": [
+      388,
+      751,
+      146,
+      111,
+      516,
+      473,
+      252,
+      111,
+      390,
+      966
+    ]
+  },
+  "19": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 18,
+      "number": 19,
+      "has_next": true,
+      "next_page_number": 20,
+      "num_pages": 20
+    },
+    "current_array": [
+      1000,
+      640,
+      207,
+      792,
+      240,
+      895,
+      477,
+      340,
+      187,
+      745
+    ]
+  },
+  "20": {
+    "problem": {
+      "title": "题八：迷踪步",
+      "description": "JavaScript经过混淆处理，给对抗增加难度，适合在学习JavaScript混淆的人群",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 19,
+      "number": 20,
+      "has_next": false,
+      "next_page_number": null,
+      "num_pages": 20
+    },
+    "current_array": [
+      605,
+      269,
+      918,
+      979,
+      746,
+      533,
+      634,
+      855,
+      270,
+      349
+    ]
+  }
+}

@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\淘宝\淘宝商品_手机_20260424_130019.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\科雷\科雷物品_20260501_180138.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

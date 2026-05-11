@@ -1,0 +1,622 @@
+{
+  "1": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": false,
+      "previous_page_number": null,
+      "number": 1,
+      "has_next": true,
+      "next_page_number": 2,
+      "num_pages": 20
+    },
+    "current_array": [
+      750,
+      709,
+      673,
+      823,
+      285,
+      35,
+      23,
+      872,
+      757,
+      766
+    ]
+  },
+  "2": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 1,
+      "number": 2,
+      "has_next": true,
+      "next_page_number": 3,
+      "num_pages": 20
+    },
+    "current_array": [
+      278,
+      13,
+      884,
+      407,
+      498,
+      74,
+      424,
+      196,
+      500,
+      737
+    ]
+  },
+  "3": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 2,
+      "number": 3,
+      "has_next": true,
+      "next_page_number": 4,
+      "num_pages": 20
+    },
+    "current_array": [
+      50,
+      835,
+      257,
+      894,
+      474,
+      487,
+      756,
+      35,
+      493,
+      198
+    ]
+  },
+  "4": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 3,
+      "number": 4,
+      "has_next": true,
+      "next_page_number": 5,
+      "num_pages": 20
+    },
+    "current_array": [
+      211,
+      767,
+      381,
+      509,
+      604,
+      553,
+      928,
+      788,
+      687,
+      795
+    ]
+  },
+  "5": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 4,
+      "number": 5,
+      "has_next": true,
+      "next_page_number": 6,
+      "num_pages": 20
+    },
+    "current_array": [
+      992,
+      226,
+      750,
+      705,
+      960,
+      615,
+      882,
+      817,
+      847,
+      310
+    ]
+  },
+  "6": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 5,
+      "number": 6,
+      "has_next": true,
+      "next_page_number": 7,
+      "num_pages": 20
+    },
+    "current_array": [
+      191,
+      913,
+      363,
+      281,
+      668,
+      513,
+      778,
+      502,
+      835,
+      194
+    ]
+  },
+  "7": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 6,
+      "number": 7,
+      "has_next": true,
+      "next_page_number": 8,
+      "num_pages": 20
+    },
+    "current_array": [
+      716,
+      655,
+      346,
+      980,
+      784,
+      274,
+      47,
+      912,
+      569,
+      975
+    ]
+  },
+  "8": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 7,
+      "number": 8,
+      "has_next": true,
+      "next_page_number": 9,
+      "num_pages": 20
+    },
+    "current_array": [
+      850,
+      532,
+      555,
+      978,
+      250,
+      732,
+      985,
+      587,
+      583,
+      465
+    ]
+  },
+  "9": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 8,
+      "number": 9,
+      "has_next": true,
+      "next_page_number": 10,
+      "num_pages": 20
+    },
+    "current_array": [
+      16,
+      143,
+      384,
+      18,
+      125,
+      704,
+      636,
+      273,
+      926,
+      253
+    ]
+  },
+  "10": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 9,
+      "number": 10,
+      "has_next": true,
+      "next_page_number": 11,
+      "num_pages": 20
+    },
+    "current_array": [
+      240,
+      386,
+      848,
+      972,
+      458,
+      481,
+      203,
+      406,
+      571,
+      282
+    ]
+  },
+  "11": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 10,
+      "number": 11,
+      "has_next": true,
+      "next_page_number": 12,
+      "num_pages": 20
+    },
+    "current_array": [
+      423,
+      709,
+      629,
+      71,
+      654,
+      616,
+      639,
+      480,
+      475,
+      999
+    ]
+  },
+  "12": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 11,
+      "number": 12,
+      "has_next": true,
+      "next_page_number": 13,
+      "num_pages": 20
+    },
+    "current_array": [
+      207,
+      760,
+      568,
+      823,
+      42,
+      62,
+      950,
+      110,
+      156,
+      498
+    ]
+  },
+  "13": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 12,
+      "number": 13,
+      "has_next": true,
+      "next_page_number": 14,
+      "num_pages": 20
+    },
+    "current_array": [
+      468,
+      200,
+      370,
+      302,
+      715,
+      206,
+      573,
+      304,
+      94,
+      393
+    ]
+  },
+  "14": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 13,
+      "number": 14,
+      "has_next": true,
+      "next_page_number": 15,
+      "num_pages": 20
+    },
+    "current_array": [
+      764,
+      226,
+      311,
+      560,
+      890,
+      671,
+      333,
+      307,
+      318,
+      146
+    ]
+  },
+  "15": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 14,
+      "number": 15,
+      "has_next": true,
+      "next_page_number": 16,
+      "num_pages": 20
+    },
+    "current_array": [
+      803,
+      494,
+      813,
+      750,
+      861,
+      930,
+      672,
+      845,
+      921,
+      775
+    ]
+  },
+  "16": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 15,
+      "number": 16,
+      "has_next": true,
+      "next_page_number": 17,
+      "num_pages": 20
+    },
+    "current_array": [
+      926,
+      596,
+      100,
+      546,
+      10,
+      354,
+      961,
+      333,
+      173,
+      939
+    ]
+  },
+  "17": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 16,
+      "number": 17,
+      "has_next": true,
+      "next_page_number": 18,
+      "num_pages": 20
+    },
+    "current_array": [
+      424,
+      69,
+      608,
+      486,
+      911,
+      26,
+      327,
+      438,
+      22,
+      123
+    ]
+  },
+  "18": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 17,
+      "number": 18,
+      "has_next": true,
+      "next_page_number": 19,
+      "num_pages": 20
+    },
+    "current_array": [
+      714,
+      28,
+      427,
+      37,
+      180,
+      998,
+      312,
+      66,
+      262,
+      838
+    ]
+  },
+  "19": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 18,
+      "number": 19,
+      "has_next": true,
+      "next_page_number": 20,
+      "num_pages": 20
+    },
+    "current_array": [
+      874,
+      431,
+      32,
+      281,
+      560,
+      8,
+      97,
+      290,
+      995,
+      637
+    ]
+  },
+  "20": {
+    "problem": {
+      "title": "题七：千山鸟飞绝",
+      "description": "代码经过轻度混淆，适合JavaScript逆向分析",
+      "difficulty": "中等",
+      "tags": [
+        "js加密",
+        "js混淆"
+      ]
+    },
+    "pagination": {
+      "has_previous": true,
+      "previous_page_number": 19,
+      "number": 20,
+      "has_next": false,
+      "next_page_number": null,
+      "num_pages": 20
+    },
+    "current_array": [
+      666,
+      671,
+      97,
+      962,
+      48,
+      582,
+      7,
+      907,
+      3,
+      743
+    ]
+  }
+}
