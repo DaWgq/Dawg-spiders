@@ -23,6 +23,10 @@ build/
 node_modules/
 package-lock.json
 
+# 特定前端项目的 node_modules
+哲风壁纸/道格壁纸/frontend/node_modules/
+
+
 # 其他缓存
 .ruff_cache/
 .qwen/
