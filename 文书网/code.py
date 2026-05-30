@@ -1,64 +1,205 @@
+import base64
+import json
+import random
+import string
+import time
+from datetime import datetime
+
 import requests
+from Crypto.Cipher import DES3
+from Crypto.Util.Padding import pad, unpad
+
+
+# =========================
+# 1. 基础配置：按你的抓包填写
+# =========================
+
+SEARCH_WORD = "私募基金"
+TOTAL_PAGES = 20
+
+PAGE_ID = "4dbf6fd2f2dfc9e2cb54a2e632331d87"
+REQUEST_TOKEN = "eemsAr6Q1tnP0LJmKHrjIiks"
+SESSION_COOKIE = "a6959fef-7003-4779-8849-35a794e0d8dc"
+
+URL = "https://wenshu.court.gov.cn/website/parse/rest.q4w"
+
+REFERER = (
+    "https://wenshu.court.gov.cn/website/wenshu/181217BMTKHNT2W0/"
+    f"index.html?pageId={PAGE_ID}&s21=%E7%A7%81%E5%8B%9F%E5%9F%BA%E9%87%91"
+)
 
 
 headers = {
-    "accept": "application/json, text/plain, */*",
-    "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
-    "content-type": "application/x-www-form-urlencoded",
-    "origin": "https://item.jd.com",
-    "priority": "u=1, i",
-    "referer": "https://item.jd.com/",
-    "sec-ch-ua": "\"Chromium\";v=\"148\", \"Google Chrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+    "Accept": "application/json, text/javascript, */*; q=0.01",
+    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+    "Connection": "keep-alive",
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "Origin": "https://wenshu.court.gov.cn",
+    "Referer": REFERER,
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-origin",
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/148.0.0.0 Safari/537.36"
+    ),
+    "X-Requested-With": "XMLHttpRequest",
+    "sec-ch-ua": '"Chromium";v="148", "Google Chrome";v="148", "Not/A)Brand";v="99"',
     "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": "\"Windows\"",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-site",
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
-    "x-referer-page": "https://item.jd.com/100310496358.html",
-    "x-rp-client": "h5_2.1.0"
+    "sec-ch-ua-platform": '"Windows"',
 }
-cookies = {
-    "__jdv": "95931165|www.google.com|-|referral|-|1778575572382",
-    "__jdu": "17785755723822032290501",
-    "jcap_dvzw_fp": "P2orBIltboeGnt9L1EAwvz_BIc8NKPD3zbO9v3cWNRDNYBwya5yFhkQRy3yd4-txhflyiLSTDz83RlrPtR_Dza44UZ0=",
-    "pinId": "U08qodXJNZu1ffsfn98I-w",
-    "pin": "haha6486",
-    "unick": "mj5zpthwq3zwdy",
-    "_tp": "hQJRug6zIIgo2S3ZBVxYxA%3D%3D",
-    "_pst": "haha6486",
-    "TrackID": "1MxieXnji-TjhfcB836ZM0r1VtX9sil6Gg0cosq0-UzfH7NZzWFJOAVj6lllQcfp7ZqUXsmnl4StiYKJ5IJYBQEtL4vHbAid7IYQv1VtXf7c",
-    "light_key": "AASBKE7rOxgWQziEhC_QY6yaMd6KgjOZa5zDzQ8mxM-ww_amqWOKxslXLFkh7_8dPlz9nsqk",
-    "shshshfpa": "4fba695c-1028-f8aa-3bf5-a80a03be2509-1778575753",
-    "shshshfpx": "4fba695c-1028-f8aa-3bf5-a80a03be2509-1778575753",
-    "3AB9D23F7A4B3CSS": "jdd03PP2G7TG4OTHAB4ZBMMPVZZMAVPAY7A4YVGH2ZFDK7ZPEPGBCYKWZQX5QHBWI4FJDFFIJTQLLHHBC6RKOCWPY345U7QAAAAM6EC6QW4QAAAAACEPVYTDAGCRS4EX",
-    "areaId": "20",
-    "cn": "0",
-    "cid": "9",
-    "ipLoc-djd": "20-1753-1755-25245",
-    "3AB9D23F7A4B3C9B": "PP2G7TG4OTHAB4ZBMMPVZZMAVPAY7A4YVGH2ZFDK7ZPEPGBCYKWZQX5QHBWI4FJDFFIJTQLLHHBC6RKOCWPY345U7Q",
-    "thor": "9F8C95FA9A1751D48A7F1175D69F913334B3BCDB0EC9A233DFC16AEB2752683AE4D8D0EBC33508DCB1F6D410CA7F181130F8ACD6EBC730CA8F3BC88B026A06F0D01C7A2D84A78D0D5D32DBEA2578155D87FE7B7E6572B966E70B4EB2F71558919D9B089F6DF478F859EB3231D262180FA04214862FADB1F67F538BD0214FC738CE94CB5A3890F7E7A832B2C9159400F4",
-    "token": "4c44b7f4374bf5a084e0a2da387ac716,3,988147",
-    "__jda": "181111935.17785755723822032290501.1778575572.1778595339.1778665712.3",
-    "__jdc": "181111935",
-    "flash": "3_HmUdhuO1QvXoZV15EeD_fGo1jmxJmhhLUqsD-T8B_T1oBGb3l-Fscqm8SjXbLNkbBLtu2hgoU2eYMA2LDae4G0N4gwDg6zMJEAPr92d_ZZO3D4521ypLXRX13Qy7bWVek6P8NgL18gd1XfZdVOrPR8MkRPacEJZcIpBg5NBGyUP*",
-    "__jdb": "181111935.9.17785755723822032290501|3.1778665712",
-    "shshshfpb": "BApXWGXO2I_tATMdM4m8WHok8wX24eJTTBjoWUHxp9xJ1OtRadYeAxkK9fKKYOeYQHecK46LWhZU2cbEw6vtd3vSTaw",
-    "sdtoken": "AAbEsBpEIOVjqTAKCQtvQu17cEzP9mLfW1uiyr7lyJnhtOfu3vZXBX3JzfxhipZr_DN0oGVamsBibBTiQvoqBz6xXnD5OAqu52Wq2d8rjL0_sc-xy9bVWt7KKB6YuN4l7ZXY4zI_cOKb-fECB4vWjG4DBpoT_Cvfjibi4P6SMLA-Zx7ZnOGwSYeE4rs0-A3B_nY5SLSq4YdF"
-}
-url = "https://api.m.jd.com/client.action"
-data = {
-    "appid": "pc-rate-qa",
-    "body": "{\"requestSource\":\"pc\",\"shopComment\":0,\"sameComment\":0,\"channel\":null,\"extInfo\":{\"isQzc\":\"0\",\"spuId\":100310496358,\"commentRate\":\"1\",\"needTopAlbum\":\"1\",\"bbtf\":\"\",\"userGroupComment\":\"1\"},\"num\":\"10\",\"pictureCommentType\":\"A\",\"scval\":null,\"shadowMainSku\":\"0\",\"shopType\":\"0\",\"shopId\":\"1000000904\",\"firstCommentGuid\":\"T6NaPsd3jZgtdRKCXqWYw3mE\",\"sku\":100310496358,\"category\":\"9987;653;655\",\"shieldCurrentComment\":\"1\",\"pageSize\":\"10\",\"isFirstRequest\":false,\"isCurrentSku\":true,\"sortType\":\"5\",\"tagId\":\"\",\"tagType\":\"\",\"type\":\"0\",\"pageNum\":\"1\"}",
-    "client": "pc",
-    "clientVersion": "1.0.0",
-    "functionId": "getCommentListPage",
-    "h5st": "20260513175043328;5nbnpe5ni5m7bei1;01a47;tk03wa2191be018nllmDT6Bk2itZ_b2EbcbI3ILmjWqlw2Egw4r674kL5W--Ie_cyTaCG9sEQIwgw0_givpBeB0-jQbK;4fb4bc7650bc8a18564b4aa168eac4a3;5.3;1778665838328;pjbMhjpd9nIg7jpjxjZf2iFjLrJp-jZfCWFT03VeCyVeGqEQJyVeJrJdJrESJrpjh7Jf6rJdJz1TIipjLDrgJXof1nle7XYT6jYf4TYe3Pod4Loe4boSFSVT7fISJSldJrJdJrEa-OFTGOEjLrJp-jZTFeYfFOYdIm1e5r4T1T1eGK4f5Hof7n1T7PYf5HIfHipjxj5PKSEQKeFjLrJp-jZf_jpjxjpe2iFjLrJp-j5f9fIg2T0UG6VRFuWeDipjxjJOJrpjh7JjbylP721Y4LIVFOFjLDIj_ulS9mFPJrpjh7Jj5fIQCOGjLDIjFqEjLrJp-3kjLDLj1SHjLDIj4nYOJipjLrpjh75fLDIj6nYOJipjLrpjh7pe6rJdJrYf2iFjLrpjLDrgz3pjxjJf6XETJrpjLrJp-jpPJiUSy7VdeeoR2amPJrJdJ31QHyVT5ipjLrpjh7pfLDIjzXETJrpjLrJp-rojxj5e2iFjLrpjLDrg2jojxjJe2iFjLrpjLDrg7rJdJXYOJipjLrpjh7pfLDIj3XETJrpjLrJp-L4fLDIj4XETJrpjLrJp-jZd9nIg7jpjxjZf2iFjLrpjLDrg7rJdJ-1OJrpjLrJp-Xojxj5P-ipjLrpjh7pfLDIj-ipjLrpjh7pfLDIjHOEjLrpjLD7NLDIjHyVS3KUSJrpjh7ZMLrJpJTod3TYTDmlRJrJdJjoPJrpjLrJpwqJdJrkPJrpjh7Jj3ToNL-oe1zVRUq5d7zpf6rpWdq5P0ulS9G1WJrJdJnVO4ipjLD7N;230f0b0e38a9516bf998120fe13fa0ef;qbkgHGHQ8GlOIyVOF6JQ8G1P5WFW3yVSC61T-bEQGGlQI6ZNHuFT-bVR7qUT",
-    "loginType": "3",
-    "t": "1778665838326",
-    "uuid": "17785755723822032290501"
-}
-response = requests.post(url, headers=headers, cookies=cookies, data=data)
 
-print(response.text)
-print(response)
+cookies = {
+    "SESSION": SESSION_COOKIE
+}
+
+
+# =========================
+# 2. 复现前端 random(24)
+# =========================
+
+def js_random_24(size=24):
+    chars = string.digits + string.ascii_lowercase + string.ascii_uppercase
+    return "".join(random.choice(chars) for _ in range(size))
+
+
+# =========================
+# 3. 字符串转二进制
+#    对应前端 strTobinary()
+# =========================
+
+def str_to_binary(s: str) -> str:
+    return " ".join(bin(ord(ch))[2:] for ch in s)
+
+
+# =========================
+# 4. 3DES 加密 timestamp
+#    对应 DES3.encrypt(timestamp, salt, iv)
+# =========================
+
+def encrypt_timestamp(timestamp: str, salt: str, iv: str) -> str:
+    key = salt.encode("utf-8")   # 24字节
+    iv_bytes = iv.encode("utf-8")  # 8字节，如 20260516
+
+    cipher = DES3.new(key, DES3.MODE_CBC, iv=iv_bytes)
+    encrypted = cipher.encrypt(pad(timestamp.encode("utf-8"), 8))
+
+    return base64.b64encode(encrypted).decode("utf-8")
+
+
+# =========================
+# 5. 生成 ciphertext
+# =========================
+
+def generate_ciphertext() -> str:
+    timestamp = str(int(time.time() * 1000))
+    salt = js_random_24(24)
+    iv = datetime.now().strftime("%Y%m%d")
+
+    enc = encrypt_timestamp(timestamp, salt, iv)
+    final_str = salt + iv + enc
+
+    return str_to_binary(final_str)
+
+
+# =========================
+# 6. 解密响应 result
+#    对应 DES3.decrypt(result, secretKey)
+# =========================
+
+def decrypt_result(result: str, secret_key: str) -> str:
+    key = secret_key.encode("utf-8")
+    iv = datetime.now().strftime("%Y%m%d").encode("utf-8")
+
+    cipher = DES3.new(key, DES3.MODE_CBC, iv=iv)
+    ciphertext_bytes = base64.b64decode(result)
+
+    plaintext = unpad(cipher.decrypt(ciphertext_bytes), 8)
+    return plaintext.decode("utf-8")
+
+
+# =========================
+# 7. 请求单页
+# =========================
+
+def fetch_one_page(session: requests.Session, page_num: int):
+    query_condition = json.dumps(
+        [{"key": "s21", "value": SEARCH_WORD}],
+        ensure_ascii=False,
+        separators=(",", ":")
+    )
+
+    data = {
+        "pageId": PAGE_ID,
+        "s21": SEARCH_WORD,
+        "sortFields": "s50:desc",
+        "ciphertext": generate_ciphertext(),
+        "pageNum": str(page_num),
+        "queryCondition": query_condition,
+        "cfg": "com.lawyee.judge.dc.parse.dto.SearchDataDsoDTO@queryDoc",
+        "__RequestVerificationToken": REQUEST_TOKEN,
+        "wh": "572",
+        "ww": "1920",
+        "cs": "0"
+    }
+
+    resp = session.post(
+        URL,
+        headers=headers,
+        cookies=cookies,
+        data=data,
+        timeout=20
+    )
+
+    resp.raise_for_status()
+    outer_json = resp.json()
+
+    return outer_json
+
+
+# =========================
+# 8. 主程序：翻页 + 解密 + 控制台输出
+# =========================
+
+def main():
+    session = requests.Session()
+
+    for page in range(1, TOTAL_PAGES + 1):
+        print("\n" + "=" * 80)
+        print(f"正在抓取第 {page} 页")
+        print("=" * 80)
+
+        try:
+            outer_json = fetch_one_page(session, page)
+
+            code = outer_json.get("code")
+            success = outer_json.get("success")
+            result = outer_json.get("result")
+            secret_key = outer_json.get("secretKey")
+
+            print(f"[接口状态] code={code}, success={success}")
+
+            if not result or not secret_key:
+                print("[异常] 当前页没有 result 或 secretKey")
+                print(json.dumps(outer_json, ensure_ascii=False, indent=2))
+                continue
+
+            plaintext = decrypt_result(result, secret_key)
+
+            try:
+                page_data = json.loads(plaintext)
+                print(json.dumps(page_data, ensure_ascii=False, indent=2))
+            except json.JSONDecodeError:
+                print("[提示] 解密成功，但结果不是标准 JSON，原文如下：")
+                print(plaintext)
+
+            time.sleep(1)
+
+        except Exception as e:
+            print(f"[第 {page} 页失败] {type(e).__name__}: {e}")
+            time.sleep(2)
+
+
+if __name__ == "__main__":
+    main()

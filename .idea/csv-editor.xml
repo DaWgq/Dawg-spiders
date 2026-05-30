@@ -3,7 +3,7 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\b站\bilibili_comments.csv">
+        <entry key="\hannovermesse\exhibitor_links.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -38,7 +38,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\科雷\科雷物品_20260501_180138.csv">
+        <entry key="\科雷\images\rewards.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
