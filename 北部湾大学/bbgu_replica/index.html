@@ -1,0 +1,4178 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+
+    <title>北部湾大学</title><meta name="pageType" content="1">
+
+<meta name="pageTitle" content="北部湾大学">
+
+<META Name="keywords" Content="北部湾大学" />
+
+
+
+    <link rel="stylesheet" href="style/reset.css">
+
+    <link rel="stylesheet" href="style/animate.min.css">
+
+    <link rel="stylesheet" href="style/slick.css">
+
+    <link rel="stylesheet" href="style/slick-theme.css">
+
+    <link rel="stylesheet" href="style/public.css">
+
+    <link rel="stylesheet" href="style/index.css">
+
+    
+
+    
+
+<style>
+
+.pub_list li .first-info p {
+
+    color: #3D3D3D;}
+
+.pub_list li>a>p {
+
+    color: #3D3D3D;}
+
+.pub_list li>a::before {
+
+    background: #0060AF;}
+
+.pub_list li {
+
+    border-bottom: 1px solid #ddd;}
+
+.s4-r .pub_list li.on {
+
+    background: #0060AF;
+
+    background: linear-gradient(120deg, #0060AF 0%, #0098E2 100%);
+
+    padding: 0.27rem 0.2rem 0.26rem 0.2rem;}
+
+.pub_list li .first-info p.user {
+
+    background: url(images/icon-user-h.png) no-repeat;
+
+    background-position: left 0.06rem;
+
+    background-size: auto 0.17rem;}
+
+.pub_list li .first-info p.time {
+
+    background: url(images/icon-times-h.png) no-repeat;
+
+    background-position: left 0.06rem;
+
+    background-size: auto 0.17rem;}
+
+.pub_list li .first-info p.address {
+
+    background: url(images/icon-address-h.png) no-repeat;
+
+    background-position: left 0.06rem;
+
+    background-size: auto 0.17rem;}
+
+</style>
+
+    
+
+<!--Announced by Visual SiteBuilder 9-->
+
+<link rel="stylesheet" type="text/css" href="_sitegray/_sitegray_d.css" />
+
+<script language="javascript" src="_sitegray/_sitegray.js"></script>
+
+<!-- CustomerNO:77656262657232307c75475d53565742000300034557 -->
+
+<link rel="stylesheet" type="text/css" href="index.vsb.css" />
+
+<script type="text/javascript" src="system/resource/js/counter.js"></script>
+
+<script type="text/javascript">_jsq_(1001,'/index.jsp',-1,1972595869)</script>
+
+</head>
+
+
+
+<body>
+
+
+
+    <div class="head pc head_rgb">
+
+        <div class="head-top">
+
+            <div class="w15">
+
+                <div class="logo">
+
+<a href="index.htm"><img src="images/logonew.png" alt=""></a></div>
+
+                <div class="nav">
+
+                    <div class="b-top-c">
+
+                        <div class="b-top-r">
+
+                            <ul><script language="javascript" src="system/resource/js/dynclicks.js"></script><script language="javascript" src="system/resource/js/openlink.js"></script>
+
+</ul>
+
+                            <div class="search">
+
+
+
+
+
+<script language="javascript" src="system/resource/js/base64.js"></script><script language="javascript" src="system/resource/js/jquery/jquery-latest.min.js"></script><script language="javascript" src="system/resource/vue/vue.js"></script><script language="javascript" src="system/resource/vue/bluebird.min.js"></script><script language="javascript" src="system/resource/vue/axios.js"></script><script language="javascript" src="system/resource/vue/polyfill.js"></script><script language="javascript" src="system/resource/vue/token.js"></script><LINK href="system/resource/vue/static/element/index.css" type="text/css" rel="stylesheet"><script language="javascript" src="system/resource/vue/static/element/index.js"></script><script language="javascript" src="system/resource/vue/static/public.js"></script><div id="divu2"></div>
+
+<script type="text/html" id="htmlu2">
+
+    <div id="appu2">
+
+        <div v-if="!isError">
+
+        
+
+        <input type="text" name="" id="" value="" placeholder="请输入关键字" class="text" autocomplete=off v-model=query.keyWord @keyup.enter="onSubmit">
+
+                                <input type="submit" name="submit" id="" value="" class="button" v-on:click="onSubmit()">
+
+        
+
+            
+
+        </div>
+
+        <div v-if="isError" style="color: #b30216; font-size:18px;text-align: center;padding:20px;">
+
+            应用维护中！
+
+        </div>
+
+    </div>
+
+</script>
+
+<script>
+
+    $("#divu2").html($("#htmlu2").text());
+
+</script>
+
+<script>
+
+    var appOwner = "1972595869";
+
+    var token = 'tourist';
+
+    var urlPrefix = "/aop_component/";
+
+
+
+    jQuery.support.cors = true;
+
+    $.ajaxSetup({
+
+        beforeSend: function (request, settings) {
+
+            request.setRequestHeader("Authorization", token);
+
+            request.setRequestHeader("owner", appOwner);
+
+        }
+
+    });
+
+
+
+    new Vue({
+
+        el: "#appu2",
+
+        data: function () {
+
+            return {
+
+                query: {
+
+                    keyWord: "",/搜索关键词
+
+                    owner: appOwner,
+
+                    token: token,
+
+                    urlPrefix: urlPrefix,
+
+                    lang:"i18n_zh_CN"
+
+                },
+
+                isError: false
+
+            }
+
+        },
+
+        mounted: function () {
+
+            var _this = this;
+
+            / _this.init();
+
+        },
+
+        methods: {
+
+            init: function(){
+
+                $.ajax({
+
+                    url: "/aop_component/webber/search/test",
+
+                    type: "get",
+
+                    success: function (response) {
+
+                        if (response.code == "0000") {
+
+                        } else if (response.code == "220") {
+
+                            _this.isError = true;
+
+                            console.log(response);
+
+                        } else if (!response.code) {
+
+                            _this.isError = true;
+
+                            console.log(response);
+
+                        }
+
+                    },
+
+                    error: function (response) {
+
+                        _this.isError = true;
+
+                    }
+
+                });
+
+            },
+
+            onSubmit: function (e) {
+
+                var url = "/views/search/modules/resultpc/soso.html";
+
+                if ("10" == "1" || "10" == "2") {
+
+                    url = "" + url;
+
+                }
+
+                var _this = this;
+
+                var query = _this.query;
+
+                if (url.indexOf("?") > -1) {
+
+                    url = url.split("?")[0];
+
+                }
+
+                if (query.keyWord) {
+
+                    var query = new Base64().encode(JSON.stringify(query));
+
+                    window.open(url + "?query=" + query);
+
+                } else {
+
+                    alert("请填写搜索内容")
+
+                }
+
+            },
+
+        }
+
+    })
+
+</script></div>
+
+                        </div>
+
+                        <div class="clear"></div>
+
+                    </div>
+
+                    <ul class="">
+
+
+
+<li class="active">
+
+                            <a href="index.htm">首页</a>
+
+                        </li>
+
+
+
+   
+
+
+
+<li>
+
+                            <a href="xxgk/xxjj.htm">学校概况</a>
+
+                            <div>
+
+                                <ul>
+
+
+
+                                    <li><a href="xxgk/xxjj.htm">学校简介</a></li>
+
+                                   
+
+
+
+                                    <li><a href="xxgk/xrld.htm">现任领导</a></li>
+
+                                   
+
+
+
+                                    <li><a href="xxgk/xxbs.htm">学校标识</a></li>
+
+                                   
+
+
+
+                                    <li><a href="xxgk/xxzc.htm">学校章程</a></li>
+
+                                   
+
+
+
+                                    <li><a href="xxgk/dxjs.htm">大学精神</a></li>
+
+                                   
+
+
+
+                                    <li><a href="xxgk/bxsj.htm">办学数据</a></li>
+
+                                   
+
+
+
+                                    <li><a href="xxgk/xxxg.htm">学校校歌</a></li>
+
+                                   
+
+
+
+                                    <li><a href="xxgk/xyfg.htm">校园风光</a></li>
+
+                                   
+
+                                </ul>
+
+                            </div>
+
+                        </li>
+
+
+
+   
+
+
+
+<li>
+
+                            <a href="jgsz.htm">机构设置</a>
+
+                        </li>
+
+
+
+   
+
+
+
+<li>
+
+                            <a href="index.html">教学管理</a>
+
+                        </li>
+
+
+
+   
+
+
+
+<li>
+
+                            <a href="index.html">科学研究</a>
+
+                        </li>
+
+
+
+   
+
+
+
+<li>
+
+                            <a href=";/index.html">招生就业</a>
+
+                            <div>
+
+                                <ul>
+
+
+
+                                    <li><a href="sy.htm">普高本科招生</a></li>
+
+                                   
+
+
+
+                                    <li><a href="index.html">就业信息网</a></li>
+
+                                   
+
+
+
+                                    <li><a href="index.html">研究生招生考试</a></li>
+
+                                   
+
+
+
+                                    <li><a href="http://www.wdgjbk.com/">国际本科招生</a></li>
+
+                                   
+
+                                </ul>
+
+                            </div>
+
+                        </li>
+
+
+
+   
+
+
+
+<li>
+
+                            <a href="ren_cai_zhao_pin/zpjh.htm">人才招聘</a>
+
+                            <div>
+
+                                <ul>
+
+
+
+                                    <li><a href="ren_cai_zhao_pin/zpjh.htm">招聘计划</a></li>
+
+                                   
+
+
+
+                                    <li><a href="ren_cai_zhao_pin/gccrczpgg.htm">高层次人才招聘公告</a></li>
+
+                                   
+
+
+
+                                    <li><a href="ren_cai_zhao_pin/qtzpgg.htm">其他招聘公告</a></li>
+
+                                   
+
+
+
+                                    <li><a href="ren_cai_zhao_pin/zcwj.htm">政策文件</a></li>
+
+                                   
+
+
+
+                                    <li><a href="ren_cai_zhao_pin/zpyx.htm">招聘邮箱</a></li>
+
+                                   
+
+                                </ul>
+
+                            </div>
+
+                        </li>
+
+
+
+   
+
+
+
+<li>
+
+                            <a href="xxgk1.htm">信息公开</a>
+
+                        </li>
+
+
+
+   
+
+<div class="clear"></div>
+
+</ul>
+
+                    <div class="clear"></div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 移动端导航 -->
+
+    <div class="top">
+
+        <div class="wap wap-menu">
+
+            <img src="images/menu.png" class="menu" alt="">
+
+            <img src="images/close.png" class="close-menu" alt="">
+
+        </div>
+
+    </div>
+
+    <div class="wap m-head">
+
+        <div class="m-logo">
+
+<a href="index.htm"><img src="images/logonew.png" alt=""></a></div>
+
+        <div class="m-nav">
+
+            <div class="m-search">
+
+
+
+
+
+
+
+<div id="divu5"></div>
+
+<script type="text/html" id="htmlu5">
+
+    <div id="appu5">
+
+        <div v-if="!isError">
+
+        
+
+        <input type="text" placeholder="请输入内容" autocomplete=off v-model=query.keyWord @keyup.enter="onSubmit">
+
+                <input type="image" src="images/search2.png" v-on:click="onSubmit()">
+
+        
+
+            
+
+        </div>
+
+        <div v-if="isError" style="color: #b30216; font-size:18px;text-align: center;padding:20px;">
+
+            应用维护中！
+
+        </div>
+
+    </div>
+
+</script>
+
+<script>
+
+    $("#divu5").html($("#htmlu5").text());
+
+</script>
+
+<script>
+
+    var appOwner = "1972595869";
+
+    var token = 'tourist';
+
+    var urlPrefix = "/aop_component/";
+
+
+
+    jQuery.support.cors = true;
+
+    $.ajaxSetup({
+
+        beforeSend: function (request, settings) {
+
+            request.setRequestHeader("Authorization", token);
+
+            request.setRequestHeader("owner", appOwner);
+
+        }
+
+    });
+
+
+
+    new Vue({
+
+        el: "#appu5",
+
+        data: function () {
+
+            return {
+
+                query: {
+
+                    keyWord: "",/搜索关键词
+
+                    owner: appOwner,
+
+                    token: token,
+
+                    urlPrefix: urlPrefix,
+
+                    lang:"i18n_zh_CN"
+
+                },
+
+                isError: false
+
+            }
+
+        },
+
+        mounted: function () {
+
+            var _this = this;
+
+            / _this.init();
+
+        },
+
+        methods: {
+
+            init: function(){
+
+                $.ajax({
+
+                    url: "/aop_component/webber/search/test",
+
+                    type: "get",
+
+                    success: function (response) {
+
+                        if (response.code == "0000") {
+
+                        } else if (response.code == "220") {
+
+                            _this.isError = true;
+
+                            console.log(response);
+
+                        } else if (!response.code) {
+
+                            _this.isError = true;
+
+                            console.log(response);
+
+                        }
+
+                    },
+
+                    error: function (response) {
+
+                        _this.isError = true;
+
+                    }
+
+                });
+
+            },
+
+            onSubmit: function (e) {
+
+                var url = "/views/search/modules/resultpc/soso.html";
+
+                if ("10" == "1" || "10" == "2") {
+
+                    url = "" + url;
+
+                }
+
+                var _this = this;
+
+                var query = _this.query;
+
+                if (url.indexOf("?") > -1) {
+
+                    url = url.split("?")[0];
+
+                }
+
+                if (query.keyWord) {
+
+                    var query = new Base64().encode(JSON.stringify(query));
+
+                    window.open(url + "?query=" + query);
+
+                } else {
+
+                    alert("请填写搜索内容")
+
+                }
+
+            },
+
+        }
+
+    })
+
+</script></div>
+
+            <div class="m-tlink">
+
+</div>
+
+            <ul class="">
+
+<li class="active">
+
+                    <a href="index.htm">首页</a><span></span>
+
+                    <ul>
+
+
+
+                        <li><a href="index/xxyw.htm">学校要闻</a></li>
+
+
+
+
+
+                        <li><a href="index/kjdt.htm">科教动态</a></li>
+
+
+
+
+
+                        <li><a href="index/xsyg.htm">学术预告</a></li>
+
+
+
+
+
+                        <li><a href="index/mtjj.htm">媒体聚焦</a></li>
+
+
+
+
+
+                        <li><a href="index/ycxw.htm">院处新闻</a></li>
+
+
+
+
+
+                        <li><a href="index/tzgg.htm">通知公告</a></li>
+
+
+
+
+
+                        <li><a href="index/ztwz/xxgcddesjszqhjs.htm">专题网站</a></li>
+
+
+
+
+
+                        <li><a href="index/dcxy/jsyr.htm">多彩校园</a></li>
+
+
+
+                    </ul>
+
+                </li>
+
+
+
+  
+
+
+
+<li>
+
+                    <a href="xxgk/xxjj.htm">学校概况</a><span></span>
+
+                    <ul>
+
+
+
+                        <li><a href="xxgk/xxjj.htm">学校简介</a></li>
+
+
+
+
+
+                        <li><a href="xxgk/xrld.htm">现任领导</a></li>
+
+
+
+
+
+                        <li><a href="xxgk/xxbs.htm">学校标识</a></li>
+
+
+
+
+
+                        <li><a href="xxgk/xxzc.htm">学校章程</a></li>
+
+
+
+
+
+                        <li><a href="xxgk/dxjs.htm">大学精神</a></li>
+
+
+
+
+
+                        <li><a href="xxgk/bxsj.htm">办学数据</a></li>
+
+
+
+
+
+                        <li><a href="xxgk/xxxg.htm">学校校歌</a></li>
+
+
+
+
+
+                        <li><a href="xxgk/xyfg.htm">校园风光</a></li>
+
+
+
+                    </ul>
+
+                </li>
+
+
+
+  
+
+
+
+<li>
+
+                    <a href="jgsz.htm">机构设置</a>                </li>
+
+
+
+  
+
+
+
+<li>
+
+                    <a href="index.html">教学管理</a>                </li>
+
+
+
+  
+
+
+
+<li>
+
+                    <a href="index.html">科学研究</a>                </li>
+
+
+
+  
+
+
+
+<li>
+
+                    <a href=";/index.html">招生就业</a><span></span>
+
+                    <ul>
+
+
+
+                        <li><a href="sy.htm">普高本科招生</a></li>
+
+
+
+
+
+                        <li><a href="index.html">就业信息网</a></li>
+
+
+
+
+
+                        <li><a href="index.html">研究生招生考试</a></li>
+
+
+
+
+
+                        <li><a href="http://www.wdgjbk.com/">国际本科招生</a></li>
+
+
+
+                    </ul>
+
+                </li>
+
+
+
+  
+
+
+
+<li>
+
+                    <a href="ren_cai_zhao_pin/zpjh.htm">人才招聘</a><span></span>
+
+                    <ul>
+
+
+
+                        <li><a href="ren_cai_zhao_pin/zpjh.htm">招聘计划</a></li>
+
+
+
+
+
+                        <li><a href="ren_cai_zhao_pin/gccrczpgg.htm">高层次人才招聘公告</a></li>
+
+
+
+
+
+                        <li><a href="ren_cai_zhao_pin/qtzpgg.htm">其他招聘公告</a></li>
+
+
+
+
+
+                        <li><a href="ren_cai_zhao_pin/zcwj.htm">政策文件</a></li>
+
+
+
+
+
+                        <li><a href="ren_cai_zhao_pin/zpyx.htm">招聘邮箱</a></li>
+
+
+
+                    </ul>
+
+                </li>
+
+
+
+  
+
+
+
+<li>
+
+                    <a href="xxgk1.htm">信息公开</a>                </li>
+
+
+
+  
+
+<div class="clear"></div></ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="banner">    <div class="slick">
+
+         
+
+            
+
+             <div>
+
+                <a href="" onclick="_addDynClicks(&#34;wbimage&#34;, 1972595869, 80223)">
+
+                    <img src="images/haiyangri.jpg" alt="">  
+
+                    <div class="djs">
+
+                        <div>
+
+                           
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            
+
+              
+
+                     
+
+              
+
+            
+
+             <div>
+
+                <a href="" onclick="_addDynClicks(&#34;wbimage&#34;, 1972595869, 80163)">
+
+                    <img src="images/Image_1772790789509_308.png" alt="">  
+
+                </a>
+
+            </div>
+
+            
+
+              
+
+                     
+
+              
+
+            
+
+             <div>
+
+                <a href="https://apph5.cloudgx.cn/article/sync1998604865121484800" onclick="_addDynClicks(&#34;wbimage&#34;, 1972595869, 80144)">
+
+                    <img src="images/fengmian1.jpg" alt="">  
+
+                </a>
+
+            </div>
+
+            
+
+              
+
+                     
+
+              
+
+            
+
+             <div>
+
+                <a href="" onclick="_addDynClicks(&#34;wbimage&#34;, 1972595869, 80153)">
+
+                    <img src="images/shenru.png" alt="">  
+
+                </a>
+
+            </div>
+
+            
+
+              
+
+                     
+
+              
+
+            
+
+             <div>
+
+                <a href="" onclick="_addDynClicks(&#34;wbimage&#34;, 1972595869, 79590)">
+
+                    <img src="images/jiefangsixiang.jpg" alt="">  
+
+                </a>
+
+            </div>
+
+            
+
+              
+
+                     
+
+              
+
+            
+
+             <div>
+
+                <a href="" onclick="_addDynClicks(&#34;wbimage&#34;, 1972595869, 80064)">
+
+                    <img src="images/666.jpg" alt="">  
+
+                </a>
+
+            </div>
+
+            
+
+              
+
+                     
+
+              
+
+            
+
+             <div>
+
+                <a href="" onclick="_addDynClicks(&#34;wbimage&#34;, 1972595869, 80013)">
+
+                    <img src="images/8888888.jpg" alt="">  
+
+                </a>
+
+            </div>
+
+            
+
+              
+
+                     
+
+              
+
+            
+
+             <div>
+
+                <a href="" onclick="_addDynClicks(&#34;wbimage&#34;, 1972595869, 79745)">
+
+                    <img src="images/23/10/26/179z8yr3un/15058941b8bd1fec308b24677904a54e.jpg" alt="">  
+
+                </a>
+
+            </div>
+
+            
+
+              
+
+                     
+
+              
+
+            
+
+             <div>
+
+                <a href="" onclick="_addDynClicks(&#34;wbimage&#34;, 1972595869, 79614)">
+
+                    <img src="images/zhongzhou.jpg" alt="">  
+
+                </a>
+
+            </div>
+
+            
+
+              
+
+                     
+
+              
+
+    
+
+ </div></div>
+
+
+
+    <div class="index">
+
+        <div class="group1">
+
+            <div class="section1">
+
+                <div class="w15">
+
+                    <div class="title wow fadeInUp">
+
+                        <div class="titname">
+
+                            <a href="index/xxyw.htm">
+
+                            <p>NEWS</p>
+
+                            <h2><span>学校</span><b>要闻</b></h2>
+
+                            </a>
+
+                        </div>
+
+                        <div class="titmore"><a href="index/xxyw.htm" target="_blank">更多</a></div>
+
+                    </div>
+
+                    <div class="s1-c">
+
+                        <div class="s1-l wow fadeInLeft"><script language="javascript" src="system/resource/js/centerCutImg.js"></script><script language="javascript" src="system/resource/js/ajax.js"></script><ul class="s1-lpic">
+
+
+
+<li>
+
+                                    <a href="info/1032/262901.htm" target="_blank">
+
+                                        <div class="pic"><img src="__local/9/1F/DE/930CDE977820BA387EBA0BA35F4_AAD174A7_61D25.jpg" /></div>
+
+                                    </a>
+
+                                </li>
+
+
+
+  
+
+
+
+<li>
+
+                                    <a href="info/1032/262911.htm" target="_blank">
+
+                                        <div class="pic"><img src="__local/3/55/CC/AEBDB80C4EBC0D0CEF00AC018C6_802CA26A_1F3CE.jpg" /></div>
+
+                                    </a>
+
+                                </li>
+
+
+
+  
+
+
+
+<li>
+
+                                    <a href="info/1032/262741.htm" target="_blank">
+
+                                        <div class="pic"><img src="__local/D/8D/C8/330CA44D2DF5F1686048E2EF597_7326DE65_5B2AB.jpg" /></div>
+
+                                    </a>
+
+                                </li>
+
+
+
+  
+
+
+
+<li>
+
+                                    <a href="info/1032/262791.htm" target="_blank">
+
+                                        <div class="pic"><img src="__local/A/D5/20/C9E2703A74F524CC441B3EDCA62_3AE62063_287F68.png" /></div>
+
+                                    </a>
+
+                                </li>
+
+
+
+  
+
+
+
+<li>
+
+                                    <a href="info/1032/262701.htm" target="_blank">
+
+                                        <div class="pic"><img src="__local/B/67/12/F82AC9A8E2CA2873113C766BFFE_468C9B77_277DC.jpg" /></div>
+
+                                    </a>
+
+                                </li>
+
+
+
+  
+
+</ul>
+
+<ul class="s1-linfo">
+
+
+
+<li class="pub_info">
+
+                                    <a href="info/1032/262901.htm" target="_blank">
+
+                                        <div class="info">
+
+                                            <span>2026-06-05</span>
+
+                                            <h3 class="titline"><i>“强化海洋意识 发展向海经济 建设海洋强区”广西海洋日进高校专题讲座在我校成功举办</i></h3>
+
+                                            <p>6月5日，“强化海洋意识 发展向海经济 建设海洋强区”广西海洋日进高校专题讲座在北部湾大学12号教学楼204报告厅举行。广西壮族自治区海洋局党组成员、副局长宁向军主讲，校党委常委、副校长闫松银主持。我校涉海类学院师生代表现场聆听。宁向军从历史与现实、理论与实践多维度阐述了强化海洋意识、发展向海经济、建设海洋强区的时代要求。他提出，必须强化海洋思维，深刻理解海洋对国家发展、经济命脉和国防安全的战略意义。围绕习近平总书记赋予广西“...
+
+                                            </p>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+<li class="pub_info">
+
+                                    <a href="info/1032/262911.htm" target="_blank">
+
+                                        <div class="info">
+
+                                            <span>2026-06-04</span>
+
+                                            <h3 class="titline"><i>【湾大有喜】特等奖！教育学院秦嘉雨同学在2026年“我是美丽中国讲解员”广西决赛中刷新我校参赛历史最佳成绩</i></h3>
+
+                                            <p>6月2日，由广西壮族自治区生态环境厅指导、广西环境科学学会主办的2026年“我是美丽中国讲解员”广西赛区决赛在南宁圆满落幕。我校教育学院小学教育专业2023级学生秦嘉雨凭借出色表现，荣获讲解类特等奖，刷新了我校及钦州市在该项赛事中的历史最佳成绩。本次比赛以“讲绿水青山故事，绘美丽广西画卷”为主题，聚焦科技创新赋能生态文明建设，设有讲解类和短视频创作两个赛道。经钦州市生态环境局组织的选拔赛，我校共有12名学生参赛，...
+
+                                            </p>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+<li class="pub_info">
+
+                                    <a href="info/1032/262741.htm" target="_blank">
+
+                                        <div class="info">
+
+                                            <span>2026-06-01</span>
+
+                                            <h3 class="titline"><i>学校党委常委会开展“第一议题”学习</i></h3>
+
+                                            <p>6月1日，校党委书记、校长苗剑主持召开学校党委常委会，传达学习习近平总书记近期重要讲话、重要指示和中央有关文件精神，研究部署我校贯彻落实措施。非党员校领导、校长助理、相关职能部门负责人列席会议。会议强调，要认真学习贯彻习近平总书记在《求是》杂志发表的《前瞻布局和发展未来产业》重要文章精神，紧密对接国家和广西“十五五”规划方向，推动学部制改革，加强内部协同，打破学科壁垒，统筹资源，精准锚定海洋装备、智慧海洋、...
+
+                                            </p>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+<li class="pub_info">
+
+                                    <a href="info/1032/262791.htm" target="_blank">
+
+                                        <div class="info">
+
+                                            <span>2026-06-01</span>
+
+                                            <h3 class="titline"><i>校领导率队赴武汉开展产学研调研交流</i></h3>
+
+                                            <p>5月28日至29日，校党委常委、副校长陈丹率科研处、海运学院、机械与船舶海洋工程学院相关负责人赴武汉，围绕平陆运河货船智能编队技术及产学研协同创新开展调研交流。5月28日，平陆运河货船智能编队技术方案专家咨询会在武汉理工大学召开，中国工程院院士严新平担任专家组组长。会上，北部湾大学团队就智能编队航行岸基监管平台的技术方案进行了详细汇报。针对技术方案的后续完善，陈丹表示将认真吸收各位专家的意见建议，进一步优化平台设计方案，...
+
+                                            </p>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+<li class="pub_info">
+
+                                    <a href="info/1032/262701.htm" target="_blank">
+
+                                        <div class="info">
+
+                                            <span>2026-05-29</span>
+
+                                            <h3 class="titline"><i>苗剑率团访问匈牙利农学与生命科学大学 深化拓展校际合作</i></h3>
+
+                                            <p>5月28日，校党委书记、校长苗剑率团访问匈牙利农学与生命科学大学，就推进已获教育部批准的食品科学与工程本科专业中外合作办学项目实施，以及拓展校际合作领域开展深入交流。匈牙利农学与生命科学大学校长乔巴·久里察博士、副校长佐尔坦·科瓦奇博士及相关负责人热情接待苗剑一行并参加交流活动。座谈交流会上，苗剑表示，两校合作办学项目获批是良好开端，希望在高质量办好现有项目的基础上，进一步拓展农学、工程等领域的合作，构建更加紧密的校际伙伴关系。...
+
+                                            </p>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+</ul>
+
+<script>_showDynClickBatch(['dynclicks_u9_262901','dynclicks_u9_262911','dynclicks_u9_262741','dynclicks_u9_262791','dynclicks_u9_262701'],[262901,262911,262741,262791,262701],"wbnews", 1972595869)</script>
+
+</div>
+
+                        <div class="s1-r wow fadeInRight"><div class="first-item">
+
+<a href="info/1032/262901.htm" target="_blank">
+
+                                    <div class="pics">
+
+                                        <div class="pic"><img src="__local/9/1F/DE/930CDE977820BA387EBA0BA35F4_AAD174A7_61D25.jpg" /></div>
+
+                                    </div>
+
+                                    <div class="info">
+
+                                        <h3 class="titline"><i>“强化海洋意识 发展向海经济 建设海洋强区”广西海洋日进高校专题讲座在我校成功举办</i></h3>
+
+                                        <span>2026-06-05</span>
+
+                                    </div>
+
+                                </a>
+
+
+
+</div>
+
+<ul>
+
+
+
+<li>
+
+                                    <a href="info/1032/262911.htm" target="_blank">
+
+                                        <span>06-04</span>
+
+                                        <p>【湾大有喜】特等奖！教育学院秦嘉雨同学在2026年“我是美丽中国讲解员”广西决赛中刷新我校参赛历史最佳成绩</p>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+<li>
+
+                                    <a href="info/1032/262741.htm" target="_blank">
+
+                                        <span>06-01</span>
+
+                                        <p>学校党委常委会开展“第一议题”学习</p>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+<li>
+
+                                    <a href="info/1032/262791.htm" target="_blank">
+
+                                        <span>06-01</span>
+
+                                        <p>校领导率队赴武汉开展产学研调研交流</p>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+<li>
+
+                                    <a href="info/1032/262701.htm" target="_blank">
+
+                                        <span>05-29</span>
+
+                                        <p>苗剑率团访问匈牙利农学与生命科学大学 深化拓展校际合作</p>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+<li>
+
+                                    <a href="info/1032/262691.htm" target="_blank">
+
+                                        <span>05-29</span>
+
+                                        <p>学校召开“十五五”发展规划专家论证会</p>
+
+                                    </a>
+
+                                </li>
+
+
+
+</ul><script>_showDynClickBatch(['dynclicks_u10_262901','dynclicks_u10_262911','dynclicks_u10_262741','dynclicks_u10_262791','dynclicks_u10_262701','dynclicks_u10_262691'],[262901,262911,262741,262791,262701,262691],"wbnews", 1972595869)</script>
+
+</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- home2 -->
+
+            
+
+
+
+            <div class="section2">
+
+                <div class="w15">
+
+                    <div class="s2-c">
+
+                        <div class="s2-l">
+
+                            <div class="title wow fadeInUp">
+
+                                <div class="titname">
+
+                                    <a href="index/kjdt.htm">
+
+                                    <p>Academic estimates</p>
+
+                                    <h2><span>科教</span><b>动态</b></h2>
+
+                                    </a>
+
+                                </div>
+
+                                <div class="titmore"><a href="index/kjdt.htm">更多</a></div>
+
+                            </div>
+
+                            <div class="first-item2 pub_info  wow fadeInUp">
+
+<a href="info/1033/262811.htm" target="_blank">
+
+                                    <div class="pics">
+
+                                        <div class="pic"><img src="__local/C/56/9C/082D3063290AD1D9E1C42A61EB4_56A5181C_21DE80.png" alt=""></div>
+
+                                    </div>
+
+                                    <div class="info">
+
+                                        <span>2026-06-02</span>
+
+                                        <h3 class="titline"><i>学校原创音乐剧《守鲎》亮相2026年广西科学家精神舞台剧汇演</i></h3>
+
+                                        <p>5月30日至31日，正值第十个“全国科技工作者日”之际，“科技报国·薪火相传”——2026年广西科学家精神舞台剧汇演在广西科技馆成功举办。学校音乐舞蹈学院原创音乐剧《守鲎》受邀参演，获现场观众与专家高度评价。《守鲎》系中国科协2025年“科学家故事舞台剧推广行动”剧目，以学校海洋生物研究团队为原型，真实再现以廖永岩教授为代表的科研人员在中国鲎保护事业中的执着坚守与无私奉献。该剧将海洋生态保护科研与舞台艺术创新有机融合，...
+
+                                        </p>
+
+                                        <div>
+
+                                            <b>查看详情</b>
+
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+
+
+  
+
+<script>_showDynClickBatch(['dynclicks_u11_262811'],[262811],"wbnews", 1972595869)</script>
+
+</div>
+
+
+
+                            <ul class="wow fadeInUp" data-wow-delay=".3s">
+
+
+
+<li class="pub_info">
+
+                                    <a href="info/1033/262811.htm" target="_blank">
+
+                                        <div class="info">
+
+                                            <span>2026-06-02</span>
+
+                                            <h3 class="titline"><i>学校原创音乐剧《守鲎》亮相2026年广西科学家精神舞台剧汇演</i></h3>
+
+                                            <p>5月30日至31日，正值第十个“全国科技工作者日”之际，“科技报国·薪火相传”——2026年广西科学家精神舞台剧汇演在广西科技馆成功举办。学校音乐舞蹈学院原创音乐剧《守鲎》受邀参演，获现场观众与专家高度评价。《守鲎》系中国科协2025年“科学家故事舞台剧推广行动”剧目，以学校海洋生物研究团队为原型，真实再现以廖永岩教授为代表的科研人员在中国鲎保护事业中的执着坚守与无私奉献。该剧将海洋生态保护科研与舞台艺术创新有机融合，...
+
+                                            </p>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+  
+
+
+
+<li class="pub_info">
+
+                                    <a href="info/1033/262801.htm" target="_blank">
+
+                                        <div class="info">
+
+                                            <span>2026-06-01</span>
+
+                                            <h3 class="titline"><i>【湾大有喜】我校学子荣登《广西日报》国家奖学金获奖学生代表名录</i></h3>
+
+                                            <p>近日，《广西日报》推出专版《国奖之光 青春榜样——2025年国家奖学金广西获奖学生代表名录》，我校海洋学院本科生何志澄成功入选。何志澄同学系中共党员，在校期间学业与科研能力突出，曾荣获第九届全国大学生生命科学竞赛（创新创业类）三等奖、中国国际大学生创新大赛（2024）“数广集团杯”广西赛区选拔赛银奖等奖项，并以第一作者身份在国际期刊《Microorganisms》上发表SCI学术论文1篇。据悉，2025年广西共有1668名研究生、3230名本专科学生及739名中职学生获得国家奖学金。...
+
+                                            </p>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+  
+
+</ul><script>_showDynClickBatch(['dynclicks_u12_262811','dynclicks_u12_262801'],[262811,262801],"wbnews", 1972595869)</script>
+
+
+
+                        </div>
+
+                        <div class="s5-r">
+
+                            <div class="title  wow fadeInUp" data-wow-delay=".3s">
+
+                                <div class="titname">
+
+                                    <a href="index/dcxy/jsyr.htm">
+
+                                    <p>Colorful campus</p>
+
+                                    <h2><span>多彩</span><b>校园</b></h2>
+
+                                    </a>
+
+                                </div>
+
+                                <div class="titmore"><a href="index/dcxy/jsyr.htm" target="_blank">更多</a></div>
+
+                            </div>
+
+
+
+                            <div class="s5-rc  wow fadeInUp" data-wow-delay=".3s">
+
+<ul>
+
+
+
+<li>
+
+                                        <a href="info/1351/262491.htm" target="_blank">
+
+                                            <div class="pics">
+
+                                                <div class="pic"><img src="__local/D/E5/69/022E4CDE91471242082737A0B90_DDCB257C_52026.jpg" alt=""></div>
+
+                                            </div>
+
+                                            <div class="info">
+
+                                                <div>
+
+                                                    <h3 class="titline"><i>“把冠军带回湾大！”——记北部湾大学体育学院青年教师黄胜贤</i></h3>
+
+                                                    <p>五月的北部湾，已有盛夏的炽热。傍晚时分，北部湾大学篮球馆内依然灯火通明，球鞋摩擦地板的声音、战术呼喊声、篮球入网的清脆声交织在一起。黄胜贤站在场边，目光紧盯着每一次跑位、每一次出手——距离那场创造学校历史的决赛已过去五个多月，但他的热情从未降温。时间倒回2025年12月14日，广西体育高等专科学校体育馆，2025年广西大学生篮球锦标赛暨第28届中国大学生篮球二级联赛广西基层赛决赛进入到最后时刻。比分交替上升，空气仿佛凝固。...
+
+                                                    </p>
+
+                                                    <div>
+
+                                                        <b>查看详情</b>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </a>
+
+                                    </li>
+
+
+
+   
+
+
+
+<li>
+
+                                        <a href="https://mp.weixin.qq.com/s/Z44QKohaR5PJDEHMUzOGUQ" target="_blank">
+
+                                            <div class="pics">
+
+                                                <div class="pic"><img src="__local/6/1A/53/43DF554211E853D06DAEF230A4D_722EF04C_2AA673.png" alt=""></div>
+
+                                            </div>
+
+                                            <div class="info">
+
+                                                <div>
+
+                                                    <h3 class="titline"><i>这届湾大人，毕业后将去哪里？（四）</i></h3>
+
+                                                    <p>
+
+                                                    </p>
+
+                                                    <div>
+
+                                                        <b>查看详情</b>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </a>
+
+                                    </li>
+
+
+
+   
+
+
+
+<li>
+
+                                        <a href="https://mp.weixin.qq.com/s/LkoPRUv746dFqOyOkBYxCQ" target="_blank">
+
+                                            <div class="pics">
+
+                                                <div class="pic"><img src="__local/3/7C/4E/7645B38AC03F618A15A14621B2C_495B220B_18C585.png" alt=""></div>
+
+                                            </div>
+
+                                            <div class="info">
+
+                                                <div>
+
+                                                    <h3 class="titline"><i>这届湾大人，毕业后将去哪里？（三）</i></h3>
+
+                                                    <p>
+
+                                                    </p>
+
+                                                    <div>
+
+                                                        <b>查看详情</b>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </a>
+
+                                    </li>
+
+
+
+   
+
+
+
+<li>
+
+                                        <a href="https://mp.weixin.qq.com/s/szbrMk76IlefB4tyNSuD0Q" target="_blank">
+
+                                            <div class="pics">
+
+                                                <div class="pic"><img src="__local/9/7E/1A/E1245D6452F8AE1EB14DD0C3C6D_7848F047_151FF.jpg" alt=""></div>
+
+                                            </div>
+
+                                            <div class="info">
+
+                                                <div>
+
+                                                    <h3 class="titline"><i>这届湾大人，毕业后将去哪里？（二）</i></h3>
+
+                                                    <p>
+
+                                                    </p>
+
+                                                    <div>
+
+                                                        <b>查看详情</b>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </a>
+
+                                    </li>
+
+
+
+   
+
+
+
+<li>
+
+                                        <a href="https://mp.weixin.qq.com/s/nsVnKYfXPhuLJFimm4GEUA" target="_blank">
+
+                                            <div class="pics">
+
+                                                <div class="pic"><img src="__local/F/E2/9B/B4F3AAE88EFC5E32E3D6F2E5BA4_71BE3177_BCEBD.png" alt=""></div>
+
+                                            </div>
+
+                                            <div class="info">
+
+                                                <div>
+
+                                                    <h3 class="titline"><i>这届湾大人，毕业后将去哪里？（一）</i></h3>
+
+                                                    <p>6
+
+                                                    </p>
+
+                                                    <div>
+
+                                                        <b>查看详情</b>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </a>
+
+                                    </li>
+
+
+
+   
+
+</ul>
+
+<div class="slick-speed">
+
+                                    <button class="myprev"><img src="images/slick-prev.png" alt=""></button>
+
+                                    <div><span></span></div>
+
+                                    <button class="mynext"><img src="images/slick-next.png" alt=""></button>
+
+                                </div>
+
+</div><script>_showDynClickBatch(['dynclicks_u13_262491','dynclicks_u13_262181','dynclicks_u13_262191','dynclicks_u13_262201','dynclicks_u13_262211'],[262491,262181,262191,262201,262211],"wbnews", 1972595869)</script>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+ 
+
+ <style>
+
+ .jx50zn-more{color: #0060af;
+
+    position: absolute;
+
+    bottom: 5px;
+
+    left: 180%;
+
+    width: 250px;
+
+    font-size: 18px;
+
+    font-weight: bold;}
+
+ @media screen and (max-width: 600px){
+
+ .jx50zn-more {
+
+    color: #0060af;
+
+    position: absolute;
+
+    bottom: 0px;
+
+    left: 53%;
+
+    width: 165px;
+
+    font-size: 12px;
+
+    font-weight: normal;}
+
+}   
+
+ </style>            
+
+             
+
+            <div class="home2">
+
+            
+
+            
+
+            
+
+                <div class="w15" style="display:none;">
+
+                    <div class="title wow fadeInUp">
+
+                        <div class="titname">
+
+                            <a href="index/xyh.htm">
+
+                            <p>Alumni Association</p>
+
+                            <h2><span>校</span><b>友会</b></h2>
+
+                            </a>
+
+                            <a class="jx50zn-more" target="_blank" href="http://sub.gxnews.com.cn/subject/2023/2023bbwdxzt/index.html">点击进入建校50周年专题网站</a>
+
+                        </div>
+
+                        <div class="titmore"><a href="index/xyh.htm">更多</a></div>
+
+                    </div>
+
+                    <div class="h2-t flex">
+
+                        <div class="h2-l">
+
+<ul>
+
+
+
+<li>
+
+                                    <a href="info/1038/240701.htm" target="_blank">
+
+                                        <div class="pic wl"><img src="__local/A/22/B7/BFC2D209AC19AFC37F47F47C67C_7728729C_D2DA.jpg" /></div>
+
+                                        <div class="con">
+
+                                            <p>2024-05-02</p>
+
+                                            <h3 class="l1">重温校园梦 共忆母校情——原钦州民师9907班校友回母校举行毕业22周年聚会</h3>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+
+
+<li>
+
+                                    <a href="info/1038/239851.htm" target="_blank">
+
+                                        <div class="pic wl"><img src="__local/A/90/67/5D552E0CEC8FAD80C31F9DC2028_C2513CF1_BC8F0.png" /></div>
+
+                                        <div class="con">
+
+                                            <p>2024-04-15</p>
+
+                                            <h3 class="l1">钦州师范英地班（1972级）校友返校举行毕业50周年聚会活动</h3>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+
+
+<li>
+
+                                    <a href="https://mp.weixin.qq.com/s/HladANzrw9bQ6yNPdh6tlA" target="_blank">
+
+                                        <div class="pic wl"><img src="__local/8/49/D1/7E3EBF4871AE7CA79E1DBE79F78_84F26EA5_46900.png" /></div>
+
+                                        <div class="con">
+
+                                            <p>2024-04-05</p>
+
+                                            <h3 class="l1">清明，他们带着对父亲的思念，回到了湾大</h3>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+
+
+<li>
+
+                                    <a href="info/1038/240281.htm" target="_blank">
+
+                                        <div class="pic wl"><img src="__local/1/F1/B2/2F1AB70401EF22C61D21F9FBDAE_6F78BCEC_4D907.jpg" /></div>
+
+                                        <div class="con">
+
+                                            <p>2024-04-01</p>
+
+                                            <h3 class="l1">学校领导走访柳州校友</h3>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+
+
+<li>
+
+                                    <a href="info/1038/237081.htm" target="_blank">
+
+                                        <div class="pic wl"><img src="__local/4/E0/50/43E679883AF9C9A648080C803C3_30DFC7E0_47154.jpg" /></div>
+
+                                        <div class="con">
+
+                                            <p>2023-12-11</p>
+
+                                            <h3 class="l1">【校庆专题】广西高校首个！CTI华测认证为北部湾大学颁发碳中和证书</h3>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+</ul>
+
+</div><script>_showDynClickBatch(['dynclicks_u14_240701','dynclicks_u14_239851','dynclicks_u14_240291','dynclicks_u14_240281','dynclicks_u14_237081'],[240701,239851,240291,240281,237081],"wbnews", 1972595869)</script>
+
+
+
+                        <div class="h2-r"><ul class="flex">
+
+<li class="pub_info">
+
+                                    <a href="info/1038/236701.htm" target="_blank">
+
+                                        <div class="pic"><img src="__local/1/91/C0/9F7E1432AC1122A5459257C07FD_4F9157A2_3159B.jpg" /></div>
+
+                                        <div class="con  wl">
+
+                                            <span>2023-12-01</span>
+
+                                            <h3 class="l1">【校庆专题】2023钦州石化产业创新发展暨政产学研合作交流会顺利举行</h3>
+
+                                            <h4 class="l2">11月30日，2023钦州石化产业创新发展暨政产学研合作交流活动在广西钦州市举行。钦州市委常委、副市长范英杰出席全体大会并致辞。学校党委副书记、校长苗剑，校党委常委、副校长陈丹，学校副校长尹艳镇，深圳大学特聘教授、亚太材料科学院院士徐坚，上海华谊集团党委副书记、副总裁李良君，广西华谊能源化工有限公司党委书记、董事长顾卫忠出席活动。活动由钦州市政府副秘书长潘定喜主持。范英杰在致辞中表示，近年来，钦州市始终围绕重点产业链部署创新链，...</h4>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+<li class="pub_info">
+
+                                    <a href="info/1038/236611.htm" target="_blank">
+
+                                        <div class="pic"><img src="__local/B/97/50/CD8CF44D0947D1E23810769ED5A_B9ACAA69_5EC31.jpg" /></div>
+
+                                        <div class="con  wl">
+
+                                            <span>2023-12-01</span>
+
+                                            <h3 class="l1">【校庆专题】凝心铸魂 向海图强——学校举行教职工合唱比赛</h3>
+
+                                            <h4 class="l2">悠扬校歌，共祝五秩。11月30日晚，北部湾大学“凝心铸魂 向海图强”教职工合唱比赛在学校礼堂盛大举行。校党委副书记唐高华、陈磊，校党委常委、副校长梁智，校党委常委、纪委书记谢立平，校党委常委、副校长陆衡、马秀明出席比赛现场。来自各学院、各机关单位的合唱队身着统一服装，共唱校歌《向着大海去远航》，以高遏行云的歌声表达对学校五秩芳华的祝愿。唐高华在致辞中提到，五十载春秋，湾大人总能一步步突破难关，取得可喜的成绩。...</h4>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+</ul><script>_showDynClickBatch(['dynclicks_u15_240701','dynclicks_u15_239851','dynclicks_u15_240291','dynclicks_u15_240281','dynclicks_u15_237081','dynclicks_u15_236701','dynclicks_u15_236611'],[240701,239851,240291,240281,237081,236701,236611],"wbnews", 1972595869)</script>
+
+</div>
+
+                    </div>
+
+                    <div class="h2-b"><ul class="flex">
+
+
+
+<li>
+
+                                <a href="info/1038/236621.htm" class="flex wl" target="_blank">
+
+                                    <h3 class="wl l1">【校庆专题】《广西日报》刊发我校韩峻峰同志理论文章《把习近平文化思想融入高校文化育人工作》</h3>
+
+                                    <p>2023-11-30</p>
+
+                                </a>
+
+                            </li>
+
+
+
+  
+
+
+
+<li>
+
+                                <a href="info/1038/236641.htm" class="flex wl" target="_blank">
+
+                                    <h3 class="wl l1">【校庆专题】北部湾大学第三届体育节、第十四届田径运动会暨第一届教职工趣味运动会圆满落幕</h3>
+
+                                    <p>2023-11-26</p>
+
+                                </a>
+
+                            </li>
+
+
+
+  
+
+
+
+<li>
+
+                                <a href="info/1038/236631.htm" class="flex wl" target="_blank">
+
+                                    <h3 class="wl l1">【校庆专题】快乐健康，创新育人——学校第三届体育节顺利开幕</h3>
+
+                                    <p>2023-11-25</p>
+
+                                </a>
+
+                            </li>
+
+
+
+  
+
+
+
+<li>
+
+                                <a href="info/1038/236651.htm" class="flex wl" target="_blank">
+
+                                    <h3 class="wl l1">【校庆专题】学校举行2023级学生军训总结表彰大会</h3>
+
+                                    <p>2023-11-20</p>
+
+                                </a>
+
+                            </li>
+
+
+
+  
+
+</ul><script>_showDynClickBatch(['dynclicks_u16_240701','dynclicks_u16_239851','dynclicks_u16_240291','dynclicks_u16_240281','dynclicks_u16_237081','dynclicks_u16_236701','dynclicks_u16_236611','dynclicks_u16_236621','dynclicks_u16_236641','dynclicks_u16_236631','dynclicks_u16_236651'],[240701,239851,240291,240281,237081,236701,236611,236621,236641,236631,236651],"wbnews", 1972595869)</script>
+
+</div>
+
+                </div>
+
+                
+
+                
+
+                
+
+                <div class="w15">
+
+                    <div class="s4-c">
+
+                        <div class="s4-r">
+
+                            <div class="title  wow fadeInUp">
+
+                                <div class="titname">
+
+                                    <a href="index/tzgg.htm">
+
+                                    <p>notice</p>
+
+                                    <h2><span>通知</span><b>公告</b></h2>
+
+                                    </a>
+
+                                </div>
+
+                                <div class="titmore"><a href="index/tzgg.htm" target="_blank">更多</a></div>
+
+                            </div>
+
+                            <ul class="pub_list pub_list_w  wow fadeInLeft">
+
+<li class="on">
+
+                                    <a href="info/1037/262891.htm" target="_blank">
+
+                                        <p>北部湾大学工会委员会2026年工会会员端午节定点供应采购服务成交结果公告</p>
+
+                                        <span>2026-06-05</span>
+
+                                    </a>
+
+                                    <div class="first-item3">
+
+                                        <a href="info/1037/262891.htm" class="text-item">
+
+                                            <div class="tidate">
+
+                                                <p>05</p>
+
+                                                <span>2026.06</span>
+
+                                            </div>
+
+                                            <div class="tiinfo">
+
+                                                <h3 class="titline"><i>北部湾大学工会委员会2026年工会会员端午节定点供应采购服务成交结果公告</i></h3>
+
+                                                <p>一、基本情况（一）采购项目：北部湾大学工会委员会2026年工会会员端午节定点供应服务采购（二）项目编号：WDGH-2026-02（三）采购单位：北部湾大学工会委员会（四）截止接收投标文件时间：2026年6月4日17时00分（五）开标时间：2026年6月5日9时00分（六）开标地点：北部湾大学办公楼122会议室（七）招标公告发布媒体：北部湾大学官网，北部湾大学工会网主页（八）采购结果：成交供应商名称：广西富鹏商贸有限责任公司成交供应商成交价格：...</p>
+
+                                            </div>
+
+                                        </a>
+
+                                    </div>
+
+                                </li>
+
+
+
+   
+
+
+
+<li>
+
+                                    <a href="info/1037/262851.htm" target="_blank">
+
+                                        <p>北部湾大学2026年区直事业单位统一公开招聘面试公告</p>
+
+                                        <span>2026-06-03</span>
+
+                                    </a>
+
+                                    <div class="first-item3">
+
+                                        <a href="info/1037/262851.htm" class="text-item">
+
+                                            <div class="tidate">
+
+                                                <p>03</p>
+
+                                                <span>2026.06</span>
+
+                                            </div>
+
+                                            <div class="tiinfo">
+
+                                                <h3 class="titline"><i>北部湾大学2026年区直事业单位统一公开招聘面试公告</i></h3>
+
+                                                <p>根据《广西壮族自治区人力资源和社会保障厅关于做好2026年事业单位统一公开招聘面试等有关工作的通知》的有关规定，现将北部湾大学2026年区直事业单位统一公开招聘面试有关事项公告如下：一、进入面试人员名单进入面试人员名单详见附件1。面试公告发布后，出现面试人选自愿放弃面试资格或面试资格复审不合格的招聘岗位，不再递补。放弃面试资格的报考人员应提供书面申请，详见附件3。二、面试资格复审原件核对时间、地点（一）原件核对时间：...</p>
+
+                                            </div>
+
+                                        </a>
+
+                                    </div>
+
+                                </li>
+
+
+
+   
+
+
+
+<li>
+
+                                    <a href="info/1037/262831.htm" target="_blank">
+
+                                        <p>北部湾大学2026年公开招聘专业技术人员体检公告</p>
+
+                                        <span>2026-06-03</span>
+
+                                    </a>
+
+                                    <div class="first-item3">
+
+                                        <a href="info/1037/262831.htm" class="text-item">
+
+                                            <div class="tidate">
+
+                                                <p>03</p>
+
+                                                <span>2026.06</span>
+
+                                            </div>
+
+                                            <div class="tiinfo">
+
+                                                <h3 class="titline"><i>北部湾大学2026年公开招聘专业技术人员体检公告</i></h3>
+
+                                                <p>根据《关于印发广西壮族自治区事业单位公开招聘人员实施办法（修订）的通知》（桂人社规〔2025〕11号）及自治区有关规定，现将我校2026年公开招聘专业技术人员的体检事项公告如下：一、进入体检环节人员名单详见附件。二、体检程序（一）相关事宜根据考核结果按自治区相关规定开展体检工作，体检标准按照事业单位工作人员录用体检标准执行，体检费用由拟聘人员自理。报考人员不按规定时间、地点参加体检的，视为自动放弃体检资格；体检不合格者，...</p>
+
+                                            </div>
+
+                                        </a>
+
+                                    </div>
+
+                                </li>
+
+
+
+   
+
+
+
+<li>
+
+                                    <a href="info/1037/262751.htm" target="_blank">
+
+                                        <p>北部湾大学灭火器材采购公告</p>
+
+                                        <span>2026-06-01</span>
+
+                                    </a>
+
+                                    <div class="first-item3">
+
+                                        <a href="info/1037/262751.htm" class="text-item">
+
+                                            <div class="tidate">
+
+                                                <p>01</p>
+
+                                                <span>2026.06</span>
+
+                                            </div>
+
+                                            <div class="tiinfo">
+
+                                                <h3 class="titline"><i>北部湾大学灭火器材采购公告</i></h3>
+
+                                                <p>一、项目基本情况1.项目名称：北部湾大学灭火器材采购2.项目编号：WD-2026-XC0143.采购方式：校内询价4.预算金额：人民币壹拾壹万柒仟贰佰元整（￥117200.00）5.采购需求：北部湾大学灭火器材采购1项，具体内容详见附件1。二、申请人的资格要求1.国内注册（指按国家有关规定要求注册的），生产或经营本次招标采购内容的，具备《中华人民共和国政府采购法》第二十二条规定条件的投标人。2.单位负责人为同一人或者存在直接控股、管理关系的不同投标人，...</p>
+
+                                            </div>
+
+                                        </a>
+
+                                    </div>
+
+                                </li>
+
+
+
+   
+
+
+
+<li>
+
+                                    <a href="info/1037/262731.htm" target="_blank">
+
+                                        <p>北部湾大学网络安全等级保护测评服务项目（科研系统）采购公告</p>
+
+                                        <span>2026-06-01</span>
+
+                                    </a>
+
+                                    <div class="first-item3">
+
+                                        <a href="info/1037/262731.htm" class="text-item">
+
+                                            <div class="tidate">
+
+                                                <p>01</p>
+
+                                                <span>2026.06</span>
+
+                                            </div>
+
+                                            <div class="tiinfo">
+
+                                                <h3 class="titline"><i>北部湾大学网络安全等级保护测评服务项目（科研系统）采购公告</i></h3>
+
+                                                <p>一、项目基本情况1.项目名称：北部湾大学网络安全等级保护测评服务项目（科研系统）采购2.项目编号：WD-2026-XC0123.采购方式：校内询价4.预算金额：人民币伍万捌仟元整（¥58000.00）5.采购需求：北部湾大学网络安全等级保护测评服务，具体内容详见附件1。二、申请人的资格要求1.国内注册（指按国家有关规定要求注册的），生产或经营本次招标采购内容的，具备《中华人民共和国政府采购法》第二十二条规定条件的投标人。2.单位负责人为同一人或者存在直接控股、...</p>
+
+                                            </div>
+
+                                        </a>
+
+                                    </div>
+
+                                </li>
+
+
+
+   
+
+
+
+<li>
+
+                                    <a href="info/1037/262721.htm" target="_blank">
+
+                                        <p>北部湾大学2026-2027年度零星搬运服务（重）采购公告</p>
+
+                                        <span>2026-06-01</span>
+
+                                    </a>
+
+                                    <div class="first-item3">
+
+                                        <a href="info/1037/262721.htm" class="text-item">
+
+                                            <div class="tidate">
+
+                                                <p>01</p>
+
+                                                <span>2026.06</span>
+
+                                            </div>
+
+                                            <div class="tiinfo">
+
+                                                <h3 class="titline"><i>北部湾大学2026-2027年度零星搬运服务（重）采购公告</i></h3>
+
+                                                <p>一、项目基本情况1.项目名称：北部湾大学2026-2027年度零星搬运服务（重）2.项目编号：WD-2026-XC010（重）3.采购方式：校内询价4.预算金额：人民币壹拾肆万贰仟元整（¥142000.00），450元每车次。5.采购需求：北部湾大学2026-2027年度零星搬运服务采购1项，具体内容详见附件1。二、申请人的资格要求1.国内注册（指按国家有关规定要求注册的），生产或经营本次招标采购内容的，具备《中华人民共和国政府采购法》第二十二条规定条件的投标人。...</p>
+
+                                            </div>
+
+                                        </a>
+
+                                    </div>
+
+                                </li>
+
+
+
+   
+
+<script>_showDynClickBatch(['dynclicks_u17_262891','dynclicks_u17_262851','dynclicks_u17_262831','dynclicks_u17_262751','dynclicks_u17_262731','dynclicks_u17_262721'],[262891,262851,262831,262751,262731,262721],"wbnews", 1972595869)</script>
+
+</ul>
+
+                        </div>
+
+                        <div class="s2-r">
+
+                            <div class="title  wow fadeInUp">
+
+                                <div class="titname">
+
+                                    <a href="index/xsyg.htm">
+
+                                    <p>Academic estimates</p>
+
+                                    <h2><span>学术</span><b>预告</b></h2>
+
+                                    </a>
+
+                                </div>
+
+                                <div class="titmore"><a href="index/xsyg.htm" target="_blank">更多</a></div>
+
+                            </div>
+
+
+
+                            <ul class="pub_list  pub_list2 wow fadeInUp" data-wow-delay=".3s">
+
+<li class="on">
+
+                                    <a href="info/1034/262881.htm" target="_blank">
+
+                                        <p>江妙浩学术报告预告</p>
+
+                                        <span>2026-06-05</span>
+
+                                    </a>
+
+                                    <div class="first-info">
+
+                                        <p class="user">主讲人：江妙浩</p>
+
+                                        <p class="time">时间：2026年6月10日上午8：30-12：00</p>
+
+                                        <p class="address">地点：北部湾大学经管学院101报告厅（蒙古包）</p>
+
+                                    </div>
+
+                                </li>
+
+
+
+  
+
+
+
+<li>
+
+                                    <a href="info/1034/262371.htm" target="_blank">
+
+                                        <p>广西优秀教师代表“教育家精神”2026年宣讲预告</p>
+
+                                        <span>2026-05-20</span>
+
+                                    </a>
+
+                                    <div class="first-info">
+
+                                        <p class="user">主讲人：陈韵湖、廖远彬、樊蓉</p>
+
+                                        <p class="time">时间：2026年5月27日（星期三）上午10:00</p>
+
+                                        <p class="address">地点：4-101报告厅</p>
+
+                                    </div>
+
+                                </li>
+
+
+
+  
+
+
+
+<li>
+
+                                    <a href="info/1034/262391.htm" target="_blank">
+
+                                        <p>周毅强教授学术报告预告</p>
+
+                                        <span>2026-05-13</span>
+
+                                    </a>
+
+                                    <div class="first-info">
+
+                                        <p class="user">主讲人：周毅强</p>
+
+                                        <p class="time">时间：2026年5月21日下午15：00-17：30</p>
+
+                                        <p class="address">地点：理学院 1C-120</p>
+
+                                    </div>
+
+                                </li>
+
+
+
+  
+
+
+
+<li>
+
+                                    <a href="info/1034/262331.htm" target="_blank">
+
+                                        <p>李春娜教授学术报告预告</p>
+
+                                        <span>2026-05-13</span>
+
+                                    </a>
+
+                                    <div class="first-info">
+
+                                        <p class="user">主讲人：李春娜</p>
+
+                                        <p class="time">时间：2026年5月20日下午15：00-17：00</p>
+
+                                        <p class="address">地点：理学院1B-319</p>
+
+                                    </div>
+
+                                </li>
+
+
+
+  
+
+
+
+<li>
+
+                                    <a href="info/1034/262231.htm" target="_blank">
+
+                                        <p>周莹教授学术报告预告</p>
+
+                                        <span>2026-05-13</span>
+
+                                    </a>
+
+                                    <div class="first-info">
+
+                                        <p class="user">主讲人：周莹</p>
+
+                                        <p class="time">时间：2026年5月15日上午9：00-12：00</p>
+
+                                        <p class="address">地点：1号教学楼1B-319</p>
+
+                                    </div>
+
+                                </li>
+
+
+
+  
+
+
+
+<li>
+
+                                    <a href="info/1034/261421.htm" target="_blank">
+
+                                        <p>关于举办苟婵婵的学术讲座</p>
+
+                                        <span>2026-04-16</span>
+
+                                    </a>
+
+                                    <div class="first-info">
+
+                                        <p class="user">主讲人：苟婵婵</p>
+
+                                        <p class="time">时间：2026年4月22日 12:30</p>
+
+                                        <p class="address">地点：4号教学楼101报告厅</p>
+
+                                    </div>
+
+                                </li>
+
+
+
+  
+
+<script>_showDynClickBatch(['dynclicks_u18_262881','dynclicks_u18_262371','dynclicks_u18_262391','dynclicks_u18_262331','dynclicks_u18_262231','dynclicks_u18_261421'],[262881,262371,262391,262331,262231,261421],"wbnews", 1972595869)</script>
+
+</ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                
+
+                
+
+            </div> 
+
+             
+
+            <div class="section3">
+
+                 <div class="w15">
+
+                    <div class="title">
+
+                        <div class="titname titname-w  wow fadeInUp">
+
+                            <a href="index/mtjj.htm">
+
+                            <p>Media Spotlight</p>
+
+                            <h2><span>媒体</span><b>聚焦</b></h2>
+
+                            </a>
+
+                        </div>
+
+                        <div class="titmore titmore-w"><a href="index/mtjj.htm" target="_blank">更多</a></div>
+
+                    </div>
+
+                    <div class="s3-c">
+
+                        <div class="s3-l  wow fadeInLeft"><ul>
+
+
+
+<li>
+
+                                    <a href="https://gxrb.gxrb.com.cn/?name=gxrb&date=2026-05-29&code=016&xuhao=5" target="_blank">
+
+                                        <h3>【广西日报】“教育家精神”宣讲活动在钦州举行</h3>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+
+
+<li>
+
+                                    <a href="https://article.xuexi.cn/articles/index.html?art_id=5484816323725780337&item_id=5484816323725780337&study_style_id=feeds_opaque&pid=&ptype=-1&source=share&share_to=wx_single" target="_blank">
+
+                                        <h3>【学习强国】“把冠军带回湾大！”——记北部湾大学体育学院青年教师黄胜贤</h3>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+
+
+<li>
+
+                                    <a href="https://web.cloudgx.cn/news?id=1239373" target="_blank">
+
+                                        <h3>【广西云-广西日报】广西优秀教师代表“教育家精神”宣讲活动走进北部湾大学</h3>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+
+
+<li>
+
+                                    <a href="https://guangxi.eol.cn/gxgd/202605/t20260526_2737922.shtml" target="_blank">
+
+                                        <h3>【中国教育在线】“把冠军带回湾大！”——记北部湾大学体育学院青年教师黄胜贤</h3>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+
+
+<li>
+
+                                    <a href="https://h.xinhuaxmt.com/vh512/share/13095811?docid=13095811&newstype=1001&d=135269e&channel=weixin&time=1778466857176" target="_blank">
+
+                                        <h3>【新华网】广西钦州：大学生抱团创业传承发扬坭兴陶文化</h3>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+
+
+<li>
+
+                                    <a href="https://baijiahao.baidu.com/s?id=1864855942746305549&wfr=spider&for=pc" target="_blank">
+
+                                        <h3>【光明网】广西钦州：大学生抱团创业传承发扬坭兴陶文化</h3>
+
+                                    </a>
+
+                                </li>
+
+
+
+
+
+</ul><script>_showDynClickBatch(['dynclicks_u19_262651','dynclicks_u19_262641','dynclicks_u19_262601','dynclicks_u19_262591','dynclicks_u19_262051','dynclicks_u19_262041'],[262651,262641,262601,262591,262051,262041],"wbnews", 1972595869)</script>
+
+</div>
+
+                        <div class="s3-r wow fadeInRight"><div class="s3-rt s3-ritem">
+
+<a href="https://web.cloudgx.cn/news?id=1239373" target="_blank">
+
+                                    <div class="pic">
+
+                                        <img src="__local/A/AB/42/A3209392F00FBA3E3ED91ECA1EE_4E8674A6_1A19DF.png" alt="">
+
+                                    </div>
+
+                                    <p>【广西云-广西日报】广西优秀教师代表“教育家精神”宣讲活动走进北部湾大学</p>
+
+                                </a>
+
+
+
+</div>
+
+<div class="s3-rb">
+
+<ul>
+
+<li class="s3-ritem">
+
+                                        <a href="https://guangxi.eol.cn/gxgd/202605/t20260526_2737922.shtml" target="_blank">
+
+                                            <div class="pic">
+
+                                                <img src="__local/D/E5/69/022E4CDE91471242082737A0B90_DDCB257C_52026.jpg" alt="">
+
+                                            </div>
+
+                                            <p>【中国教育在线】“把冠军带回湾大！”——记北部湾大学体育学院青年教师黄胜贤</p>
+
+                                        </a>
+
+                                    </li>
+
+<li class="s3-ritem">
+
+                                        <a href="https://h.xinhuaxmt.com/vh512/share/13095811?docid=13095811&newstype=1001&d=135269e&channel=weixin&time=1778466857176" target="_blank">
+
+                                            <div class="pic">
+
+                                                <img src="__local/9/5E/F6/6CA752E71B8599046484FAEBEFC_48C613A0_1F731A.png" alt="">
+
+                                            </div>
+
+                                            <p>【新华网】广西钦州：大学生抱团创业传承发扬坭兴陶文化</p>
+
+                                        </a>
+
+                                    </li>
+
+</ul>
+
+</div><script>_showDynClickBatch(['dynclicks_u20_262601','dynclicks_u20_262591','dynclicks_u20_262051'],[262601,262591,262051],"wbnews", 1972595869)</script>
+
+</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="section5">
+
+                <div class="w15">
+
+                    <div class="title  wow fadeInUp">
+
+                        <div class="titname">
+
+                            <a href="index/ycxw.htm">
+
+                            <p>Science and education dynamics</p>
+
+                            <h2><span>院处</span><b>新闻</b></h2>
+
+                            </a>
+
+                        </div>
+
+                        <div class="titmore"><a href="index/ycxw.htm" target="_blank">更多</a></div>
+
+                    </div>
+
+                    <div class="h5-t flex">
+
+                        <div class="h5-l wow fadeInLeft">
+
+<ul class="h5-pic">
+
+
+
+<li>
+
+                                    <a href="info/1036/262821.htm" target="_blank">
+
+                                        <div class="pic"><img src="__local/0/16/EF/DFFA6093C704D12CA028E1D0BDB_DEAE098E_4483C.jpg" alt=""></div>
+
+                                        <div class="con">
+
+                                            <span class="flex"><img src="images/icon-time-w.png" alt="">2026-06-02</span>
+
+                                            <h3 class="l1">学校首批教师赴平陆运河文旅公司实践锻炼</h3>
+
+                                            <h4 class="l2">
+
+                                                6月1日上午，校党委常委、副校长陈丹一行前往广西平陆运河文化旅游发展有限公司，送学校首批4名教师到岗实践，并在平陆运河会议中心出席座谈会。广西平陆运河文化旅游发展有限公司董事长张凯对陈丹一行表示热烈欢迎，并系统介绍了公司依托平陆运河建设背景、在文旅融合领域的战略布局与发展规划。陈丹对运河文旅公司为我校教师提供实践锻炼平台表示感谢。她勉励四位教师珍惜机会，深入一线、真学实干，勇做平陆运河建设的开拓者，在服务运河建设中提升实践能力与育人水平。...
+
+                                            </h4>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+   
+
+
+
+<li>
+
+                                    <a href="info/1036/262561.htm" target="_blank">
+
+                                        <div class="pic"><img src="__local/F/0F/D4/1CDF978C9433CCFD43535C6A2AE_A0C67D39_494AA6.png" alt=""></div>
+
+                                        <div class="con">
+
+                                            <span class="flex"><img src="images/icon-time-w.png" alt="">2026-05-25</span>
+
+                                            <h3 class="l1">学校开展优质资源开放活动</h3>
+
+                                            <h4 class="l2">
+
+                                                5月23日上午，学校科学技术协会组织优质资源开放活动。钦州幼儿师范高等专科学校附属幼儿园的270余名幼儿、家长及教师走进我校，参加“童趣探科学，科普润童心”六一科普研学。活动依托“星火馆”及相关学院实验平台，打造四大沉浸式科普站点。在航海模拟体验中心，孩子们操控1:1复刻的驾驶舱，化身“小小船长”，感受航海科技魅力。在海洋学院生物标本馆，中华白海豚、中国鲎等标本令孩子们目不暇接，讲解员以故事化方式介绍北部湾海洋物种，...
+
+                                            </h4>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+   
+
+
+
+<li>
+
+                                    <a href="info/1036/261951.htm" target="_blank">
+
+                                        <div class="pic"><img src="__local/C/39/5F/3C9D981F4E34979CC210377C69D_DA96CF9B_82C6B.png" alt=""></div>
+
+                                        <div class="con">
+
+                                            <span class="flex"><img src="images/icon-time-w.png" alt="">2026-05-06</span>
+
+                                            <h3 class="l1">我校师生参加2026广西特殊少年儿童公共艺术展活动</h3>
+
+                                            <h4 class="l2">
+
+                                                4月15日下午，由我校陶瓷与设计学院、钦南区特殊教育学校及钦州福利院三方联合创作的公共艺术作品《拾光》与《平陆织梦，运河花开》，在南宁市新阳石化里正式落成并面向公众展出。本次项目深度融合教学实践与公益服务，成为推动教学改革落地的重要载体。陶瓷与设计学院教师张飞带领产品设计专业2024级研究生何国贤，将研究生课程“陶瓷公共艺术设计”与特殊儿童公共艺术创作方案有机衔接，实施“真题真做”教学模式。师生以真实项目为课堂载体，...
+
+                                            </h4>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+   
+
+
+
+<li>
+
+                                    <a href="info/1036/262571.htm" target="_blank">
+
+                                        <div class="pic"><img src="__local/1/78/01/B178F36B78EEB903203946BAFE2_189A1DBC_386DCE.png" alt=""></div>
+
+                                        <div class="con">
+
+                                            <span class="flex"><img src="images/icon-time-w.png" alt="">2026-05-05</span>
+
+                                            <h3 class="l1">学校科学技术协会组织开展海洋公益科普活动</h3>
+
+                                            <h4 class="l2">
+
+                                                5月1日至3日，由北部湾大学科学技术协会牵头，携手北京市企业家环保基金会、阿里巴巴公益、闲鱼、公益宝贝及北部湾大学鲸豚研究团队，共同策划主办的“大环海洋公益文化集市”，在钦州市钦南区犀牛脚镇大环村顺利落下帷幕。活动累计吸引近千名游客与当地村民参与，取得良好社会反响。本次活动以“自然教育+科学传播+公益行动”为主线，联动海洋学院、陶瓷与设计学院、人文学院、音乐与舞蹈学院、经济管理学院等多学科力量，将海洋生态科普、...
+
+                                            </h4>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+   
+
+
+
+<li>
+
+                                    <a href="info/1036/261871.htm" target="_blank">
+
+                                        <div class="pic"><img src="__local/E/1B/AD/1C82384B151FF75294E40FB97D2_7F2562D7_6FDCA0.png" alt=""></div>
+
+                                        <div class="con">
+
+                                            <span class="flex"><img src="images/icon-time-w.png" alt="">2026-04-30</span>
+
+                                            <h3 class="l1">学校向北部湾大学第一附属小学捐赠图书</h3>
+
+                                            <h4 class="l2">
+
+                                                4月30日上午，学校图书馆副馆长卢山携各部室主任一行，前往北部湾大学第一附属小学开展图书捐赠活动。本次活动共捐赠科普、文学、励志等类别优质图书315册，旨在以书香传递温暖，深入推进全民阅读。捐赠仪式上，卢山表示，学校图书馆将持续以“大手拉小手”的形式，搭建高校与基础教育之间的阅读联动平台，常态化开展送书进校园、阅读指导等公益活动，让优质阅读资源持续陪伴少年儿童成长。他勉励孩子们以书为友，在阅读中开阔视野、...
+
+                                            </h4>
+
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+
+
+   
+
+</ul>
+
+</div><script>_showDynClickBatch(['dynclicks_u21_262821','dynclicks_u21_262561','dynclicks_u21_261951','dynclicks_u21_262571','dynclicks_u21_261871'],[262821,262561,261951,262571,261871],"wbnews", 1972595869)</script>
+
+
+
+                        <div class="h5-r wow fadeInRight"><ul class="pub_list">
+
+
+
+<li class="on">
+
+                                    <div class="li-t">
+
+                                        <a href="info/1036/262821.htm" class="flex" target="_blank">
+
+                                            <h3 class="l1 wl">学校首批教师赴平陆运河文旅公司实践锻炼</h3>
+
+                                            <span class="flex"><img src="images/icon-time.png" alt="">2026-06-02</span>
+
+                                        </a>
+
+                                    </div>
+
+                                    <div class="li-b">
+
+                                        <a href="info/1036/262821.htm" target="_blank">
+
+                                            <h3 class="l1 wl">学校首批教师赴平陆运河文旅公司实践锻炼</h3>
+
+                                            <h4 class="l2">
+
+                                                6月1日上午，校党委常委、副校长陈丹一行前往广西平陆运河文化旅游发展有限公司，送学校首批4名教师到岗实践，并在平陆运河会议中心出席座谈会。广西平陆运河文化旅游发展有限公司董事长张凯对陈丹一行表示热烈欢迎，并系统介绍了公司依托平陆运河建设背景、在文旅融合领域的战略布局与发展规划。陈丹对运河文旅公司为我校教师提供实践锻炼平台表示感谢。她勉励四位教师珍惜机会，深入一线、真学实干，勇做平陆运河建设的开拓者，在服务运河建设中提升实践能力与育人水平。...
+
+                                            </h4>
+
+                                            <p class="flex"><span class="flex"><img src="images/icon-time.png" alt="">2026-06-02</span></p>
+
+                                        </a>
+
+                                    </div>
+
+
+
+                                </li>
+
+
+
+ 
+
+
+
+<li>
+
+                                    <div class="li-t">
+
+                                        <a href="info/1036/262561.htm" class="flex" target="_blank">
+
+                                            <h3 class="l1 wl">学校开展优质资源开放活动</h3>
+
+                                            <span class="flex"><img src="images/icon-time.png" alt="">2026-05-25</span>
+
+                                        </a>
+
+                                    </div>
+
+                                    <div class="li-b">
+
+                                        <a href="info/1036/262561.htm" target="_blank">
+
+                                            <h3 class="l1 wl">学校开展优质资源开放活动</h3>
+
+                                            <h4 class="l2">
+
+                                                5月23日上午，学校科学技术协会组织优质资源开放活动。钦州幼儿师范高等专科学校附属幼儿园的270余名幼儿、家长及教师走进我校，参加“童趣探科学，科普润童心”六一科普研学。活动依托“星火馆”及相关学院实验平台，打造四大沉浸式科普站点。在航海模拟体验中心，孩子们操控1:1复刻的驾驶舱，化身“小小船长”，感受航海科技魅力。在海洋学院生物标本馆，中华白海豚、中国鲎等标本令孩子们目不暇接，讲解员以故事化方式介绍北部湾海洋物种，...
+
+                                            </h4>
+
+                                            <p class="flex"><span class="flex"><img src="images/icon-time.png" alt="">2026-05-25</span></p>
+
+                                        </a>
+
+                                    </div>
+
+
+
+                                </li>
+
+
+
+ 
+
+
+
+<li>
+
+                                    <div class="li-t">
+
+                                        <a href="info/1036/261951.htm" class="flex" target="_blank">
+
+                                            <h3 class="l1 wl">我校师生参加2026广西特殊少年儿童公共艺术展活动</h3>
+
+                                            <span class="flex"><img src="images/icon-time.png" alt="">2026-05-06</span>
+
+                                        </a>
+
+                                    </div>
+
+                                    <div class="li-b">
+
+                                        <a href="info/1036/261951.htm" target="_blank">
+
+                                            <h3 class="l1 wl">我校师生参加2026广西特殊少年儿童公共艺术展活动</h3>
+
+                                            <h4 class="l2">
+
+                                                4月15日下午，由我校陶瓷与设计学院、钦南区特殊教育学校及钦州福利院三方联合创作的公共艺术作品《拾光》与《平陆织梦，运河花开》，在南宁市新阳石化里正式落成并面向公众展出。本次项目深度融合教学实践与公益服务，成为推动教学改革落地的重要载体。陶瓷与设计学院教师张飞带领产品设计专业2024级研究生何国贤，将研究生课程“陶瓷公共艺术设计”与特殊儿童公共艺术创作方案有机衔接，实施“真题真做”教学模式。师生以真实项目为课堂载体，...
+
+                                            </h4>
+
+                                            <p class="flex"><span class="flex"><img src="images/icon-time.png" alt="">2026-05-06</span></p>
+
+                                        </a>
+
+                                    </div>
+
+
+
+                                </li>
+
+
+
+ 
+
+
+
+<li>
+
+                                    <div class="li-t">
+
+                                        <a href="info/1036/262571.htm" class="flex" target="_blank">
+
+                                            <h3 class="l1 wl">学校科学技术协会组织开展海洋公益科普活动</h3>
+
+                                            <span class="flex"><img src="images/icon-time.png" alt="">2026-05-05</span>
+
+                                        </a>
+
+                                    </div>
+
+                                    <div class="li-b">
+
+                                        <a href="info/1036/262571.htm" target="_blank">
+
+                                            <h3 class="l1 wl">学校科学技术协会组织开展海洋公益科普活动</h3>
+
+                                            <h4 class="l2">
+
+                                                5月1日至3日，由北部湾大学科学技术协会牵头，携手北京市企业家环保基金会、阿里巴巴公益、闲鱼、公益宝贝及北部湾大学鲸豚研究团队，共同策划主办的“大环海洋公益文化集市”，在钦州市钦南区犀牛脚镇大环村顺利落下帷幕。活动累计吸引近千名游客与当地村民参与，取得良好社会反响。本次活动以“自然教育+科学传播+公益行动”为主线，联动海洋学院、陶瓷与设计学院、人文学院、音乐与舞蹈学院、经济管理学院等多学科力量，将海洋生态科普、...
+
+                                            </h4>
+
+                                            <p class="flex"><span class="flex"><img src="images/icon-time.png" alt="">2026-05-05</span></p>
+
+                                        </a>
+
+                                    </div>
+
+
+
+                                </li>
+
+
+
+ 
+
+
+
+<li>
+
+                                    <div class="li-t">
+
+                                        <a href="info/1036/261871.htm" class="flex" target="_blank">
+
+                                            <h3 class="l1 wl">学校向北部湾大学第一附属小学捐赠图书</h3>
+
+                                            <span class="flex"><img src="images/icon-time.png" alt="">2026-04-30</span>
+
+                                        </a>
+
+                                    </div>
+
+                                    <div class="li-b">
+
+                                        <a href="info/1036/261871.htm" target="_blank">
+
+                                            <h3 class="l1 wl">学校向北部湾大学第一附属小学捐赠图书</h3>
+
+                                            <h4 class="l2">
+
+                                                4月30日上午，学校图书馆副馆长卢山携各部室主任一行，前往北部湾大学第一附属小学开展图书捐赠活动。本次活动共捐赠科普、文学、励志等类别优质图书315册，旨在以书香传递温暖，深入推进全民阅读。捐赠仪式上，卢山表示，学校图书馆将持续以“大手拉小手”的形式，搭建高校与基础教育之间的阅读联动平台，常态化开展送书进校园、阅读指导等公益活动，让优质阅读资源持续陪伴少年儿童成长。他勉励孩子们以书为友，在阅读中开阔视野、...
+
+                                            </h4>
+
+                                            <p class="flex"><span class="flex"><img src="images/icon-time.png" alt="">2026-04-30</span></p>
+
+                                        </a>
+
+                                    </div>
+
+
+
+                                </li>
+
+
+
+ 
+
+
+
+<li>
+
+                                    <div class="li-t">
+
+                                        <a href="info/1036/261801.htm" class="flex" target="_blank">
+
+                                            <h3 class="l1 wl">外国语学院一行赴湖北经济学院外国语学院调研交流</h3>
+
+                                            <span class="flex"><img src="images/icon-time.png" alt="">2026-04-28</span>
+
+                                        </a>
+
+                                    </div>
+
+                                    <div class="li-b">
+
+                                        <a href="info/1036/261801.htm" target="_blank">
+
+                                            <h3 class="l1 wl">外国语学院一行赴湖北经济学院外国语学院调研交流</h3>
+
+                                            <h4 class="l2">
+
+                                                4月23日，外国语学院副院长（主持工作）黎茂昌、副院长蔡成龙一行6人赴湖北经济学院外国语学院开展调研交流。湖北经济学院外国语学院党委书记李鹏、院长吴长青热情接待了黎茂昌、蔡成龙一行，双方围绕外语学科建设、人才培养、专业发展等议题进行深入座谈。座谈会上，李鹏介绍了学院在党建引领与学科融合、师资队伍建设等方面的经验做法。吴长青详细阐述了湖北经济学院外国语学院的发展历程、学科特色及办学成果，重点分享了商务英语（...
+
+                                            </h4>
+
+                                            <p class="flex"><span class="flex"><img src="images/icon-time.png" alt="">2026-04-28</span></p>
+
+                                        </a>
+
+                                    </div>
+
+
+
+                                </li>
+
+
+
+ 
+
+</ul><script>_showDynClickBatch(['dynclicks_u22_262821','dynclicks_u22_262561','dynclicks_u22_261951','dynclicks_u22_262571','dynclicks_u22_261871','dynclicks_u22_261801'],[262821,262561,261951,262571,261871,261801],"wbnews", 1972595869)</script>
+
+</div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+           
+
+        </div>
+
+
+
+
+
+
+
+        <div class="footer">
+
+            <div class="w15">
+
+                <div class="foot-t">
+
+                    <div class="foot-tit">
+
+                        <h3>友情链接</h3>
+
+                        <ul>        </ul>
+
+                    </div>
+
+
+
+                    <div class="link-group">
+
+                        <div>
+
+                            <p>国家机关</p>
+
+                            <div>
+
+<a href="http://www.most.gov.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93543)" target="_blank">科技部</a>
+
+
+
+  
+
+
+
+<a href="http://www.moe.gov.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93544)" target="_blank">教育部</a>
+
+
+
+  
+
+</div>
+
+                        </div>
+
+                        <div>
+
+                            <p>区直机关</p>
+
+                            <div>
+
+<a href="http://jyt.gxzf.gov.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93547)" target="_blank">广西区教育厅</a>
+
+
+
+  
+
+
+
+<a href="http://kjt.gxzf.gov.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93545)" target="_blank">广西区科技厅</a>
+
+
+
+  
+
+
+
+<a href="https://czt.gxzf.gov.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93546)" target="_blank">广西区财政厅</a>
+
+
+
+  
+
+</div>
+
+                        </div>
+
+                        <div>
+
+                            <p>教育资源</p>
+
+                            <div>
+
+<a href="http://www.neea.edu.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93549)" target="_blank">中国教育考试网</a>
+
+
+
+  
+
+
+
+<a href="https://www.gxeea.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93550)" target="_blank">广西招生考试院</a>
+
+
+
+  
+
+
+
+<a href="http://www.edu.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93548)" target="_blank">中国教育科研网</a>
+
+
+
+  
+
+</div>
+
+                        </div>
+
+                        <div>
+
+                            <p>学术研究</p>
+
+                            <div>
+
+<a href="http://www.cnki.net" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93551)" target="_blank">中国知网</a>
+
+
+
+  
+
+
+
+<a href="http://www.sciencemag.org/magazine" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93552)" target="_blank">SCIENCE</a>
+
+
+
+  
+
+
+
+<a href="http://www.nature.com/nature/index.html" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93553)" target="_blank">NATURE</a>
+
+
+
+  
+
+</div>
+
+                        </div>
+
+                        <div>
+
+                            <p>校媒平台</p>
+
+                            <div>
+
+<a href="guanweierweima.jpg" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93554)" target="_blank">北部湾大学微信</a>
+
+
+
+  
+
+
+
+<a href="weixintupian_20240320092005.jpg" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93555)" target="_blank">北部湾大学抖音</a>
+
+
+
+  
+
+
+
+<a href="http://wx.ihwrm.com/baokan/index/index.html?baokan_id=887" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93556)" target="_blank">北部湾大学校报</a>
+
+
+
+  
+
+
+
+<a href="beibuwandaxueweibo.jpg" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93557)" target="_blank">北部湾大学微博</a>
+
+
+
+  
+
+
+
+<a href="http://wap.yiban.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93558)" target="_blank">易班网</a>
+
+
+
+  
+
+</div>
+
+                        </div>
+
+                        <div>
+
+                            <p>兄弟院校</p>
+
+                            <div>
+
+<a href="http://www.ouc.edu.cn/main.htm" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93577)" target="_blank">中国海洋大学</a>
+
+
+
+  
+
+
+
+<a href="https://www.buct.edu.cn/main.htm" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93578)" target="_blank">北京化工大学</a>
+
+
+
+  
+
+
+
+<a href="https://www.gdou.edu.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93579)" target="_blank">广东海洋大学</a>
+
+
+
+  
+
+
+
+<a href="http://www.gxu.edu.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93559)" target="_blank">广西大学</a>
+
+
+
+  
+
+
+
+<a href="http://www.gxmu.edu.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93560)" target="_blank">广西医科大学</a>
+
+
+
+  
+
+
+
+<a href="https://www.gxmzu.edu.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93561)" target="_blank">广西民族大学</a>
+
+
+
+  
+
+
+
+<a href="https://www.gxau.edu.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93562)" target="_blank">广西艺术学院</a>
+
+
+
+  
+
+
+
+<a href="http://www.gxtcmu.edu.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93563)" target="_blank">广西中医药大学</a>
+
+
+
+  
+
+
+
+<a href="https://www.gxufe.edu.cn/www/myweb/index.html" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93564)" target="_blank">广西财经学院</a>
+
+
+
+  
+
+
+
+<a href="https://www.gxust.edu.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93565)" target="_blank">广西科技大学</a>
+
+
+
+  
+
+
+
+<a href="http://www.gxnu.edu.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93566)" target="_blank">广西师范大学</a>
+
+
+
+  
+
+
+
+<a href="http://www.gliet.edu.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93567)" target="_blank">桂林电子科技大学</a>
+
+
+
+  
+
+
+
+<a href="http://www.glut.edu.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93568)" target="_blank">桂林理工大学</a>
+
+
+
+  
+
+
+
+<a href="https://www.nnnu.edu.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 94004)" target="_blank">南宁师范大学</a>
+
+
+
+  
+
+
+
+<a href="http://www.glmc.edu.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93569)" target="_blank">桂林医科大学</a>
+
+
+
+  
+
+
+
+<a href="http://www.ylu.edu.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93570)" target="_blank">玉林师范学院</a>
+
+
+
+  
+
+
+
+<a href="http://www.hcnu.edu.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93571)" target="_blank">河池学院</a>
+
+
+
+  
+
+
+
+<a href="https://www.ymun.edu.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93572)" target="_blank">右江民族医学院</a>
+
+
+
+  
+
+
+
+<a href="http://www.bsuc.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93573)" target="_blank">百色学院</a>
+
+
+
+  
+
+
+
+<a href="http://www.gxuwz.edu.cn" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93574)" target="_blank">梧州学院</a>
+
+
+
+  
+
+</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="foot-b">
+
+                    <div class="foot-l">
+
+                        <div class="foot-tit">
+
+                            <h3>联系我们</h3>
+
+                        </div>
+
+
+
+                        <div class="foot-lc"><script language="javascript" src="system/resource/js/news/mp4video.js"></script>
+
+<div class="foot-ll">
+
+                                <p>地址：钦州市滨海新城滨海大道12号 邮编：535011</p>
+
+                                <p>办公室：0777-2808003 传真：0777-2808633</p>
+
+                                <p>招生咨询（本科）：0777-2804188/2804088</p>
+
+                            </div>
+
+                            <div class="foot-lr">
+
+                                <p>招生咨询（研究生）：0777-2807026</p>
+
+                                <p>书记信箱：dwsj@bbgu.edu.cn</p>
+
+                                <p>校长信箱：xz@bbgu.edu.cn</p>
+
+                            </div></div>
+
+                        <div class="foot-logo">
+
+<a href="index.htm"><img src="images/logonew.png" alt=""></a></div>
+
+                    </div>
+
+                    <div class="foot-r">
+
+                        <div class="foot-tit">
+
+                            <h3>我要举报 <a href="http://www.gxjjw.gov.cn/"><img src="images/foot-icon3.png" alt=""></a></h3>
+
+                        </div>
+
+                        <div class="foot-rc">
+
+<p>来信请寄：钦州市滨海新城滨海大道12号自治区纪委监委驻北部湾大学纪检监察组</p>
+
+<p>邮编: 535011</p>
+
+<p>来访请到：钦州市滨海新城滨海大道12号办公楼245室</p>
+
+<p>举报电话：(0771)12388</p>
+
+<p>网上举报：http://guangxi.12388.gov.cn/</p>
+
+<p><br></p></div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="bq"><!-- 版权内容请在本组件"内容配置-版权"处填写 -->
+
+<p><span>版权所有：北部湾大学</span><span><a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:#fff;">ICP备案号：桂ICP备14004231号-2</a></span></p></div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="fixed-r pc">
+
+        
+
+        <ul>
+
+<li>
+
+                <a href="index.html" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93482)" target="_blank">
+
+                    <div class="icon">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="31" height="28" viewbox="0 0 31 28">
+
+                            <g>
+
+                                <path d="M30.1383,26.4134L29.0627,26.4134L29.0627,9.74317C29.0627,8.80469,28.2732,8.0114,27.2678,8.0114L23.178,8.0114L23.178,6.78451C23.178,6.56804,23.178,5.99056,20.0207,3.03191C16.7919,0,16.0739,0,15.7871,0C15.4997,0,14.7824,0,11.4098,2.95931C8.10881,5.91797,8.10881,6.42285,8.10881,6.71126L8.10881,7.93815L4.16138,7.93815C3.15729,7.93815,2.36781,8.7321,2.36781,9.67058L2.36781,26.4128L0.789486,26.4128C0.358976,26.4128,0,26.7731,0,27.2061C0,27.639,0.358975,28,0.789486,28L30.2105,27.9281C30.641,27.9281,31,27.5671,31,27.1341C31,26.7012,30.5695,26.4128,30.139,26.4128L30.1383,26.4134ZM27.1969,9.59929C27.34,9.59929,27.4115,9.67123,27.4115,9.74317L27.4115,26.4134L23.1064,26.4134L23.1064,9.59929L27.1969,9.59929ZM12.4146,4.18555C14.2081,2.59896,15.2844,1.80502,15.7143,1.66114C16.719,2.09408,20.9532,5.99122,21.599,7.00163L21.599,26.4141L20.2353,26.4141L20.2353,20.8558C20.2353,19.124,18.8,17.7526,17.0065,17.7526L14.3512,17.7526C12.557,17.7526,11.1217,19.124,11.1217,20.8558L11.1217,26.4128L9.54342,26.4128L9.54342,7.00098C9.83021,6.63998,10.9065,5.48568,12.4139,4.1862L12.4146,4.18555ZM18.6576,26.4128L12.6292,26.4128L12.6292,20.7839C12.6292,19.918,13.4187,19.2686,14.3519,19.2686L17.0071,19.2686C17.9397,19.2686,18.7292,19.918,18.7292,20.7839L18.7292,26.4128L18.6576,26.4128ZM3.87459,9.74317C3.87459,9.67123,3.94613,9.59929,4.0905,9.59929L7.96509,9.59929L7.96509,26.4134L3.80306,26.4134L3.80306,9.74317L3.87459,9.74317ZM11.9125,12.6299L18.8729,12.6299C19.3034,12.6299,19.6617,12.2689,19.6617,11.8359C19.6617,11.403,19.3034,11.042,18.8729,11.042L11.9119,11.042C11.4814,11.042,11.1224,11.403,11.1224,11.8359C11.1939,12.2689,11.4814,12.6299,11.9119,12.6299L11.9125,12.6299ZM11.9125,15.5885L18.8729,15.5885C19.3034,15.5885,19.6617,15.2275,19.6617,14.7946C19.6617,14.3617,19.3034,14.0007,18.8729,14.0007L11.9119,14.0007C11.4814,14.0007,11.1224,14.3617,11.1224,14.7946C11.1224,15.2275,11.4814,15.5885,11.9119,15.5885L11.9125,15.5885ZM11.9125,9.59864L18.8729,9.59864C19.3034,9.59864,19.6617,9.23829,19.6617,8.80469C19.6617,8.37175,19.3034,8.0114,18.8729,8.0114L11.9119,8.0114C11.4814,8.0114,11.1224,8.37175,11.1224,8.80469C11.1224,9.23829,11.4814,9.59864,11.9119,9.59864L11.9125,9.59864Z" fill="#FFFFFF" fill-opacity="1" />
+
+                            </g>
+
+                        </svg>
+
+                    </div>
+
+                    <p>智慧校园</p>
+
+                </a>
+
+            </li>
+
+
+
+   
+
+
+
+<li>
+
+                <a href="index.html" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93483)" target="_blank">
+
+                    <div class="icon">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="29" height="29" viewbox="0 0 29 29">
+
+                            <defs>
+
+                                <clippath id="master_svg0_41_2881">
+
+                                    <rect x="0" y="0" width="29" height="29" rx="0" />
+
+                                </clippath>
+
+                            </defs>
+
+                            <g clip-path="url(index.html)">
+
+                                <g>
+
+                                    <path d="M14.2,3L14.8,3C16.2,3,17.4,4.1625,17.6,5.7125L17.6,25.0875C17.6,26.6375,16.4,27.8,14.8,27.8L14.2,27.8L3.6,25.6688C2.2,25.2812,1,23.925,1,22.5688L1,8.0375C1,6.4875,2.2,5.325,3.6,4.9375L14.2,3ZM14.8,25.8625C15.2,25.8625,15.6,25.6688,15.6,25.0875L15.6,5.7125C15.6,5.325,15.2,4.9375,14.8,4.9375L14.6,4.9375L4,6.875C3.4,6.875,3,7.45625,3,8.0375L3,22.5688C3,23.15,3.4,23.7313,4,23.7313L14.6,25.8625L14.8,25.8625ZM18,5.51875L25.2,5.51875C27.4,5.51875,29,7.2625,29.2,9.2L29.2,21.2125C29.2,23.3438,27.4,24.8938,25.4,24.8938L18,24.8938L18,23.15L25.4,23.15C26.4,23.15,27.2,22.375,27.2,21.4063L27.2,9.00625C27.2,8.0375,26.4,7.2625,25.4,7.2625L18,7.2625L18,5.51875ZM6.59995,10.3626C6.59995,12.10635,7.99995,13.6563,9.59995,13.6563C11.4,13.6563,12.6,12.10635,12.6,10.3626C12.6,8.61885,11.2,7.06885,9.59995,7.06885C7.99995,7.06885,6.59995,8.61885,6.59995,10.3626ZM8.59995,10.3626C8.59995,9.5876,8.99995,9.006350000000001,9.59995,9.006350000000001C10.19995,9.006350000000001,10.59995,9.5876,10.59995,10.3626C10.59995,11.1376,10.19995,11.71885,9.59995,11.71885C8.99995,11.71885,8.59995,11.1376,8.59995,10.3626ZM25,9.5876C25.6,9.5876,26,9.975100000000001,26,10.55635C26,11.1376,25.6,11.5251,25,11.5251L18,11.5251L18,9.5876L25,9.5876ZM18,14.2376L25,14.2376C25.6,14.2376,26,14.6251,26,15.2063C26,15.7876,25.6,16.1751,25,16.1751L18,16.1751L18,14.2376ZM7.99995,14.8188L10.39995,14.8188L14.8,24.3126L12.6,24.3126L10.99995,20.8251L7.39995,20.8251L6.39995,22.7626L4.199949999999999,22.7626L7.99995,14.8188ZM9.19995,17.1438L8.39995,18.8876L9.99995,18.8876L9.19995,17.1438ZM18,18.8876L25,18.8876C25.6,18.8876,26,19.2751,26,19.8563C26,20.4376,25.6,20.8251,25,20.8251L18,20.8251L18,18.8876Z" fill-rule="evenodd" fill="#fff" fill-opacity="1" />
+
+                                </g>
+
+                            </g>
+
+                        </svg>
+
+                    </div>
+
+                    <p>OA系统</p>
+
+                </a>
+
+            </li>
+
+
+
+   
+
+
+
+<li>
+
+                <a href="index.html" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93484)" target="_blank">
+
+                    <div class="icon">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="26" height="26" viewbox="0 0 26 26">
+
+                            <defs>
+
+                                <clippath id="master_svg0_41_2860">
+
+                                    <rect x="0" y="0" width="26" height="26" rx="0" />
+
+                                </clippath>
+
+                            </defs>
+
+                            <g clip-path="url(index.html)">
+
+                                <g>
+
+                                    <path d="M18.66461875,3.4404797656249997L18.66461875,14.833259765625L5.4183587499999994,14.833259765625C4.70741875,14.833259765625,4.04218875,15.023659765625,3.47089875,15.356259765625L3.47089875,5.362549765624999C3.47089875,4.293599765625,4.32655875,3.4404797656249997,5.39296875,3.4404797656249997L18.66461875,3.4404797656249997ZM20.56131875,1.541259765625L5.395508749999999,1.541259765625C3.28300875,1.5412598624825,1.57421875,3.250049765625,1.57421875,5.362549765624999L1.57421875,20.505559765625C1.57421875,22.618059765625,3.28300875,24.326759765625,5.395508749999999,24.326759765625L24.35971875,24.326759765625L24.35971875,3.4404797656249997L22.46051875,3.4404797656249997L22.46051875,22.427559765625L5.4183587499999994,22.427559765625C4.34940875,22.427559765625,3.47089875,21.549059765625,3.47089875,20.480159765625L3.47089875,18.677359765625C3.47089875,17.608459765625,4.34940875,16.732459765625002,5.4183587499999994,16.732459765625002L20.56131875,16.732459765625002L20.56131875,1.541259765625ZM20.56131875,18.631659765625L5.372658749999999,18.631659765625L5.372658749999999,20.530859765625L20.56381875,20.530859765625L20.56381875,18.631659765625L20.56131875,18.631659765625Z" fill="#FFFFFF" fill-opacity="1" />
+
+                                </g>
+
+                            </g>
+
+                        </svg>
+
+                    </div>
+
+                    <p>图书资源</p>
+
+                </a>
+
+            </li>
+
+
+
+   
+
+
+
+<li>
+
+                <a href="index.html" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93485)" target="_blank">
+
+                    <div class="icon">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="24" height="24" viewbox="0 0 24 24">
+
+                            <g>
+
+                                <path d="M12.1473,23.2197C12.6706,23.2135,13.1928,23.1709,13.7102,23.0922C16.6112,20.5573,18.4852,16.5337,18.4852,12.0001C18.4852,7.46648,16.6112,3.44287,13.7102,0.90796C13.1928,0.829208,12.6706,0.786606,12.1473,0.780464C15.4718,3.03038,17.7093,7.21524,17.7093,12.0001C17.7093,16.7849,15.4718,20.966,12.1473,23.2197ZM11.675,23.2197C11.1543,23.213,10.6345,23.1704,10.1196,23.0922C7.21117,20.5573,5.33716,16.5337,5.33716,12.0001C5.33716,7.46648,7.21117,3.44287,10.1196,0.90796C10.637,0.829364,11.1592,0.786763,11.6825,0.780464C8.35056,3.03413,6.113,7.21524,6.113,12.0001C6.113,16.7849,8.35056,20.966,11.675,23.2197ZM11.9936,18.8736C9.5861,18.8718,7.23433,19.5986,5.24721,20.9585C5.46834,21.1272,5.70072,21.2847,5.9331,21.4385C9.62988,19.0531,14.3799,19.0531,18.0766,21.4385C18.309,21.2847,18.5414,21.1272,18.7625,20.9585C16.7691,19.5942,14.4088,18.8672,11.9936,18.8736ZM11.9936,5.12281C9.5861,5.1246,7.23433,4.39781,5.24721,3.03788C5.46834,2.86914,5.70072,2.71165,5.93309,2.56165C7.73948,3.72777,9.84385,4.34755,11.9936,4.34659C14.1472,4.34972,16.2558,3.72985,18.0654,2.56165C18.2978,2.71165,18.5301,2.86914,18.7513,3.03788C16.761,4.39998,14.405,5.12687,11.9936,5.12281ZM0.157416,11.6101L23.2114,11.6101L23.2114,12.3863L0.157416,12.3863L0.157416,11.6101ZM22.7429,6.68276C22.7357,6.66453,22.7269,6.64697,22.7167,6.63026L22.7167,6.61151L22.6867,6.57401C22.5645,6.40019,22.3247,6.35831,22.1509,6.48045C21.977,6.60259,21.935,6.84253,22.057,7.01649C25.7545,14.4813,20.3206,23.2325,11.9936,23.2234C7.87081,23.2234,4.12281,20.7635,2.18134,17.4374C2.12909,17.2764,1.97552,17.1704,1.80654,17.1786C1.59954,17.1786,1.43174,17.3465,1.43174,17.5536C1.43218,17.6119,1.44495,17.6694,1.46922,17.7224C3.53325,21.6143,7.59011,24.034,11.9936,23.9996C20.8845,23.9978,26.6827,14.657,22.7429,6.68276ZM1.47671,15.9112L1.4992,15.9112C1.01122,14.6655,0.765689,13.338,0.775838,12.0001C0.774969,7.27334,3.73511,3.05303,8.1782,1.44641C12.6213,-0.160219,17.5943,1.19148,20.614,4.82657C20.7444,4.99639,20.9878,5.02829,21.1575,4.89782C21.3272,4.76735,21.3591,4.52391,21.2287,4.35409L21.2287,4.30909C18.9585,1.55149,15.5643,-0.0320467,11.9936,0.000491942C5.36973,0.000490832,3.73028e-7,5.37288,0,12.0001C0.020834,13.4216,0.274047,14.8302,0.749601,16.1699C0.796687,16.3629,0.980039,16.4905,1.17724,16.4676C1.37444,16.4448,1.52373,16.2785,1.52544,16.0799C1.52278,16.0206,1.50608,15.9628,1.47671,15.9112ZM21.3486,5.63279C21.3482,5.84847,21.5229,6.02354,21.7384,6.02354C21.954,6.02354,22.1287,5.84847,22.1282,5.63279C22.1287,5.41711,21.954,5.24204,21.7384,5.24204C21.5229,5.24204,21.3482,5.41711,21.3486,5.63279ZM11.4577,0.262983L12.2935,0.262983L12.2935,23.5497L11.4577,23.5497L11.4577,0.262983Z" fill="#FFFFFF" fill-opacity="1" />
+
+                            </g>
+
+                        </svg>   
+
+                    </div>
+
+                    <p>VPN</p>
+
+                </a>
+
+            </li>
+
+
+
+   
+
+
+
+<li>
+
+                <a href="index.html" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93486)" target="_blank">
+
+                    <div class="icon">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="21" height="21" viewbox="0 0 21 21">
+
+                            <g>
+
+                                <path d="M20.8566,9.16332L18.6612,7.25447L18.6612,0.477306C18.6612,0.190849,18.4704,0,18.1839,0L2.86389,0C2.57743,0,2.3862,0.190848,2.3862,0.477306L2.3862,7.39751L0.190852,9.16332C0.0478055,9.25893,0,9.40197,0,9.54502L0,20.5227C0,20.8092,0.190852,21,0.477315,21L20.5223,21C20.8091,21,21,20.8092,21,20.5227L21,9.54539C21,9.40197,20.9518,9.25893,20.8566,9.16369L20.8566,9.16332ZM18.6134,8.54297L19.7589,9.49758L18.6138,10.261L18.6138,8.54297L18.6134,8.54297ZM3.34083,0.954613L17.6592,0.954613L17.6592,10.9291L12.743,14.3177L8.25666,14.3177L3.34083,10.9291L3.34083,0.954613ZM2.38657,8.63821L2.38657,10.3084L1.2889,9.54502L2.38657,8.63821ZM0.955,10.4518L7.30277,14.795L0.954629,19.5673L0.954629,10.4522L0.955,10.4518ZM1.90926,20.0446L8.25666,15.2723L12.6955,15.2723L19.0907,20.045L1.90926,20.045L1.90926,20.0446ZM20.0454,19.5673L13.6976,14.795L20.0454,10.4518L20.0454,19.5677L20.0454,19.5673ZM15.7499,8.1131L5.25009,8.1131L5.25009,9.06808L15.7499,9.06808L15.7499,8.11347L15.7499,8.1131ZM15.7499,5.72731L5.25009,5.72731L5.25009,6.68155L15.7499,6.68155L15.7499,5.72731ZM8.11361,3.34077L5.25009,3.34077L5.25009,4.29539L8.11361,4.29539L8.11361,3.34077Z" fill="#FFFFFF" fill-opacity="1" />
+
+                            </g>
+
+                        </svg>
+
+                    </div>
+
+                    <p>邮箱系统</p>
+
+                </a>
+
+            </li>
+
+
+
+   
+
+
+
+<li>
+
+                <a href="index.html" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93487)" target="_blank">
+
+                    <div class="icon">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="21.361913681030273" height="19.973325729370117" viewbox="0 0 21.361913681030273 19.973325729370117">
+
+                            <g>
+
+                                <path d="M5.16567,15.3305L10.7371,18.1162L16.3085,15.3305L16.3085,10.0501L18.1657,9.16668L18.1657,15.3305C18.1656,16.0339,17.7683,16.6768,17.1393,16.9914L11.5679,19.7771C11.0449,20.0387,10.4293,20.0387,9.90633,19.7771L4.3349,16.9914C3.70585,16.6768,3.30852,16.0338,3.30852,15.3305L3.30852,9.2193L5.05424,10.0488L1.06014,8.15082C0.424232,7.84868,0.0138499,7.21293,0.000343457,6.50902C-0.0131629,5.80511,0.372529,5.15409,0.99638,4.82777L9.8209,0.211534C10.3601,-0.0705113,11.0033,-0.0705113,11.5425,0.211534L20.3664,4.82777C21.1789,5.25347,21.5589,6.20863,21.2609,7.07615L21.2609,13.383L19.4038,13.383L19.4038,8.57734L11.4787,12.3461C10.974,12.5861,10.3881,12.5861,9.88343,12.3461L5.16567,10.1021L5.16567,15.3305ZM10.6814,1.85758L1.85686,6.4732L10.6801,10.6685L19.504,6.4732L10.6801,1.85758L10.6814,1.85758Z" fill="#FFFFFF" fill-opacity="1" />
+
+                            </g>
+
+                        </svg>
+
+                    </div>
+
+                    <p>学生邮箱</p>
+
+                </a>
+
+            </li>
+
+
+
+   
+
+
+
+<li>
+
+                <a href="index.html" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1972595869, 93598)" target="_blank">
+
+                    <div class="icon">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="21.361913681030273" height="19.973325729370117" viewbox="0 0 21.361913681030273 19.973325729370117">
+
+                            <g>
+
+                                <path d="M5.16567,15.3305L10.7371,18.1162L16.3085,15.3305L16.3085,10.0501L18.1657,9.16668L18.1657,15.3305C18.1656,16.0339,17.7683,16.6768,17.1393,16.9914L11.5679,19.7771C11.0449,20.0387,10.4293,20.0387,9.90633,19.7771L4.3349,16.9914C3.70585,16.6768,3.30852,16.0338,3.30852,15.3305L3.30852,9.2193L5.05424,10.0488L1.06014,8.15082C0.424232,7.84868,0.0138499,7.21293,0.000343457,6.50902C-0.0131629,5.80511,0.372529,5.15409,0.99638,4.82777L9.8209,0.211534C10.3601,-0.0705113,11.0033,-0.0705113,11.5425,0.211534L20.3664,4.82777C21.1789,5.25347,21.5589,6.20863,21.2609,7.07615L21.2609,13.383L19.4038,13.383L19.4038,8.57734L11.4787,12.3461C10.974,12.5861,10.3881,12.5861,9.88343,12.3461L5.16567,10.1021L5.16567,15.3305ZM10.6814,1.85758L1.85686,6.4732L10.6801,10.6685L19.504,6.4732L10.6801,1.85758L10.6814,1.85758Z" fill="#FFFFFF" fill-opacity="1" />
+
+                            </g>
+
+                        </svg>
+
+                    </div>
+
+                    <p>仪器设备</p>
+
+                </a>
+
+            </li>
+
+
+
+   
+
+<li>
+
+                <a class="gotop" href=";/index.html"><img src="images/top.png" alt=""></a>
+
+            </li>
+
+</ul>
+
+    </div>
+
+
+
+    <script src="js/jquery.js"></script>
+
+    <script src="js/slick.js"></script>
+
+    <script src="js/public.js"></script>
+
+    <script src="js/wow.min.js"></script>
+
+    <script src="js/index.js"></script>
+
+    <script>
+
+        new WOW().init();
+
+    </script>
+
+
+
+</body>
+
+
+
+</html>
+

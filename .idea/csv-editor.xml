@@ -31,7 +31,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\淘宝\淘宝商品_手机_20260424_130019.csv">
+        <entry key="\微博\weibo_comments.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -39,6 +39,20 @@
           </value>
         </entry>
         <entry key="\科雷\images\rewards.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\科雷\科雷物品_20260523_190506.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\米哈游\action_logs.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
