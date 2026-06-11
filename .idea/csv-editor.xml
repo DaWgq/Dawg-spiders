@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\上海证券交易所\etf_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\咸鱼\xianyu_手机.csv">
           <value>
             <Attribute>
@@ -32,6 +39,20 @@
           </value>
         </entry>
         <entry key="\微博\weibo_comments.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\深圳证券交易所\fund_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\猫眼专业版\maoyan_movie.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

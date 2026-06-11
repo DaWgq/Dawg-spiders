@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>北部湾大学 — Beibu Gulf University</title>
+<meta name="keywords" content="北部湾大学">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Variables ===== */
+:root {
+  --bg-deep: #060d18;
+  --bg-navy: #0a1628;
+  --bg-card: #0f1d35;
+  --bg-card-hover: #152240;
+  --bg-glass: rgba(15, 29, 53, 0.65);
+  --bg-glass-light: rgba(255, 255, 255, 0.03);
+  --gold: #c8a45c;
+  --gold-light: #e2c071;
+  --gold-dim: rgba(200, 164, 92, 0.15);
+  --text-primary: #e8e6e1;
+  --text-secondary: #8b95a5;
+  --text-muted: #5a6575;
+  --accent-blue: #3b7ddd;
+  --accent-teal: #2dd4bf;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-card: rgba(255, 255, 255, 0.08);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-card: 0 4px 30px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 40px rgba(200, 164, 92, 0.08);
+  --font-display: 'Cinzel', 'Noto Serif SC', serif;
+  --font-heading: 'Noto Serif SC', serif;
+  --font-body: 'Noto Sans SC', sans-serif;
+  --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --max-width: 1400px;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Noise Texture Overlay ===== */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ===== Top Navigation Bar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 40px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all var(--transition-smooth);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+}
+.navbar.scrolled {
+  background: rgba(6, 13, 24, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+.navbar.scrolled .nav-logo-img { height: 38px; }
+
+.nav-logo { display: flex; align-items: center; text-decoration: none; gap: 12px; }
+.nav-logo-img { height: 44px; transition: height var(--transition-smooth); }
+.nav-logo-text { display: none; }
+
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  position: relative;
+  padding: 6px 0;
+  transition: color var(--transition-smooth);
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--gold);
+  transition: width var(--transition-smooth);
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--gold); }
+.nav-links a.active::after { width: 100%; }
+
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 8px 0;
+  min-width: 160px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-card);
+}
+.nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(4px); }
+.nav-dropdown-menu a {
+  display: block;
+  padding: 8px 20px;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+.nav-dropdown-menu a::after { display: none; }
+.nav-dropdown-menu a:hover { background: var(--bg-card-hover); }
+
+.nav-actions { display: flex; align-items: center; gap: 16px; }
+.nav-search-btn {
+  background: none;
+  border: 1px solid var(--border-card);
+  color: var(--text-secondary);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-smooth);
+  font-size: 1rem;
+}
+.nav-search-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+.nav-mobile-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all var(--transition-smooth);
+  border-radius: 2px;
+}
+
+/* ===== Search Overlay ===== */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 13, 24, 0.95);
+  backdrop-filter: blur(30px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+}
+.search-overlay.active { opacity: 1; visibility: visible; }
+.search-overlay-inner { width: 90%; max-width: 600px; }
+.search-overlay input {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--gold-dim);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  padding: 16px 0;
+  outline: none;
+  font-family: var(--font-heading);
+  transition: border-color var(--transition-smooth);
+}
+.search-overlay input:focus { border-bottom-color: var(--gold); }
+.search-overlay input::placeholder { color: var(--text-muted); }
+.search-overlay-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color var(--transition-smooth);
+}
+.search-overlay-close:hover { color: var(--gold); }
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-slider { position: absolute; inset: 0; }
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  z-index: 1;
+}
+.hero-slide.active { opacity: 1; z-index: 2; }
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(6, 13, 24, 0.6) 0%,
+    rgba(6, 13, 24, 0.1) 40%,
+    rgba(6, 13, 24, 0.1) 70%,
+    rgba(6, 13, 24, 0.9) 100%);
+}
+
+/* Hero Wave */
+.hero-wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+.hero-wave svg { display: block; width: 100%; }
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 40px;
+}
+.hero-badge {
+  display: inline-block;
+  padding: 6px 20px;
+  border: 1px solid var(--gold-dim);
+  border-radius: 50px;
+  color: var(--gold-light);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 28px;
+  backdrop-filter: blur(10px);
+  background: rgba(200, 164, 92, 0.08);
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+}
+.hero-title span { color: var(--gold); }
+.hero-subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin-bottom: 40px;
+  letter-spacing: 0.08em;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 36px;
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1;
+}
+.hero-cta:hover { color: var(--bg-deep); }
+.hero-cta:hover::before { transform: scaleX(1); }
+
+/* Hero indicators */
+.hero-indicators {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 11;
+}
+.hero-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+.hero-indicators button.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 12px var(--gold-dim);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  animation: float 2s ease-in-out infinite;
+}
+.scroll-indicator span { writing-mode: vertical-rl; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ===== Section Common ===== */
+.section {
+  position: relative;
+  padding: 100px 40px;
+  z-index: 1;
+}
+.section-inner { max-width: var(--max-width); margin: 0 auto; }
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+.section-title span { color: var(--gold); }
+.section-more {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition-smooth);
+  letter-spacing: 0.04em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+}
+.section-more:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* ===== Featured News Grid (学校要闻) ===== */
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+}
+.featured-main {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  transition: all var(--transition-smooth);
+}
+.featured-main:hover { border-color: var(--gold-dim); transform: translateY(-2px); }
+.featured-main-img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+.featured-main-body {
+  padding: 28px 32px;
+}
+.featured-main-date {
+  font-size: 0.78rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+.featured-main-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.featured-main-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.featured-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.featured-list-item {
+  display: flex;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+}
+.featured-list-item:hover { background: var(--bg-card-hover); border-color: var(--gold-dim); transform: translateX(4px); }
+.featured-list-item-date {
+  font-size: 0.78rem;
+  color: var(--gold);
+  white-space: nowrap;
+  padding-top: 2px;
+  font-weight: 500;
+  min-width: 50px;
+}
+.featured-list-item-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+/* ===== Two Column Layout ===== */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+/* ===== Card Style ===== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-smooth);
+}
+.card:hover { border-color: var(--gold-dim); }
+.card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.card:hover .card-img { transform: scale(1.03); }
+.card-body { padding: 24px 28px; }
+.card-date {
+  font-size: 0.78rem;
+  color: var(--gold);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== Notice & Academic List ===== */
+.info-list { display: flex; flex-direction: column; }
+.info-list-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+}
+.info-list-item:hover { padding-left: 8px; }
+.info-list-item:last-child { border-bottom: none; }
+.info-list-item-date {
+  font-size: 0.78rem;
+  color: var(--gold);
+  white-space: nowrap;
+  font-weight: 500;
+}
+.info-list-item-text {
+  flex: 1;
+  font-size: 0.93rem;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Info list with expand */
+.info-list-expand .info-list-item { position: relative; flex-wrap: wrap; }
+.info-list-expand .info-list-item.expanded { background: var(--bg-card-hover); border-radius: var(--radius-md); padding: 18px 20px; margin: 0 -20px; }
+.info-list-expand .info-detail { display: none; width: 100%; padding-top: 12px; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; }
+.info-list-expand .info-list-item.expanded .info-detail { display: block; }
+
+/* ===== Media Spotlight ===== */
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.media-main-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  transition: all var(--transition-smooth);
+  text-decoration: none;
+  display: block;
+}
+.media-main-card:hover { border-color: var(--gold-dim); }
+.media-main-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+.media-main-card-body {
+  padding: 20px 24px;
+}
+.media-main-card-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.media-source {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: var(--gold);
+  margin-bottom: 8px;
+  letter-spacing: 0.08em;
+}
+
+.media-list { display: flex; flex-direction: column; gap: 10px; }
+.media-list-item {
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.media-list-item:hover { background: var(--bg-card-hover); border-color: var(--gold-dim); }
+.media-list-item-source {
+  font-size: 0.72rem;
+  color: var(--gold);
+  white-space: nowrap;
+  padding-top: 1px;
+  min-width: 60px;
+  letter-spacing: 0.05em;
+}
+.media-list-item-title {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== Campus Life Section ===== */
+.campus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.campus-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  transition: all var(--transition-smooth);
+  text-decoration: none;
+  display: block;
+}
+.campus-card:hover { transform: translateY(-6px); border-color: var(--gold-dim); box-shadow: var(--shadow-glow); }
+.campus-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.campus-card:hover img { transform: scale(1.05); }
+.campus-card-body { padding: 18px 22px; }
+.campus-card-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== Department News ===== */
+.dept-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; }
+.dept-carousel-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  position: relative;
+}
+.dept-carousel-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.dept-carousel-card-body {
+  padding: 24px 28px;
+  position: relative;
+}
+.dept-carousel-card-body::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+.dept-carousel-date {
+  font-size: 0.78rem;
+  color: var(--gold);
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+.dept-carousel-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+.dept-list { display: flex; flex-direction: column; }
+.dept-list-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+  display: block;
+}
+.dept-list-item:hover { padding-left: 8px; }
+.dept-list-item:last-child { border-bottom: none; }
+.dept-list-item-date { font-size: 0.78rem; color: var(--gold); margin-bottom: 4px; }
+.dept-list-item-title {
+  font-size: 0.93rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== Footer ===== */
+.footer {
+  position: relative;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-card);
+  padding: 80px 40px 30px;
+}
+.footer-inner { max-width: var(--max-width); margin: 0 auto; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+.footer-brand-img { height: 50px; margin-bottom: 20px; }
+.footer-brand-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
+.footer-links-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color var(--transition-smooth);
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-contact p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 2;
+}
+.footer-bottom {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.footer-bottom a { color: var(--text-muted); text-decoration: none; transition: color var(--transition-smooth); }
+.footer-bottom a:hover { color: var(--gold); }
+
+/* ===== Quick Tools Sidebar ===== */
+.tools-sidebar {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tool-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-smooth);
+  position: relative;
+  text-decoration: none;
+}
+.tool-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+.tool-btn:hover {
+  background: var(--gold);
+  color: var(--bg-deep);
+  border-color: var(--gold);
+  transform: scale(1.1);
+}
+.tool-btn-tip {
+  position: absolute;
+  right: 56px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+  pointer-events: none;
+  border: 1px solid var(--border-card);
+}
+.tool-btn:hover .tool-btn-tip { opacity: 1; visibility: visible; }
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.reveal {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.visible { opacity: 1; }
+.reveal-up.visible { animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+.reveal-left.visible { animation: fadeInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+.reveal-right.visible { animation: fadeInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+.reveal-scale.visible { animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ===== Mobile Menu ===== */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-deep);
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+}
+.mobile-menu.active { opacity: 1; visibility: visible; }
+.mobile-menu a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  padding: 16px 0;
+  transition: color var(--transition-smooth);
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+  .featured-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .media-grid { grid-template-columns: 1fr; }
+  .campus-grid { grid-template-columns: repeat(2, 1fr); }
+  .dept-layout { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 0 20px; height: 60px; }
+  .nav-links { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .hero { min-height: 500px; height: 70vh; }
+  .hero-content { padding: 0 20px; }
+  .section { padding: 60px 20px; }
+  .section-header { margin-bottom: 36px; }
+  .campus-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .tools-sidebar { right: 8px; gap: 4px; }
+  .tool-btn { width: 38px; height: 38px; }
+  .tool-btn svg { width: 18px; height: 18px; }
+  .scroll-indicator { display: none; }
+  .hero-indicators { bottom: 30px; }
+  .nav-actions { gap: 10px; }
+  .nav-search-btn { width: 34px; height: 34px; }
+  .footer { padding: 50px 20px 20px; }
+}
+
+@media (max-width: 480px) {
+  .featured-main-img { height: 200px; }
+  .featured-main-body { padding: 18px 20px; }
+  .featured-list-item { padding: 14px 16px; }
+  .card-img { height: 180px; }
+  .card-body { padding: 16px 20px; }
+  .dept-carousel-card img { height: 200px; }
+  .dept-carousel-card-body { padding: 16px 20px; }
+  .info-list-item { padding: 14px 0; }
+  .media-main-card img { height: 180px; }
+  .media-main-card-body { padding: 14px 18px; }
+  .campus-card img { height: 160px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Navbar ===== -->
+<nav class="navbar" id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="../bbgu_replica/images/logonew.png" alt="北部湾大学" class="nav-logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" class="active">首页</a></li>
+    <li class="nav-dropdown">
+      <a href="#">学校概况</a>
+      <div class="nav-dropdown-menu">
+        <a href="#">学校简介</a>
+        <a href="#">现任领导</a>
+        <a href="#">学校标识</a>
+        <a href="#">学校章程</a>
+        <a href="#">大学精神</a>
+        <a href="#">校园风光</a>
+      </div>
+    </li>
+    <li><a href="#">机构设置</a></li>
+    <li><a href="#">教学管理</a></li>
+    <li><a href="#">科学研究</a></li>
+    <li class="nav-dropdown">
+      <a href="#">招生就业</a>
+      <div class="nav-dropdown-menu">
+        <a href="#">普高本科招生</a>
+        <a href="#">就业信息网</a>
+        <a href="#">研究生招生</a>
+        <a href="#">国际本科招生</a>
+      </div>
+    </li>
+    <li><a href="#">信息公开</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-search-btn" id="searchToggle" aria-label="搜索">⌕</button>
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== Search Overlay ===== -->
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-overlay-close" id="searchClose">✕</button>
+  <div class="search-overlay-inner">
+    <input type="text" placeholder="搜索北部湾大学..." id="searchInput">
+  </div>
+</div>
+
+<!-- ===== Mobile Menu ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="mobileClose">✕</button>
+  <a href="#">首页</a>
+  <a href="#">学校概况</a>
+  <a href="#">机构设置</a>
+  <a href="#">教学管理</a>
+  <a href="#">科学研究</a>
+  <a href="#">招生就业</a>
+  <a href="#">信息公开</a>
+</div>
+
+<!-- ===== Hero Section ===== -->
+<section class="hero" id="hero">
+  <div class="hero-slider" id="heroSlider">
+    <div class="hero-slide active">
+      <img src="../bbgu_replica/images/haiyangri.jpg" alt="">
+    </div>
+    <div class="hero-slide">
+      <img src="../bbgu_replica/images/Image_1772790789509_308.png" alt="">
+    </div>
+    <div class="hero-slide">
+      <img src="../bbgu_replica/images/fengmian1.jpg" alt="">
+    </div>
+    <div class="hero-slide">
+      <img src="../bbgu_replica/images/shenru.png" alt="">
+    </div>
+    <div class="hero-slide">
+      <img src="../bbgu_replica/images/jiefangsixiang.jpg" alt="">
+    </div>
+    <div class="hero-slide">
+      <img src="../bbgu_replica/images/8888888.jpg" alt="">
+    </div>
+    <div class="hero-slide">
+      <img src="../bbgu_replica/images/zhongzhou.jpg" alt="">
+    </div>
+  </div>
+
+  <!-- Wave SVG -->
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C240,120 480,0 720,40 C960,80 1200,10 1440,50 L1440,120 L0,120 Z" fill="#060d18"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">BEIBU GULF UNIVERSITY</div>
+    <h1 class="hero-title">北部湾<span>大学</span></h1>
+    <p class="hero-subtitle">博观内省 · 达道知行</p>
+    <a href="#news" class="hero-cta">探索湾大 →</a>
+  </div>
+
+  <div class="hero-indicators" id="heroIndicators"></div>
+  <div class="scroll-indicator"><span>SCROLL</span>↓</div>
+</section>
+
+<!-- ===== 学校要闻 ===== -->
+<section class="section" id="news">
+  <div class="section-inner">
+    <div class="section-header reveal reveal-up">
+      <div>
+        <div class="section-label">NEWS</div>
+        <h2 class="section-title"><span>学校</span>要闻</h2>
+      </div>
+      <a href="#" class="section-more">更多新闻 →</a>
+    </div>
+
+    <div class="featured-grid">
+      <!-- Main featured -->
+      <a href="#" class="featured-main reveal reveal-left" style="text-decoration:none;color:inherit;">
+        <img src="../bbgu_replica/__local/9/1F/DE/930CDE977820BA387EBA0BA35F4_AAD174A7_61D25.jpg" alt="" class="featured-main-img">
+        <div class="featured-main-body">
+          <div class="featured-main-date">2026-06-05</div>
+          <h3 class="featured-main-title">"强化海洋意识 发展向海经济 建设海洋强区"广西海洋日进高校专题讲座在我校成功举办</h3>
+          <p class="featured-main-desc">6月5日，"强化海洋意识 发展向海经济 建设海洋强区"广西海洋日进高校专题讲座在北部湾大学12号教学楼204报告厅举行。广西壮族自治区海洋局党组成员、副局长宁向军主讲。</p>
+        </div>
+      </a>
+
+      <!-- Side list -->
+      <div class="featured-list reveal reveal-right">
+        <a href="#" class="featured-list-item">
+          <span class="featured-list-item-date">06-04</span>
+          <span class="featured-list-item-title">【湾大有喜】特等奖！教育学院秦嘉雨同学在2026年"我是美丽中国讲解员"广西决赛中刷新我校参赛历史最佳成绩</span>
+        </a>
+        <a href="#" class="featured-list-item">
+          <span class="featured-list-item-date">06-01</span>
+          <span class="featured-list-item-title">学校党委常委会开展"第一议题"学习</span>
+        </a>
+        <a href="#" class="featured-list-item">
+          <span class="featured-list-item-date">06-01</span>
+          <span class="featured-list-item-title">校领导率队赴武汉开展产学研调研交流</span>
+        </a>
+        <a href="#" class="featured-list-item">
+          <span class="featured-list-item-date">05-29</span>
+          <span class="featured-list-item-title">苗剑率团访问匈牙利农学与生命科学大学 深化拓展校际合作</span>
+        </a>
+        <a href="#" class="featured-list-item">
+          <span class="featured-list-item-date">05-29</span>
+          <span class="featured-list-item-title">学校召开"十五五"发展规划专家论证会</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 科教动态 + 多彩校园 ===== -->
+<section class="section" style="background: var(--bg-navy);">
+  <div class="section-inner">
+    <div class="two-col">
+      <!-- 科教动态 -->
+      <div class="reveal reveal-left">
+        <div class="section-header">
+          <div>
+            <div class="section-label">ACADEMIC</div>
+            <h2 class="section-title"><span>科教</span>动态</h2>
+          </div>
+          <a href="#" class="section-more">更多 →</a>
+        </div>
+
+        <a href="#" class="card" style="display:block;text-decoration:none;color:inherit;margin-bottom:20px;">
+          <img src="../bbgu_replica/__local/C/56/9C/082D3063290AD1D9E1C42A61EB4_56A5181C_21DE80.png" alt="" class="card-img">
+          <div class="card-body">
+            <div class="card-date">2026-06-02</div>
+            <h3 class="card-title">学校原创音乐剧《守鲎》亮相2026年广西科学家精神舞台剧汇演</h3>
+            <p class="card-desc">5月30日至31日，正值第十个"全国科技工作者日"之际，"科技报国·薪火相传"——2026年广西科学家精神舞台剧汇演在广西科技馆成功举办。</p>
+          </div>
+        </a>
+
+        <div class="info-list">
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">06-02</span>
+            <span class="info-list-item-text">学校原创音乐剧《守鲎》亮相2026年广西科学家精神舞台剧汇演</span>
+          </a>
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">06-01</span>
+            <span class="info-list-item-text">【湾大有喜】我校学子荣登《广西日报》国家奖学金获奖学生代表名录</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 多彩校园 -->
+      <div class="reveal reveal-right">
+        <div class="section-header">
+          <div>
+            <div class="section-label">CAMPUS</div>
+            <h2 class="section-title"><span>多彩</span>校园</h2>
+          </div>
+          <a href="#" class="section-more">更多 →</a>
+        </div>
+
+        <div class="campus-grid">
+          <a href="#" class="campus-card">
+            <img src="../bbgu_replica/__local/D/E5/69/022E4CDE91471242082737A0B90_DDCB257C_52026.jpg" alt="">
+            <div class="campus-card-body">
+              <div class="campus-card-title">"把冠军带回湾大！"——记北部湾大学体育学院青年教师黄胜贤</div>
+            </div>
+          </a>
+          <a href="#" class="campus-card">
+            <img src="../bbgu_replica/__local/6/1A/53/43DF554211E853D06DAEF230A4D_722EF04C_2AA673.png" alt="">
+            <div class="campus-card-body">
+              <div class="campus-card-title">这届湾大人，毕业后将去哪里？（四）</div>
+            </div>
+          </a>
+          <a href="#" class="campus-card">
+            <img src="../bbgu_replica/__local/3/7C/4E/7645B38AC03F618A15A14621B2C_495B220B_18C585.png" alt="">
+            <div class="campus-card-body">
+              <div class="campus-card-title">这届湾大人，毕业后将去哪里？（三）</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 通知公告 + 学术预告 ===== -->
+<section class="section">
+  <div class="section-inner">
+    <div class="two-col">
+      <!-- 通知公告 -->
+      <div class="reveal reveal-left">
+        <div class="section-header">
+          <div>
+            <div class="section-label">NOTICE</div>
+            <h2 class="section-title"><span>通知</span>公告</h2>
+          </div>
+          <a href="#" class="section-more">更多 →</a>
+        </div>
+
+        <div class="info-list">
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">06-05</span>
+            <span class="info-list-item-text">北部湾大学工会委员会2026年工会会员端午节定点供应采购服务成交结果公告</span>
+          </a>
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">06-03</span>
+            <span class="info-list-item-text">北部湾大学2026年区直事业单位统一公开招聘面试公告</span>
+          </a>
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">06-03</span>
+            <span class="info-list-item-text">北部湾大学2026年公开招聘专业技术人员体检公告</span>
+          </a>
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">06-01</span>
+            <span class="info-list-item-text">北部湾大学灭火器材采购公告</span>
+          </a>
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">06-01</span>
+            <span class="info-list-item-text">北部湾大学网络安全等级保护测评服务项目（科研系统）采购公告</span>
+          </a>
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">06-01</span>
+            <span class="info-list-item-text">北部湾大学2026-2027年度零星搬运服务（重）采购公告</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 学术预告 -->
+      <div class="reveal reveal-right">
+        <div class="section-header">
+          <div>
+            <div class="section-label">ACADEMIC</div>
+            <h2 class="section-title"><span>学术</span>预告</h2>
+          </div>
+          <a href="#" class="section-more">更多 →</a>
+        </div>
+
+        <div class="info-list">
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">06-05</span>
+            <span class="info-list-item-text">江妙浩学术报告预告</span>
+          </a>
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">05-20</span>
+            <span class="info-list-item-text">广西优秀教师代表"教育家精神"2026年宣讲预告</span>
+          </a>
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">05-13</span>
+            <span class="info-list-item-text">周毅强教授学术报告预告</span>
+          </a>
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">05-13</span>
+            <span class="info-list-item-text">李春娜教授学术报告预告</span>
+          </a>
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">05-13</span>
+            <span class="info-list-item-text">周莹教授学术报告预告</span>
+          </a>
+          <a href="#" class="info-list-item">
+            <span class="info-list-item-date">04-16</span>
+            <span class="info-list-item-text">关于举办苟婵婵的学术讲座</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 媒体聚焦 ===== -->
+<section class="section" style="background: var(--bg-navy);">
+  <div class="section-inner">
+    <div class="section-header reveal reveal-up">
+      <div>
+        <div class="section-label">MEDIA SPOTLIGHT</div>
+        <h2 class="section-title"><span>媒体</span>聚焦</h2>
+      </div>
+      <a href="#" class="section-more">更多 →</a>
+    </div>
+
+    <div class="media-grid">
+      <a href="#" class="media-main-card reveal reveal-left">
+        <img src="../bbgu_replica/__local/A/AB/42/A3209392F00FBA3E3ED91ECA1EE_4E8674A6_1A19DF.png" alt="">
+        <div class="media-main-card-body">
+          <span class="media-source">广西云-广西日报</span>
+          <h3 class="media-main-card-title">广西优秀教师代表"教育家精神"宣讲活动走进北部湾大学</h3>
+        </div>
+      </a>
+
+      <div class="media-list reveal reveal-right">
+        <a href="#" class="media-list-item">
+          <span class="media-list-item-source">广西日报</span>
+          <span class="media-list-item-title">"教育家精神"宣讲活动在钦州举行</span>
+        </a>
+        <a href="#" class="media-list-item">
+          <span class="media-list-item-source">学习强国</span>
+          <span class="media-list-item-title">"把冠军带回湾大！"——记北部湾大学体育学院青年教师黄胜贤</span>
+        </a>
+        <a href="#" class="media-list-item">
+          <span class="media-list-item-source">中国教育在线</span>
+          <span class="media-list-item-title">"把冠军带回湾大！"——记北部湾大学体育学院青年教师黄胜贤</span>
+        </a>
+        <a href="#" class="media-list-item">
+          <span class="media-list-item-source">新华网</span>
+          <span class="media-list-item-title">广西钦州：大学生抱团创业传承发扬坭兴陶文化</span>
+        </a>
+        <a href="#" class="media-list-item">
+          <span class="media-list-item-source">光明网</span>
+          <span class="media-list-item-title">广西钦州：大学生抱团创业传承发扬坭兴陶文化</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 院处新闻 ===== -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header reveal reveal-up">
+      <div>
+        <div class="section-label">DEPARTMENT NEWS</div>
+        <h2 class="section-title"><span>院处</span>新闻</h2>
+      </div>
+      <a href="#" class="section-more">更多 →</a>
+    </div>
+
+    <div class="dept-layout">
+      <!-- Carousel card -->
+      <div class="reveal reveal-left">
+        <div class="dept-carousel-card" id="deptCarousel">
+          <img src="../bbgu_replica/__local/0/16/EF/DFFA6093C704D12CA028E1D0BDB_DEAE098E_4483C.jpg" alt="" id="deptCarouselImg">
+          <div class="dept-carousel-card-body">
+            <div class="dept-carousel-date" id="deptCarouselDate">2026-06-02</div>
+            <h3 class="dept-carousel-title" id="deptCarouselTitle">学校首批教师赴平陆运河文旅公司实践锻炼</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- List -->
+      <div class="dept-list reveal reveal-right">
+        <a href="#" class="dept-list-item" data-img="../bbgu_replica/__local/0/16/EF/DFFA6093C704D12CA028E1D0BDB_DEAE098E_4483C.jpg" data-date="2026-06-02">
+          <div class="dept-list-item-date">2026-06-02</div>
+          <div class="dept-list-item-title">学校首批教师赴平陆运河文旅公司实践锻炼</div>
+        </a>
+        <a href="#" class="dept-list-item" data-img="../bbgu_replica/__local/F/0F/D4/1CDF978C9433CCFD43535C6A2AE_A0C67D39_494AA6.png" data-date="2026-05-25">
+          <div class="dept-list-item-date">2026-05-25</div>
+          <div class="dept-list-item-title">学校开展优质资源开放活动</div>
+        </a>
+        <a href="#" class="dept-list-item" data-img="../bbgu_replica/__local/C/39/5F/3C9D981F4E34979CC210377C69D_DA96CF9B_82C6B.png" data-date="2026-05-06">
+          <div class="dept-list-item-date">2026-05-06</div>
+          <div class="dept-list-item-title">我校师生参加2026广西特殊少年儿童公共艺术展活动</div>
+        </a>
+        <a href="#" class="dept-list-item" data-img="../bbgu_replica/__local/1/78/01/B178F36B78EEB903203946BAFE2_189A1DBC_386DCE.png" data-date="2026-05-05">
+          <div class="dept-list-item-date">2026-05-05</div>
+          <div class="dept-list-item-title">学校科学技术协会组织开展海洋公益科普活动</div>
+        </a>
+        <a href="#" class="dept-list-item" data-img="../bbgu_replica/__local/E/1B/AD/1C82384B151FF75294E40FB97D2_7F2562D7_6FDCA0.png" data-date="2026-04-30">
+          <div class="dept-list-item-date">2026-04-30</div>
+          <div class="dept-list-item-title">学校向北部湾大学第一附属小学捐赠图书</div>
+        </a>
+        <a href="#" class="dept-list-item" data-img="../bbgu_replica/__local/1/78/01/B178F36B78EEB903203946BAFE2_189A1DBC_386DCE.png" data-date="2026-04-28">
+          <div class="dept-list-item-date">2026-04-28</div>
+          <div class="dept-list-item-title">外国语学院一行赴湖北经济学院外国语学院调研交流</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <img src="../bbgu_replica/images/logonew.png" alt="北部湾大学" class="footer-brand-img">
+        <p class="footer-brand-desc">北部湾大学是一所以工学、理学、管理学为主，多学科协调发展的全日制普通高等学校。学校位于"一带一路"重要节点城市——广西钦州市。</p>
+      </div>
+      <div>
+        <h4 class="footer-links-title">快速链接</h4>
+        <ul class="footer-links">
+          <li><a href="#">智慧校园</a></li>
+          <li><a href="#">OA系统</a></li>
+          <li><a href="#">图书资源</a></li>
+          <li><a href="#">VPN服务</a></li>
+          <li><a href="#">邮箱系统</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">联系我们</h4>
+        <div class="footer-contact">
+          <p>地址：钦州市滨海新城滨海大道12号</p>
+          <p>邮编：535011</p>
+          <p>电话：0777-2808003</p>
+          <p>招生咨询：0777-2804188 / 2804088</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 北部湾大学 版权所有</span>
+      <a href="https://beian.miit.gov.cn/">桂ICP备14004231号-2</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Tools Sidebar ===== -->
+<div class="tools-sidebar" id="toolsSidebar">
+  <a href="#" class="tool-btn" title="智慧校园">
+    <svg viewBox="64 64 896 896" xmlns="http://www.w3.org/2000/svg"><path d="M894 462c30.9 0 43.8-39.7 18.7-58L530.8 126.2a31.81 31.81 0 00-37.6 0L111.3 404c-25.1 18.3-12.2 58 18.8 58H192v374h-72c-4.4 0-8 3.6-8 8v52c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-52c0-4.4-3.6-8-8-8h-72V462h62zM512 196.7l271.1 197.2H240.9L512 196.7zM264 462h117v374H264V462zm189 0h117v374H453V462zm307 374H642V462h118v374z"/></svg>
+    <span class="tool-btn-tip">智慧校园</span>
+  </a>
+  <a href="#" class="tool-btn" title="OA系统">
+    <svg viewBox="64 64 896 896" xmlns="http://www.w3.org/2000/svg"><path d="M832 112H724V72c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v40H500V72c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v40H320c-17.7 0-32 14.3-32 32v120h-96c-17.7 0-32 14.3-32 32v632c0 17.7 14.3 32 32 32h512c17.7 0 32-14.3 32-32v-96h96c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM664 888H232V336h218v174c0 22.1 17.9 40 40 40h174v338zm0-402H514V336h150v150zm158 250h-94V448c0-22.1-17.9-40-40-40h-64V192h198v544z"/></svg>
+    <span class="tool-btn-tip">OA系统</span>
+  </a>
+  <a href="#" class="tool-btn" title="图书资源">
+    <svg viewBox="64 64 896 896" xmlns="http://www.w3.org/2000/svg"><path d="M928 161H699.2c-49.1 0-97.1 14.1-138.4 40.7L512 233l-48.8-31.3A255.2 255.2 0 00324.8 161H96c-17.7 0-32 14.3-32 32v568c0 17.7 14.3 32 32 32h228.8c49.1 0 97.1 14.1 138.4 40.7l44.8 28.6c3.3 2.1 7.4 2.1 10.7 0l44.8-28.6c41.3-26.6 89.3-40.7 138.4-40.7H928c17.7 0 32-14.3 32-32V193c0-17.7-14.3-32-32-32zM324.8 225c40 0 79.2 11.6 112.8 33.3L488 291.8V721l-28.8-18.4c-33.6-21.5-72.8-33.3-112.8-33.3H168V225h156.8zM896 669.3H699.2c-40 0-79.2 11.6-112.8 33.3L536 721V291.8l50.4-33.5c33.6-21.7 72.8-33.3 112.8-33.3H896v444.3z"/></svg>
+    <span class="tool-btn-tip">图书资源</span>
+  </a>
+  <a href="#" class="tool-btn" title="VPN">
+    <svg viewBox="64 64 896 896" xmlns="http://www.w3.org/2000/svg"><path d="M854.4 800.9c.2-.3.5-.6.7-.9C920.6 722.1 960 621.7 960 512s-39.4-210.1-104.8-288c-.2-.3-.5-.5-.7-.8-1.1-1.3-2.1-2.5-3.2-3.7l-1.2-1.4-4.1-4.7-.1-.1c-1.5-1.7-3.1-3.4-4.6-5.1l-.1-.1c-3.2-3.4-6.4-6.8-9.7-10.1l-.1-.1-4.8-4.8-.3-.3c-1.5-1.5-3-2.9-4.5-4.3l-1.6-1.5-3-2.8-1-1C736.4 109.2 629.5 64 512 64s-224.4 45.2-304.3 119.2l-1 1c-1 .9-2 1.8-3 2.8l-1.6 1.5c-1.5 1.4-3 2.9-4.5 4.3l-.3.3-4.8 4.8-.1.1c-3.3 3.3-6.5 6.7-9.7 10.1l-.1.1c-1.6 1.7-3.1 3.4-4.6 5.1l-.1.1c-1.4 1.5-2.8 3.1-4.1 4.7l-1.2 1.4c-1.1 1.2-2.1 2.5-3.2 3.7-.2.3-.5.5-.7.8C103.4 301.9 64 402.3 64 512s39.4 210.1 104.8 288c.2.3.5.6.7.9l3.1 3.7 1.2 1.4 4.1 4.7c0 .1.1.1.1.2 1.5 1.7 3 3.4 4.6 5.1l.1.1c3.2 3.4 6.4 6.8 9.7 10.1l.1.1c1.6 1.6 3.2 3.2 4.8 4.8l.3.3c1.5 1.5 3 2.9 4.5 4.3l1.6 1.5c.9.9 1.9 1.9 2.9 2.8l1 1C287.6 914.8 394.5 960 512 960s224.4-45.2 304.3-119.2l1-1c.9-.9 1.9-1.9 2.9-2.8l1.6-1.5c1.5-1.4 3-2.9 4.5-4.3l.3-.3 4.8-4.8.1-.1c3.3-3.3 6.5-6.7 9.7-10.1l.1-.1c1.6-1.7 3.1-3.4 4.6-5.1l.1-.1c1.4-1.5 2.8-3.1 4.1-4.7l1.2-1.4c1.2-1.3 2.3-2.5 3.3-3.8zm-46.7-190.5c-.1 1-.2 2-.4 3-11.6 92.2-40.4 169.1-78.4 228.8-8.4 13.2-17.7 25.4-27.7 36.6 47-67.9 82.4-158.1 98.2-268.4h8.3zM696 512c0 68.7-5.9 135.6-16.8 198.4H344.8C333.9 647.6 328 580.7 328 512s5.9-135.6 16.8-198.4h335.2c10.9 62.8 16.8 129.7 16.8 198.4zM512 848c-42.4 0-94.1-52.2-121.7-137.6h243.4C606.1 795.8 554.4 848 512 848zM390.3 374.4h243.4C606.1 228.2 554.4 176 512 176s-94.1 52.2-121.7 137.6zM165.9 512c0-55.4 9.4-108.2 26-155.4H282c-12.5 63.7-18.8 129.9-18.8 198.4 0 68.5 6.3 134.7 18.8 198.4H191.9c-16.6-47.2-26-100-26-155.4zM312.2 670.4c-12.6-63.7-19-129.9-19-198.4 0-68.5 6.4-134.7 19-198.4h99.6c-10.9 62.8-16.8 129.7-16.8 198.4s5.9 135.6 16.8 198.4H312.2zM536 670.4c10.9-62.8 16.8-129.7 16.8-198.4s-5.9-135.6-16.8-198.4h99.6c12.6 63.7 19 129.9 19 198.4 0 68.5-6.4 134.7-19 198.4H536zm205.9 0c16.6 47.2 26 100 26 155.4s-9.4 108.2-26 155.4H742c12.5-63.7 18.8-129.9 18.8-198.4 0-68.5-6.3-134.7-18.8-198.4h25.9zm36.6-64h-9.3c11.9-63.7 17.8-129.9 17.8-198.4 0-68.5-5.9-134.7-17.8-198.4h9.3c42.5 56.6 68.8 133.6 77.4 198.4h-8.3c-8.7 0-15.8 7.4-13.5 15.8 11.1 40.6 16.5 84.8 16.5 118.2 0 33.4-5.4 77.6-16.5 118.2-2.3 8.4 4.8 15.8 13.5 15.8h8.3c-8.6 64.8-34.9 141.8-77.4 198.4z"/></svg>
+    <span class="tool-btn-tip">VPN</span>
+  </a>
+  <a href="#" class="tool-btn" title="邮箱">
+    <svg viewBox="64 64 896 896" xmlns="http://www.w3.org/2000/svg"><path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.6 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0068.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z"/></svg>
+    <span class="tool-btn-tip">邮箱系统</span>
+  </a>
+  <a href="#hero" class="tool-btn" title="返回顶部">
+    <svg viewBox="64 64 896 896" xmlns="http://www.w3.org/2000/svg"><path d="M859.9 168H164.1c-4.5 0-8.1 3.6-8.1 8v60c0 4.4 3.6 8 8.1 8h695.8c4.5 0 8.1-3.6 8.1-8v-60c0-4.4-3.6-8-8.1-8zM518.3 355c-3.1-3.7-8.5-3.7-11.6 0l-112 130.7c-4 4.7-.2 11.9 5.8 11.9h73.5V848c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V497.6h73.5c6 0 9.8-7.2 5.8-11.9L518.3 355z"/></svg>
+  </a>
+</div>
+
+<script>
+// ===== Hero Slider =====
+(function() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const indicatorsContainer = document.getElementById('heroIndicators');
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+  let autoPlayInterval;
+
+  // Create indicators
+  for (let i = 0; i < totalSlides; i++) {
+    const btn = document.createElement('button');
+    if (i === 0) btn.classList.add('active');
+    btn.addEventListener('click', () => goToSlide(i));
+    indicatorsContainer.appendChild(btn);
+  }
+
+  function goToSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    indicatorsContainer.children[currentSlide].classList.remove('active');
+    currentSlide = index;
+    slides[currentSlide].classList.add('active');
+    indicatorsContainer.children[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % totalSlides);
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoPlayInterval = setInterval(nextSlide, 5000);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayInterval) clearInterval(autoPlayInterval);
+  }
+
+  startAutoPlay();
+
+  // Pause on hover
+  const hero = document.getElementById('hero');
+  hero.addEventListener('mouseenter', stopAutoPlay);
+  hero.addEventListener('mouseleave', startAutoPlay);
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { nextSlide(); stopAutoPlay(); startAutoPlay(); }
+    if (e.key === 'ArrowLeft') {
+      goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+      stopAutoPlay(); startAutoPlay();
+    }
+  });
+})();
+
+// ===== Navbar Scroll =====
+(function() {
+  const navbar = document.getElementById('navbar');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (scrollY > 80) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+    lastScroll = scrollY;
+  });
+})();
+
+// ===== Search Overlay =====
+(function() {
+  const toggle = document.getElementById('searchToggle');
+  const overlay = document.getElementById('searchOverlay');
+  const close = document.getElementById('searchClose');
+  const input = document.getElementById('searchInput');
+
+  toggle.addEventListener('click', () => {
+    overlay.classList.add('active');
+    setTimeout(() => input.focus(), 100);
+  });
+  close.addEventListener('click', () => overlay.classList.remove('active'));
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.remove('active');
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') overlay.classList.remove('active');
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && input.value.trim()) {
+      alert('搜索：' + input.value.trim());
+      overlay.classList.remove('active');
+    }
+  });
+})();
+
+// ===== Mobile Menu =====
+(function() {
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('mobileMenu');
+  const close = document.getElementById('mobileClose');
+
+  toggle.addEventListener('click', () => menu.classList.add('active'));
+  close.addEventListener('click', () => menu.classList.remove('active'));
+  menu.addEventListener('click', (e) => {
+    if (e.target === menu) menu.classList.remove('active');
+  });
+  // Close on link click
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => menu.classList.remove('active'));
+  });
+})();
+
+// ===== Scroll Reveal =====
+(function() {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+})();
+
+// ===== Department News Carousel Hover =====
+(function() {
+  const items = document.querySelectorAll('.dept-list-item');
+  const img = document.getElementById('deptCarouselImg');
+  const date = document.getElementById('deptCarouselDate');
+  const title = document.getElementById('deptCarouselTitle');
+
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const newImg = item.dataset.img;
+      const newDate = item.dataset.date;
+      const newTitle = item.querySelector('.dept-list-item-title').textContent;
+      if (newImg) img.src = newImg;
+      if (newDate) date.textContent = newDate;
+      if (newTitle) title.textContent = newTitle;
+    });
+  });
+})();
+
+// ===== Smooth Scroll for Hero CTA =====
+document.querySelector('.hero-cta').addEventListener('click', function(e) {
+  e.preventDefault();
+  const target = document.querySelector('#news');
+  target.scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+</body>
+</html>

@@ -22,7 +22,7 @@ headers = {
 cookies = {
     "session": "XoeYFeN2KpuZMM7jqsA8Wv06b2wex_p1cEzVaIlU2KY"
 }
-url = "https://accounts.klei.com/account/rewards/items.json"
+url = "https://accounts.klei.com/account/rewardsitems.json"
 response = requests.get(url, headers=headers, cookies=cookies)
 
 # 解析JSON数据
