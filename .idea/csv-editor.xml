@@ -59,6 +59,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\猫眼专业版\maoyan_web.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\科雷\images\rewards.csv">
           <value>
             <Attribute>
@@ -77,6 +84,13 @@
           <value>
             <Attribute>
               <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\腾讯视频\腾讯视频弹幕.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
             </Attribute>
           </value>
         </entry>
