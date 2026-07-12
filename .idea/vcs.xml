@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/企业环境信息依法披露系统" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/北部湾大学" vcs="Git" />
   </component>
 </project>

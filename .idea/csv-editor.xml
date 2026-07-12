@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\企业环境信息依法披露系统\data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\咸鱼\xianyu_手机.csv">
           <value>
             <Attribute>
@@ -81,6 +88,13 @@
           </value>
         </entry>
         <entry key="\米哈游\action_logs.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\网易云音乐\data\网易云评论.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

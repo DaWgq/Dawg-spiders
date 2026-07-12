@@ -1,0 +1,330 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { 
+  Play, Square, Pause, RefreshCw, Download, 
+  Settings, Terminal, Database, ShieldAlert, 
+  CheckCircle2, AlertCircle, FileJson, FileSpreadsheet
+} from 'lucide-react';
+
+export default function App() {
+  // --- 状态管理 ---
+  const [status, setStatus] = useState('idle'); // idle, running, paused, error, completed
+  const [config, setConfig] = useState({
+    totalPages: 300,
+    pageSize: 20,
+    csvFile: 'data.csv',
+    checkpointFile: 'checkpoint.json',
+    cookie: '',
+    retryLimit: 5,
+    delay: 2
+  });
+  
+  const [stats, setStats] = useState({
+    currentPage: 0,
+    successPages: 0,
+    failedPages: 0,
+    totalRecords: 0
+  });
+
+  const [logs, setLogs] = useState([
+    { time: new Date().toLocaleTimeString(), msg: '系统初始化完成，等待启动...', type: 'info' }
+  ]);
+  const [previewData, setPreviewData] = useState([]);
+  const logsEndRef = useRef(null);
+
+  // --- 模拟爬虫引擎 ---
+  useEffect(() => {
+    let timer;
+    if (status === 'running') {
+      timer = setInterval(() => {
+        setStats(prev => {
+          if (prev.currentPage >= config.totalPages) {
+            setStatus('completed');
+            addLog('爬取任务全部完成！', 'success');
+            return prev;
+          }
+          
+          const nextPage = prev.currentPage + 1;
+          const isError = Math.random() < 0.05; // 5% 概率模拟网络错误
+          
+          if (isError) {
+            addLog(`[错误] 抓取第 ${nextPage} 页时发生网络波动，准备重试...`, 'error');
+            return { ...prev, failedPages: prev.failedPages + 1 };
+          } else {
+            addLog(`成功抓取第 ${nextPage} 页数据，解析到 ${config.pageSize} 条记录。已自动保存进度到 ${config.checkpointFile}`);
+            
+            // 模拟插入数据
+            const mockRecord = {
+              id: `ENP${10000 + nextPage}`,
+              province: '某省',
+              city: '某市',
+              name: `环保科技测试企业 ${nextPage} 厂`,
+              creditCode: `910000000000${nextPage.toString().padStart(4, '0')}`,
+              year: '2025',
+              status: '已完成'
+            };
+            setPreviewData(data => [mockRecord, ...data].slice(0, 100)); // 保留最新100条预览
+
+            return {
+              ...prev,
+              currentPage: nextPage,
+              successPages: prev.successPages + 1,
+              totalRecords: prev.totalRecords + config.pageSize
+            };
+          }
+        });
+      }, config.delay * 500); // 模拟速度加快以便演示
+    }
+    return () => clearInterval(timer);
+  }, [status, config]);
+
+  // 自动滚动日志
+  useEffect(() => {
+    if (logsEndRef.current) {
+      logsEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [logs]);
+
+  // --- 控制方法 ---
+  const addLog = (msg, type = 'info') => {
+    setLogs(prev => [...prev, { time: new Date().toLocaleTimeString(), msg, type }]);
+  };
+
+  const handleStart = () => {
+    if (!config.cookie && status === 'idle') {
+      addLog('警告: 未配置 Cookie/JSESSIONID，可能会遇到 405 或 401 错误。', 'warning');
+    }
+    setStatus('running');
+    addLog(stats.currentPage > 0 ? '检测到断点，继续执行增量爬取...' : '启动全新爬取任务...');
+  };
+
+  const handlePause = () => {
+    setStatus('paused');
+    addLog('任务已暂停，进度已安全保存。', 'warning');
+  };
+
+  const handleReset = () => {
+    if(window.confirm('确定要清除断点文件 (checkpoint.json) 并重置数据吗？')) {
+      setStatus('idle');
+      setStats({ currentPage: 0, successPages: 0, failedPages: 0, totalRecords: 0 });
+      setPreviewData([]);
+      setLogs([{ time: new Date().toLocaleTimeString(), msg: '已清除断点，下次将从第 1 页重新开始。', type: 'info' }]);
+    }
+  };
+
+  const handleConfigChange = (e) => {
+    const { name, value } = e.target;
+    setConfig(prev => ({ ...prev, [name]: value }));
+  };
+
+  // --- UI 组件 ---
+  const progressPercent = config.totalPages > 0 ? Math.min(100, Math.round((stats.currentPage / config.totalPages) * 100)) : 0;
+
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans p-6">
+      <div className="max-w-7xl mx-auto space-y-6">
+        
+        {/* Header */}
+        <header className="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-blue-600 rounded-lg text-white">
+              <Database size={24} />
+            </div>
+            <div>
+              <h1 className="text-xl font-bold text-slate-900">企业环境信息依法披露系统</h1>
+              <p className="text-sm text-slate-500">数据爬虫控制台 v1.0</p>
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <span className="px-3 py-1 bg-green-100 text-green-700 text-sm font-medium rounded-full flex items-center gap-1">
+              <CheckCircle2 size={16} /> 引擎就绪
+            </span>
+            <span className="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full flex items-center gap-1">
+              <ShieldAlert size={16} /> 断点续爬开启
+            </span>
+          </div>
+        </header>
+
+        {/* Top Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          {[
+            { label: '抓取进度', value: `${progressPercent}%`, sub: `${stats.currentPage} / ${config.totalPages} 页`, color: 'text-blue-600' },
+            { label: '已采集数据', value: stats.totalRecords, sub: '条记录 (CSV)', color: 'text-emerald-600' },
+            { label: '成功页面', value: stats.successPages, sub: '响应 200 OK', color: 'text-green-600' },
+            { label: '异常/重试', value: stats.failedPages, sub: '网络波动自动恢复', color: 'text-rose-600' }
+          ].map((stat, idx) => (
+            <div key={idx} className="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
+              <p className="text-sm text-slate-500 mb-1">{stat.label}</p>
+              <h3 className={`text-3xl font-bold ${stat.color}`}>{stat.value}</h3>
+              <p className="text-xs text-slate-400 mt-2">{stat.sub}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Left Column: Config & Control */}
+          <div className="space-y-6">
+            
+            {/* Control Panel */}
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+              <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Play size={20} className="text-blue-600"/> 任务控制
+              </h2>
+              
+              <div className="mb-6">
+                <div className="flex justify-between text-sm mb-2">
+                  <span className="font-medium">总体进度</span>
+                  <span className="text-blue-600 font-bold">{progressPercent}%</span>
+                </div>
+                <div className="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
+                  <div 
+                    className="bg-blue-600 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${progressPercent}%` }}
+                  ></div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                {status !== 'running' ? (
+                  <button onClick={handleStart} className="col-span-2 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">
+                    <Play size={18} /> {stats.currentPage > 0 ? '继续增量抓取' : '启动爬虫'}
+                  </button>
+                ) : (
+                  <button onClick={handlePause} className="col-span-2 flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white py-3 rounded-lg font-medium transition">
+                    <Pause size={18} /> 暂停任务
+                  </button>
+                )}
+                
+                <button onClick={handleReset} className="flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 py-2 rounded-lg text-sm font-medium transition">
+                  <RefreshCw size={16} /> 清除断点
+                </button>
+                <button className="flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 py-2 rounded-lg text-sm font-medium transition cursor-not-allowed opacity-70">
+                  <Download size={16} /> 导出 CSV
+                </button>
+              </div>
+            </div>
+
+            {/* Config Panel */}
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+              <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Settings size={20} className="text-slate-600"/> 爬虫配置
+              </h2>
+              <div className="space-y-4 text-sm">
+                <div>
+                  <label className="block text-slate-500 mb-1">目标总页数 (TOTAL_PAGES)</label>
+                  <input type="number" name="totalPages" value={config.totalPages} onChange={handleConfigChange} disabled={status === 'running'} className="w-full border border-slate-200 rounded-md px-3 py-2 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition disabled:opacity-50" />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-slate-500 mb-1">每页条数</label>
+                    <input type="number" name="pageSize" value={config.pageSize} onChange={handleConfigChange} disabled={status === 'running'} className="w-full border border-slate-200 rounded-md px-3 py-2 bg-slate-50 outline-none disabled:opacity-50" />
+                  </div>
+                  <div>
+                    <label className="block text-slate-500 mb-1">请求延时(秒)</label>
+                    <input type="number" name="delay" value={config.delay} onChange={handleConfigChange} disabled={status === 'running'} className="w-full border border-slate-200 rounded-md px-3 py-2 bg-slate-50 outline-none disabled:opacity-50" />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-slate-500 mb-1">会话 Cookie (JSESSIONID)</label>
+                  <input type="text" name="cookie" value={config.cookie} onChange={handleConfigChange} placeholder="JSESSIONID=..." className="w-full border border-slate-200 rounded-md px-3 py-2 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none font-mono text-xs" />
+                </div>
+                <div className="grid grid-cols-2 gap-4 pt-2">
+                  <div className="flex items-center gap-2 text-slate-600 bg-slate-50 p-2 rounded border border-slate-100">
+                    <FileSpreadsheet size={16} className="text-green-600"/> {config.csvFile}
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-600 bg-slate-50 p-2 rounded border border-slate-100">
+                    <FileJson size={16} className="text-amber-500"/> {config.checkpointFile}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Right Column: Terminal & Table */}
+          <div className="lg:col-span-2 space-y-6 flex flex-col">
+            
+            {/* Terminal Logs */}
+            <div className="bg-[#1e1e1e] rounded-xl shadow-sm border border-slate-800 flex flex-col h-64 overflow-hidden">
+              <div className="bg-[#2d2d2d] px-4 py-2 flex justify-between items-center border-b border-black/50">
+                <span className="text-slate-300 text-xs font-mono flex items-center gap-2">
+                  <Terminal size={14}/> python code.py
+                </span>
+                <span className="text-[10px] text-slate-500 bg-black/30 px-2 py-1 rounded">UTF-8</span>
+              </div>
+              <div className="p-4 font-mono text-sm overflow-y-auto flex-1 custom-scrollbar">
+                {logs.map((log, idx) => (
+                  <div key={idx} className="mb-1 leading-relaxed">
+                    <span className="text-slate-500 mr-3">[{log.time}]</span>
+                    <span className={
+                      log.type === 'error' ? 'text-rose-400' : 
+                      log.type === 'warning' ? 'text-amber-300' : 
+                      log.type === 'success' ? 'text-emerald-400' : 'text-slate-300'
+                    }>
+                      {log.msg}
+                    </span>
+                  </div>
+                ))}
+                <div ref={logsEndRef} />
+              </div>
+            </div>
+
+            {/* Data Preview */}
+            <div className="bg-white rounded-xl shadow-sm border border-slate-100 flex-1 flex flex-col overflow-hidden">
+              <div className="px-6 py-4 border-b border-slate-100 flex justify-between items-center">
+                <h2 className="text-lg font-semibold flex items-center gap-2">
+                  <Database size={20} className="text-emerald-600"/> 实时数据预览
+                </h2>
+                <span className="text-xs text-slate-500">仅显示最近 100 条</span>
+              </div>
+              <div className="overflow-x-auto flex-1 bg-slate-50/50">
+                <table className="w-full text-left text-sm text-slate-600">
+                  <thead className="bg-slate-100 text-slate-700 text-xs uppercase font-semibold sticky top-0">
+                    <tr>
+                      <th className="px-4 py-3">ID</th>
+                      <th className="px-4 py-3">企业名称</th>
+                      <th className="px-4 py-3">信用代码</th>
+                      <th className="px-4 py-3">省市</th>
+                      <th className="px-4 py-3">年份</th>
+                      <th className="px-4 py-3">状态</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 bg-white">
+                    {previewData.length > 0 ? previewData.map((row, idx) => (
+                      <tr key={idx} className="hover:bg-slate-50 transition">
+                        <td className="px-4 py-3 font-mono text-xs">{row.id}</td>
+                        <td className="px-4 py-3 font-medium text-slate-800">{row.name}</td>
+                        <td className="px-4 py-3 font-mono text-xs">{row.creditCode}</td>
+                        <td className="px-4 py-3">{row.province}-{row.city}</td>
+                        <td className="px-4 py-3">{row.year}</td>
+                        <td className="px-4 py-3">
+                          <span className="bg-green-100 text-green-700 px-2 py-0.5 rounded text-xs">
+                            {row.status}
+                          </span>
+                        </td>
+                      </tr>
+                    )) : (
+                      <tr>
+                        <td colSpan="6" className="px-4 py-12 text-center text-slate-400 flex-col items-center justify-center">
+                          <Database size={32} className="mx-auto mb-2 opacity-50" />
+                          <p>暂无数据，请启动爬虫</p>
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+      <style dangerouslySetInnerHTML={{__html: `
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #64748b; }
+      `}} />
+    </div>
+  );
+}

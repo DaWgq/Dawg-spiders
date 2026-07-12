@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Node
+node_modules/
+package-lock.json
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# CLI tool config
+.antigravitycli/
+
+# Cache / AI config
+.qwen/
+.claude/
+.ruff_cache/
+
+# Generated data / DB
+crawler.db
+data_structure
+data.csv
+
+# Other junk
+nul
