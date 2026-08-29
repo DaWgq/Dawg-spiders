@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书管理系统 (Library Management System Prototype)</title>
+    <!-- 引入 Tailwind CSS 进行快速样式开发 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Phosphor Icons 作为图标库 -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- 配置 Tailwind 主题颜色 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6', // blue-500
+                        secondary: '#64748b', // slate-500
+                        danger: '#ef4444', // red-500
+                        success: '#10b981', // emerald-500
+                        background: '#f8fafc', // slate-50
+                        surface: '#ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.background');
+        }
+
+        /* 隐藏不激活的视图 */
+        .view-section {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 侧边栏菜单项样式 */
+        .nav-item {
+            transition: all 0.2s;
+        }
+        .nav-item:hover, .nav-item.active {
+            background-color: #eff6ff; /* blue-50 */
+            color: #2563eb; /* blue-600 */
+            border-right: 4px solid #2563eb;
+        }
+        .nav-item.active i {
+            color: #2563eb;
+        }
+
+        /* 模态框样式 */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 50;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-overlay.active {
+            display: flex;
+            animation: fadeInModal 0.2s ease-out;
+        }
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .modal-content {
+            background: white;
+            border-radius: 0.75rem;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: scale(0.95);
+            transition: transform 0.2s ease-out;
+        }
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="h-screen flex overflow-hidden text-slate-800">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col hidden md:flex z-20 shadow-sm">
+        <div class="h-16 flex items-center px-6 border-b border-slate-100">
+            <i class="ph-fill ph-books text-primary text-2xl mr-3"></i>
+            <span class="text-xl font-bold text-slate-800 tracking-tight">LibraryPro</span>
+        </div>
+
+        <div class="flex-1 overflow-y-auto py-4">
+            <nav class="space-y-1">
+                <a href="#" onclick="switchView('dashboard')" id="nav-dashboard" class="nav-item active flex items-center px-6 py-3 text-slate-600">
+                    <i class="ph ph-squares-four text-xl mr-3 text-slate-400 transition-colors"></i>
+                    <span class="font-medium">仪表盘 (Dashboard)</span>
+                </a>
+                <a href="#" onclick="switchView('books')" id="nav-books" class="nav-item flex items-center px-6 py-3 text-slate-600">
+                    <i class="ph ph-book-open text-xl mr-3 text-slate-400 transition-colors"></i>
+                    <span class="font-medium">图书管理 (Books)</span>
+                </a>
+                <a href="#" onclick="switchView('users')" id="nav-users" class="nav-item flex items-center px-6 py-3 text-slate-600">
+                    <i class="ph ph-users text-xl mr-3 text-slate-400 transition-colors"></i>
+                    <span class="font-medium">读者管理 (Readers)</span>
+                </a>
+                <a href="#" onclick="switchView('circulation')" id="nav-circulation" class="nav-item flex items-center px-6 py-3 text-slate-600">
+                    <i class="ph ph-arrows-left-right text-xl mr-3 text-slate-400 transition-colors"></i>
+                    <span class="font-medium">借阅流通 (Circulation)</span>
+                </a>
+
+                <div class="pt-6 pb-2 px-6">
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">System</p>
+                </div>
+                <a href="#" class="nav-item flex items-center px-6 py-3 text-slate-600 opacity-50 cursor-not-allowed" title="原型未实现此功能">
+                    <i class="ph ph-chart-bar text-xl mr-3 text-slate-400"></i>
+                    <span class="font-medium">统计报表 (Reports)</span>
+                </a>
+                <a href="#" class="nav-item flex items-center px-6 py-3 text-slate-600 opacity-50 cursor-not-allowed" title="原型未实现此功能">
+                    <i class="ph ph-gear text-xl mr-3 text-slate-400"></i>
+                    <span class="font-medium">系统设置 (Settings)</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="border-t border-slate-200 p-4">
+            <div class="flex items-center">
+                <img src="https://placehold.co/40x40/3b82f6/ffffff?text=Admin" alt="Admin User" class="w-10 h-10 rounded-full border-2 border-white shadow-sm">
+                <div class="ml-3">
+                    <p class="text-sm font-medium text-slate-700">Admin User</p>
+                    <p class="text-xs text-slate-500">Super Administrator</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-full overflow-hidden relative">
+        <!-- Header (Mobile Trigger & Search) -->
+        <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-6 lg:px-8 shadow-sm z-10">
+            <div class="flex items-center flex-1">
+                <button class="md:hidden p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+
+                <!-- Global Search -->
+                <div class="hidden sm:flex ml-4 w-full max-w-md relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="ph ph-magnifying-glass text-slate-400"></i>
+                    </div>
+                    <input type="text" class="block w-full pl-10 pr-3 py-2 border border-slate-200 rounded-lg leading-5 bg-slate-50 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm transition-colors" placeholder="全局搜索：书名、作者、ISBN 或读者ID...">
+                </div>
+            </div>
+
+            <div class="ml-4 flex items-center space-x-4">
+                <button class="p-2 text-slate-400 hover:text-slate-500 relative">
+                    <i class="ph ph-bell text-xl"></i>
+                    <span class="absolute top-1.5 right-1.5 block h-2 w-2 rounded-full bg-danger ring-2 ring-white"></span>
+                </button>
+                <button class="p-2 text-slate-400 hover:text-slate-500">
+                    <i class="ph ph-question text-xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- View Container -->
+        <div class="flex-1 overflow-auto p-4 sm:p-6 lg:p-8 bg-slate-50">
+
+            <!-- 1. Dashboard View -->
+            <div id="view-dashboard" class="view-section active">
+                <div class="mb-6">
+                    <h1 class="text-2xl font-bold text-slate-800">仪表盘</h1>
+                    <p class="text-slate-500 text-sm mt-1">系统今日概况 (2023年10月27日)</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white overflow-hidden rounded-xl shadow-sm border border-slate-100 p-5 hover:shadow-md transition-shadow">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-blue-50 p-3 rounded-lg">
+                                <i class="ph ph-books text-primary text-2xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-slate-500 truncate">馆藏总数</dt>
+                                    <dd class="flex items-baseline">
+                                        <div class="text-2xl font-bold text-slate-900">24,592</div>
+                                        <span class="ml-2 text-sm font-medium text-success flex items-center"><i class="ph ph-trend-up mr-1"></i>+120 本月</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white overflow-hidden rounded-xl shadow-sm border border-slate-100 p-5 hover:shadow-md transition-shadow">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-emerald-50 p-3 rounded-lg">
+                                <i class="ph ph-users text-success text-2xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-slate-500 truncate">活跃读者</dt>
+                                    <dd class="flex items-baseline">
+                                        <div class="text-2xl font-bold text-slate-900">1,204</div>
+                                        <span class="ml-2 text-sm font-medium text-success flex items-center"><i class="ph ph-trend-up mr-1"></i>+15 本周</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white overflow-hidden rounded-xl shadow-sm border border-slate-100 p-5 hover:shadow-md transition-shadow">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-purple-50 p-3 rounded-lg">
+                                <i class="ph ph-arrow-circle-up right text-purple-500 text-2xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-slate-500 truncate">当前借出</dt>
+                                    <dd class="flex items-baseline">
+                                        <div class="text-2xl font-bold text-slate-900">3,450</div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-white overflow-hidden rounded-xl shadow-sm border border-slate-100 p-5 hover:shadow-md transition-shadow">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-red-50 p-3 rounded-lg">
+                                <i class="ph ph-warning-circle text-danger text-2xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-slate-500 truncate">逾期未还</dt>
+                                    <dd class="flex items-baseline">
+                                        <div class="text-2xl font-bold text-danger">42</div>
+                                        <span class="ml-2 text-sm font-medium text-slate-500">需催还</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities & Popular Books -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Recent Circulation -->
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100">
+                        <div class="px-6 py-5 border-b border-slate-100 flex justify-between items-center">
+                            <h3 class="text-base leading-6 font-medium text-slate-900">最新借还动态</h3>
+                            <button class="text-sm text-primary hover:text-blue-700 font-medium">查看全部</button>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <span class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-emerald-100">
+                                            <i class="ph ph-arrow-down-left text-success"></i>
+                                        </span>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <p class="text-sm font-medium text-slate-900">读者 张三 (ID: R001) 归还了图书</p>
+                                        <p class="text-sm text-slate-500">《三体》 - ISBN: 9787536692930</p>
+                                        <p class="text-xs text-slate-400 mt-1">10分钟前</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <span class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-blue-100">
+                                            <i class="ph ph-arrow-up-right text-primary"></i>
+                                        </span>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <p class="text-sm font-medium text-slate-900">读者 李四 (ID: R002) 借出了图书</p>
+                                        <p class="text-sm text-slate-500">《深入理解计算机系统》</p>
+                                        <p class="text-xs text-slate-400 mt-1">45分钟前</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <span class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-red-100">
+                                            <i class="ph ph-warning text-danger"></i>
+                                        </span>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <p class="text-sm font-medium text-slate-900">系统发出催还提醒</p>
+                                        <p class="text-sm text-slate-500">致读者 王五 (ID: R089) - 逾期3天</p>
+                                        <p class="text-xs text-slate-400 mt-1">2小时前</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Popular Books -->
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100">
+                        <div class="px-6 py-5 border-b border-slate-100 flex justify-between items-center">
+                            <h3 class="text-base leading-6 font-medium text-slate-900">本月热门借阅</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-8 bg-slate-200 rounded flex items-center justify-center text-slate-500 font-bold text-xs">1</div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-slate-900">《人类简史》</p>
+                                            <p class="text-xs text-slate-500">尤瓦尔·赫拉利</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-sm font-semibold text-primary">42次借阅</div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-8 bg-slate-200 rounded flex items-center justify-center text-slate-500 font-bold text-xs">2</div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-slate-900">《百年孤独》</p>
+                                            <p class="text-xs text-slate-500">加西亚·马尔克斯</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-sm font-semibold text-primary">38次借阅</div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-8 bg-slate-200 rounded flex items-center justify-center text-slate-500 font-bold text-xs">3</div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-slate-900">《设计模式》</p>
+                                            <p class="text-xs text-slate-500">GoF</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-sm font-semibold text-primary">35次借阅</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Books Management View -->
+            <div id="view-books" class="view-section h-full flex flex-col">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+                    <div>
+                        <h1 class="text-2xl font-bold text-slate-800">图书管理</h1>
+                        <p class="text-slate-500 text-sm mt-1">管理馆藏图书信息</p>
+                    </div>
+                    <button onclick="openModal('addBookModal')" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-lg text-white bg-primary hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
+                        <i class="ph ph-plus mr-2"></i> 新增图书
+                    </button>
+                </div>
+
+                <!-- Book Filters Toolbar -->
+                <div class="bg-white p-4 rounded-t-xl border border-slate-200 border-b-0 flex flex-wrap gap-4 items-center">
+                    <div class="flex-1 min-w-[200px] relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="ph ph-magnifying-glass text-slate-400"></i>
+                        </div>
+                        <input type="text" id="bookSearchInput" onkeyup="renderBookTable()" class="block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-lg leading-5 bg-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm" placeholder="搜索书名、作者、ISBN...">
+                    </div>
+                    <select class="block pl-3 pr-10 py-2 text-base border border-slate-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-lg">
+                        <option>所有分类</option>
+                        <option>文学小说</option>
+                        <option>计算机/IT</option>
+                        <option>历史传记</option>
+                        <option>科学技术</option>
+                    </select>
+                    <select class="block pl-3 pr-10 py-2 text-base border border-slate-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-lg">
+                        <option>所有状态</option>
+                        <option>在馆可借</option>
+                        <option>全部借出</option>
+                    </select>
+                </div>
+
+                <!-- Books Table -->
+                <div class="bg-white border border-slate-200 rounded-b-xl shadow-sm overflow-hidden flex-1 flex flex-col">
+                    <div class="overflow-x-auto flex-1">
+                        <table class="min-w-full divide-y divide-slate-200">
+                            <thead class="bg-slate-50 sticky top-0 z-10">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">ISBN</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">书名信息</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">分类</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">库存 (在馆/总数)</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">状态</th>
+                                    <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-slate-500 uppercase tracking-wider">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="booksTableBody" class="bg-white divide-y divide-slate-200">
+                                <!-- Table rows will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination (Static for prototype) -->
+                    <div class="bg-white px-4 py-3 border-t border-slate-200 flex items-center justify-between sm:px-6">
+                        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                            <div>
+                                <p class="text-sm text-slate-700">
+                                    显示第 <span class="font-medium">1</span> 到 <span class="font-medium">5</span> 条，共 <span class="font-medium">24,592</span> 条
+                                </p>
+                            </div>
+                            <div>
+                                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-slate-300 bg-white text-sm font-medium text-slate-500 hover:bg-slate-50">
+                                        <span class="sr-only">Previous</span>
+                                        <i class="ph ph-caret-left"></i>
+                                    </a>
+                                    <a href="#" aria-current="page" class="z-10 bg-blue-50 border-primary text-primary relative inline-flex items-center px-4 py-2 border text-sm font-medium"> 1 </a>
+                                    <a href="#" class="bg-white border-slate-300 text-slate-500 hover:bg-slate-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"> 2 </a>
+                                    <a href="#" class="bg-white border-slate-300 text-slate-500 hover:bg-slate-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"> 3 </a>
+                                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-slate-300 bg-white text-sm font-medium text-slate-500 hover:bg-slate-50">
+                                        <span class="sr-only">Next</span>
+                                        <i class="ph ph-caret-right"></i>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Users View (Placeholder for prototype) -->
+            <div id="view-users" class="view-section">
+                <div class="mb-6">
+                    <h1 class="text-2xl font-bold text-slate-800">读者管理</h1>
+                    <p class="text-slate-500 text-sm mt-1">管理借阅证及读者信息</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-8 text-center">
+                    <i class="ph ph-users text-6xl text-slate-300 mb-4 inline-block"></i>
+                    <h3 class="text-lg font-medium text-slate-900">读者列表模块</h3>
+                    <p class="text-slate-500 mt-2">此页面结构类似于“图书管理”，提供读者的增删改查、借阅历史查看、状态冻结等功能。（原型仅作结构示意）</p>
+                    <button class="mt-4 px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors">添加新读者原型演示</button>
+                </div>
+            </div>
+
+            <!-- 4. Circulation View (Placeholder for prototype) -->
+            <div id="view-circulation" class="view-section">
+                <div class="mb-6">
+                    <h1 class="text-2xl font-bold text-slate-800">借阅流通台</h1>
+                    <p class="text-slate-500 text-sm mt-1">处理借书、还书、续借等日常操作</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Borrow Panel -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-6">
+                        <div class="flex items-center border-b border-slate-100 pb-4 mb-4">
+                            <i class="ph ph-arrow-up-right text-2xl text-primary mr-3"></i>
+                            <h2 class="text-lg font-semibold text-slate-800">借书办理 (Borrow)</h2>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">读者条码 / ID</label>
+                                <div class="flex">
+                                    <input type="text" class="flex-1 focus:ring-primary focus:border-primary block w-full rounded-l-md sm:text-sm border-slate-300 border p-2" placeholder="扫描或输入读者ID">
+                                    <button class="bg-slate-100 border border-l-0 border-slate-300 rounded-r-md px-4 text-slate-600 hover:bg-slate-200">读取</button>
+                                </div>
+                            </div>
+                            <div class="opacity-50 pointer-events-none">
+                                <label class="block text-sm font-medium text-slate-700 mb-1">图书条码 / ISBN</label>
+                                <input type="text" class="focus:ring-primary focus:border-primary block w-full rounded-md sm:text-sm border-slate-300 border p-2" placeholder="先读取读者信息，再扫描图书">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Return Panel -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-6">
+                        <div class="flex items-center border-b border-slate-100 pb-4 mb-4">
+                            <i class="ph ph-arrow-down-left text-2xl text-success mr-3"></i>
+                            <h2 class="text-lg font-semibold text-slate-800">还书办理 (Return)</h2>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">图书条码 / ISBN</label>
+                                <div class="flex">
+                                    <input type="text" class="flex-1 focus:ring-success focus:border-success block w-full rounded-l-md sm:text-sm border-slate-300 border p-2" placeholder="扫描或输入图书条码进行归还">
+                                    <button class="bg-success text-white border border-success rounded-r-md px-4 hover:bg-emerald-600">确认还书</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <!-- Add Book Modal -->
+    <div id="addBookModal" class="modal-overlay">
+        <div class="modal-content flex flex-col max-h-[90vh]">
+            <div class="px-6 py-4 border-b border-slate-200 flex justify-between items-center bg-slate-50 rounded-t-xl">
+                <h3 class="text-lg font-medium text-slate-900" id="modalTitle">新增图书信息</h3>
+                <button onclick="closeModal('addBookModal')" class="text-slate-400 hover:text-slate-500 focus:outline-none">
+                    <i class="ph ph-x text-xl"></i>
+                </button>
+            </div>
+
+            <div class="px-6 py-4 overflow-y-auto flex-1">
+                <form id="bookForm" class="space-y-4">
+                    <input type="hidden" id="bookId">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="col-span-2 sm:col-span-1">
+                            <label for="isbn" class="block text-sm font-medium text-slate-700">ISBN <span class="text-danger">*</span></label>
+                            <input type="text" name="isbn" id="isbn" required class="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-slate-300 border rounded-md p-2" placeholder="例如: 9787111544937">
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <label for="category" class="block text-sm font-medium text-slate-700">分类</label>
+                            <select id="category" name="category" class="mt-1 block w-full py-2 px-3 border border-slate-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm">
+                                <option value="计算机/IT">计算机/IT</option>
+                                <option value="文学小说">文学小说</option>
+                                <option value="历史传记">历史传记</option>
+                                <option value="科学技术">科学技术</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-slate-700">书名 <span class="text-danger">*</span></label>
+                        <input type="text" name="title" id="title" required class="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-slate-300 border rounded-md p-2">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="col-span-2 sm:col-span-1">
+                            <label for="author" class="block text-sm font-medium text-slate-700">作者 <span class="text-danger">*</span></label>
+                            <input type="text" name="author" id="author" required class="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-slate-300 border rounded-md p-2">
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <label for="publisher" class="block text-sm font-medium text-slate-700">出版社</label>
+                            <input type="text" name="publisher" id="publisher" class="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-slate-300 border rounded-md p-2">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="col-span-2 sm:col-span-1">
+                            <label for="totalCopies" class="block text-sm font-medium text-slate-700">总馆藏数量 <span class="text-danger">*</span></label>
+                            <input type="number" min="1" name="totalCopies" id="totalCopies" required class="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-slate-300 border rounded-md p-2">
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <label for="location" class="block text-sm font-medium text-slate-700">馆藏位置 (排架号)</label>
+                            <input type="text" name="location" id="location" class="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-slate-300 border rounded-md p-2" placeholder="如: A区-03架-02层">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="px-6 py-4 border-t border-slate-200 bg-slate-50 flex justify-end space-x-3 rounded-b-xl">
+                <button type="button" onclick="closeModal('addBookModal')" class="bg-white py-2 px-4 border border-slate-300 rounded-md shadow-sm text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    取消
+                </button>
+                <button type="button" onclick="saveBook()" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    保存
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 模拟数据 (Mock Data)
+        let mockBooks = [
+            { id: 1, isbn: '9787111544937', title: '深入理解计算机系统 (原书第3版)', author: 'Randal E.Bryant', publisher: '机械工业出版社', category: '计算机/IT', total: 5, available: 2 },
+            { id: 2, isbn: '9787115428028', title: 'Python编程：从入门到实践', author: 'Eric Matthes', publisher: '人民邮电出版社', category: '计算机/IT', total: 10, available: 10 },
+            { id: 3, isbn: '9787536692930', title: '三体 (全三册)', author: '刘慈欣', publisher: '重庆出版社', category: '文学小说', total: 8, available: 0 },
+            { id: 4, isbn: '9787508647357', title: '人类简史：从动物到上帝', author: '尤瓦尔·赫拉利', publisher: '中信出版社', category: '历史传记', total: 12, available: 5 },
+            { id: 5, isbn: '9787208061644', title: '追风筝的人', author: '卡勒德·胡赛尼', publisher: '上海人民出版社', category: '文学小说', total: 6, available: 1 },
+        ];
+
+        // 导航切换逻辑
+        function switchView(viewId) {
+            // 隐藏所有视图
+            document.querySelectorAll('.view-section').forEach(el => {
+                el.classList.remove('active');
+            });
+            // 移除所有导航高亮
+            document.querySelectorAll('.nav-item').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // 显示选中视图
+            document.getElementById(`view-${viewId}`).classList.add('active');
+            // 高亮当前导航
+            document.getElementById(`nav-${viewId}`).classList.add('active');
+
+            // 特殊处理：如果是图书视图，渲染表格
+            if (viewId === 'books') {
+                renderBookTable();
+            }
+        }
+
+        // 模态框控制
+        function openModal(modalId, bookData = null) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('active');
+
+            if (modalId === 'addBookModal') {
+                const form = document.getElementById('bookForm');
+                form.reset();
+                document.getElementById('modalTitle').innerText = bookData ? '编辑图书信息' : '新增图书信息';
+
+                if (bookData) {
+                    document.getElementById('bookId').value = bookData.id;
+                    document.getElementById('isbn').value = bookData.isbn;
+                    document.getElementById('title').value = bookData.title;
+                    document.getElementById('author').value = bookData.author;
+                    document.getElementById('publisher').value = bookData.publisher || '';
+                    document.getElementById('category').value = bookData.category;
+                    document.getElementById('totalCopies').value = bookData.total;
+                } else {
+                    document.getElementById('bookId').value = '';
+                }
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // 渲染图书表格
+        function renderBookTable() {
+            const tbody = document.getElementById('booksTableBody');
+            const searchInput = document.getElementById('bookSearchInput').value.toLowerCase();
+
+            tbody.innerHTML = ''; // 清空现有内容
+
+            const filteredBooks = mockBooks.filter(book =>
+                book.title.toLowerCase().includes(searchInput) ||
+                book.author.toLowerCase().includes(searchInput) ||
+                book.isbn.includes(searchInput)
+            );
+
+            if (filteredBooks.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-slate-500">未找到匹配的图书记录</td></tr>`;
+                return;
+            }
+
+            filteredBooks.forEach(book => {
+                // 计算状态样式
+                let statusBadge = '';
+                if (book.available === 0) {
+                    statusBadge = `<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">全部借出</span>`;
+                } else if (book.available < book.total * 0.3) {
+                    statusBadge = `<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">库存紧张</span>`;
+                } else {
+                    statusBadge = `<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">在馆可借</span>`;
+                }
+
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-50 transition-colors';
+                tr.innerHTML = `
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">${book.isbn}</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-10 w-8 bg-slate-200 rounded flex items-center justify-center">
+                                <i class="ph ph-book text-slate-400"></i>
+                            </div>
+                            <div class="ml-4">
+                                <div class="text-sm font-medium text-slate-900 truncate max-w-[200px]" title="${book.title}">${book.title}</div>
+                                <div class="text-sm text-slate-500">${book.author} | ${book.publisher || '-'}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-800 border border-slate-200">
+                            ${book.category}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">
+                        <span class="font-medium ${book.available > 0 ? 'text-primary' : 'text-slate-400'}">${book.available}</span> / ${book.total}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        ${statusBadge}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <button onclick='editBook(${book.id})' class="text-primary hover:text-blue-900 mr-3" title="编辑"><i class="ph ph-pencil-simple text-lg"></i></button>
+                        <button onclick='deleteBook(${book.id})' class="text-danger hover:text-red-900" title="删除"><i class="ph ph-trash text-lg"></i></button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // 保存/新增图书逻辑
+        function saveBook() {
+            // 获取表单数据
+            const id = document.getElementById('bookId').value;
+            const isbn = document.getElementById('isbn').value;
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const publisher = document.getElementById('publisher').value;
+            const category = document.getElementById('category').value;
+            const totalCopies = parseInt(document.getElementById('totalCopies').value);
+
+            // 简单前端验证
+            if (!isbn || !title || !author || !totalCopies) {
+                // 原型中用自定义UI替代alert（此处简化，实际应显示错误提示UI）
+                console.error("请填写必填项");
+
+                // 简单的防抖动视觉反馈代替alert
+                const saveBtn = document.querySelector('#addBookModal button.bg-primary');
+                const originText = saveBtn.innerText;
+                saveBtn.innerText = "请检查必填项";
+                saveBtn.classList.add('bg-danger');
+                saveBtn.classList.remove('bg-primary');
+                setTimeout(() => {
+                    saveBtn.innerText = originText;
+                    saveBtn.classList.remove('bg-danger');
+                    saveBtn.classList.add('bg-primary');
+                }, 2000);
+                return;
+            }
+
+            if (id) {
+                // 编辑模式
+                const index = mockBooks.findIndex(b => b.id == id);
+                if (index !== -1) {
+                    // 假设可用数量同比例增加/减少 (简化处理)
+                    let diff = totalCopies - mockBooks[index].total;
+                    let newAvailable = Math.max(0, mockBooks[index].available + diff);
+
+                    mockBooks[index] = {
+                        ...mockBooks[index],
+                        isbn, title, author, publisher, category,
+                        total: totalCopies,
+                        available: newAvailable
+                    };
+                }
+            } else {
+                // 新增模式
+                const newBook = {
+                    id: Date.now(), // 伪造ID
+                    isbn, title, author, publisher, category,
+                    total: totalCopies,
+                    available: totalCopies // 新书默认全部可用
+                };
+                mockBooks.unshift(newBook); // 添加到顶部
+            }
+
+            closeModal('addBookModal');
+            renderBookTable();
+
+            // 如果在仪表盘页，为了数据一致性也可以考虑刷新，但在原型中主要展示交互
+        }
+
+        // 编辑图书
+        function editBook(id) {
+            const book = mockBooks.find(b => b.id === id);
+            if (book) {
+                openModal('addBookModal', book);
+            }
+        }
+
+        // 删除图书
+        function deleteBook(id) {
+            // 原型中用自定义确认框逻辑代替 confirm
+            // 这里为了保持单文件简洁，直接模拟删除并在控制台输出
+            console.log(`试图删除图书 ID: ${id}`);
+
+            // 简单实现直接删除效果
+            mockBooks = mockBooks.filter(b => b.id !== id);
+            renderBookTable();
+
+            /*
+             * 在真实的生产级应用中，这里应该触发一个自定义的对话框，例如：
+             * showConfirmDialog("确认删除", "删除后无法恢复，确定吗？", () => {
+             *      // 执行删除
+             * });
+             */
+        }
+
+        // 初始化
+        window.onload = () => {
+            // 默认渲染图书列表，虽然初始视图是dashboard，但预先加载数据
+            renderBookTable();
+        };
+
+    </script>
+</body>
+</html>
