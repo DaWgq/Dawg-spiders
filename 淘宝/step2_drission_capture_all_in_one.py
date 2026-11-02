@@ -11,12 +11,12 @@ INPUT_CSV = "taobao_target_queue.csv"
 OUTPUT_DIR = "captured_html"          # HTML 保存文件夹
 INDEX_CSV = "index_table.csv"         # 实时更新的 CSV 索引表
 INDEX_XLSX = "index_table.xlsx"       # 实时更新的 Excel 索引表
-TARGET_COUNT = 300                    # 目标有效 HTML 采集总数
-ROLLBACK_START_NUM = 103               # 强制从第 n 个起清理并重爬（保留前 n 个）
+TARGET_COUNT = 300                    # 目标采集总数（如果淘宝只采150个、剩下150个采京东，这里改成 150 即可）
+ROLLBACK_START_NUM = 999              # 设为 999 表示保留目前已爬好的所有正常文件；若仍想强制删掉61及之后的重来，改为 61
 
 EXTRA_EXCLUDE_WORDS = ["骨传导", "挂耳式", "耳挂式", "颈挂", "挂脖", "入耳式", "半入耳", "耳夹式"]
 
-# 黑名单：所有属于风控/验证码/异常降级的特征词[cite: 3, 4, 5]
+# 黑名单：风控/验证码/软拦截特征词[cite: 3, 4, 5, 6]
 BAD_PAGE_MARKERS = [
     "验证码拦截",
     "安全验证",
@@ -31,21 +31,14 @@ BAD_PAGE_MARKERS = [
     "sec.taobao.com",
 ]
 
-# 白名单：正常淘宝/天猫商品详情页必须至少包含其中一个核心交易词
+# 白名单：正常商品详情页核心词
 VALID_ITEM_MARKERS = [
-    "加入购物车",
-    "立即购买",
-    "领券购买",
-    "宝贝详情",
-    "商品详情",
-    "累计评价",
-    "图文详情",
+    "加入购物车", "立即购买", "领券购买", "宝贝详情", "商品详情", "累计评价", "图文详情"
 ]
 
-# 注入浏览器的 JS：固化懒加载图 + 内联CSS + 清除预发环境拦截遮罩 + 移除所有<script>[cite: 1]
+# 注入浏览器的 JS：固化懒加载图 + 内联CSS + 移除<script>防离线弹窗[cite: 1]
 INLINE_DOM_JS = """
 async () => {
-    // 1. 固化所有懒加载图片的真实地址并限制最大宽度
     document.querySelectorAll('img').forEach(img => {
         const realSrc = img.getAttribute('data-src') || img.getAttribute('data-ks-lazyload') || img.src;
         if (realSrc && !realSrc.startsWith('data:')) {
@@ -56,7 +49,6 @@ async () => {
         img.style.maxWidth = '100%';
     });
 
-    // 2. 将外部 CSS 样式表内联为 <style> 标签
     const links = Array.from(document.querySelectorAll('link[rel="stylesheet"]'));
     for (const link of links) {
         try {
@@ -76,13 +68,11 @@ async () => {
         }
     }
 
-    // 3. 补全所有以 // 开头的相对协议链接
     document.querySelectorAll('[src^="//"], [href^="//"]').forEach(el => {
         if (el.src && el.getAttribute('src').startsWith('//')) el.src = 'https:' + el.getAttribute('src');
         if (el.href && el.getAttribute('href').startsWith('//')) el.href = 'https:' + el.getAttribute('href');
     });
 
-    // 4. 清除“外网访问预发环境拦截 / 一键加白”弹窗及遮罩层[cite: 1]
     document.querySelectorAll('div, section, iframe').forEach(el => {
         const text = el.innerText || '';
         if (text.includes('外网访问预发环境拦截') || text.includes('一键加白')) {
@@ -101,8 +91,6 @@ async () => {
 
     document.body.style.overflow = 'auto';
     document.documentElement.style.overflow = 'auto';
-
-    // 5. 移除所有 <script> 和 iframe，防止离线双击打开 HTML 时报错弹窗[cite: 1]
     document.querySelectorAll('script, link[as="script"], link[rel="preload"], iframe').forEach(el => el.remove());
 
     return "<!DOCTYPE html>\\n" + document.documentElement.outerHTML;
@@ -110,31 +98,20 @@ async () => {
 """
 
 
-# ================= 2. 强制回滚至第 60 个，删除 61 及之后的全部脏数据 =================
-def rollback_and_clean(start_num: int = 61):
-    """
-    1. 强制删除 item_061.html 及之后的所有 HTML 文件；
-    2. 同时检查前 60 个文件里有没有漏网的验证码页，确保前 60 个 100% 纯净；
-    3. 截断并同步更新 index_table.csv 和 index_table.xlsx。
-    """
+# ================= 2. 启动自检与脏文件清理 =================
+def rollback_and_clean(start_num: int = 999):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-    # 第一步：直接物理删除文件夹里编号 >= 61 的所有 html 文件
     deleted_files = []
+
     for fname in os.listdir(OUTPUT_DIR):
         match = re.match(r"item_(\d+)\.(html|mhtml)$", fname)
         if match and int(match.group(1)) >= start_num:
-            fpath = os.path.join(OUTPUT_DIR, fname)
-            os.remove(fpath)
+            os.remove(os.path.join(OUTPUT_DIR, fname))
             deleted_files.append(fname)
-
-    if deleted_files:
-        print(f"🗑️ 已强制删除第 {start_num} 号及之后的脏 HTML 文件共 {len(deleted_files)} 个（{deleted_files[0]} ~ {deleted_files[-1]}）。")
 
     if not os.path.exists(INDEX_CSV):
         return set(), []
 
-    # 第二步：截取索引表前 60 条，并二次校验这前 60 个文件是否 100% 正常
     df_idx = pd.read_csv(INDEX_CSV)
     valid_records = []
 
@@ -151,15 +128,13 @@ def rollback_and_clean(start_num: int = 61):
         with open(fpath, "r", encoding="utf-8", errors="ignore") as f:
             content = f.read()
 
-        # 如果前 60 个里面也有残留验证码页，一并剔除
-        if any(m in content for m in BAD_PAGE_MARKERS):
-            print(f"⚠️ 发现前 60 个中 {fname} 也含有异常/验证码特征，已一并删除！")
+        if any(m in content for m in BAD_PAGE_MARKERS) or len(content) < 25000:
+            print(f"🗑️ 自动剔除含验证码/访问异常的坏文件: {fname}")
             os.remove(fpath)
             continue
 
         valid_records.append(row.to_dict())
 
-    # 重新对齐编号（正常情况下就是 item_001.html ~ item_060.html）
     for i, rec in enumerate(valid_records, 1):
         expected_fname = f"item_{i:03d}.html"
         old_path = os.path.join(OUTPUT_DIR, rec["html_filename"])
@@ -176,33 +151,45 @@ def rollback_and_clean(start_num: int = 61):
         os.remove(INDEX_CSV)
 
     captured_ids = {str(r["item_id"]) for r in valid_records}
-    print(f"✅ 索引表回滚完毕！当前保留有效存量: {len(valid_records)} 条，接下来将严格从 item_{len(valid_records)+1:03d}.html 重新开始爬！")
+    print(f"✅ 自检完毕！当前保留 100% 正常文件: {len(valid_records)} 个，将从 item_{len(valid_records)+1:03d}.html 继续！")
     return captured_ids, valid_records
 
 
-# ================= 3. 浏览器导航与【正反双重死锁】验证码拦截 =================
-def navigate_with_referer(page: ChromiumPage, target_url: str):
-    if "taobao.com" not in page.url and "tmall.com" not in page.url:
+# ================= 3. 拟人化导航、真鼠标轨迹与风控死锁拦截 =================
+def open_item_from_search_mother_tab(page: ChromiumPage, raw_url: str, item_idx: int):
+    """
+    模拟真人行为：
+    保持主标签页始终在 s.taobao.com 搜索列表页，每次从中点击带随机 spm 的链接打开新标签页，
+    彻底消除『详情页跳详情页』的爬虫轨迹！
+    """
+    if "s.taobao.com" not in page.url:
         page.get("https://s.taobao.com/search?q=%E5%A4%B4%E6%88%B4%E5%BC%8F%E8%80%B3%E6%9C%BA")
-        time.sleep(3)
+        time.sleep(random.uniform(3.0, 5.0))
 
-    if "spm=" not in target_url:
-        sep = "&" if "?" in target_url else "?"
-        target_url = f"{target_url}{sep}spm=a21bo.jianhua.201876.d1"
+    # 在搜索母页随便滚一下鼠标，制造母页活跃痕迹
+    page.scroll.down(random.randint(150, 450))
+    time.sleep(random.uniform(0.6, 1.5))
 
-    js_jump = f"""
-    let a = document.getElementById('__sim_click_link');
+    # 构造高度拟真的动态 spm 参数（每次序号不同）
+    rand_pos = (item_idx % 48) + 1
+    rand_spm = f"a21bo.jianhua.201876.d{rand_pos}.{random.randint(1000,9999)}ac"
+    sep = "&" if "?" in raw_url else "?"
+    target_url = f"{raw_url}{sep}spm={rand_spm}"
+
+    # 在当前标签页打开（或通过链接跳转），抓完后会退回搜索页
+    js_click = f"""
+    let a = document.getElementById('__human_link');
     if (!a) {{
         a = document.createElement('a');
-        a.id = '__sim_click_link';
+        a.id = '__human_link';
         a.rel = 'opener';
         document.body.appendChild(a);
     }}
     a.href = "{target_url}";
     a.click();
     """
-    page.run_js(js_jump)
-    time.sleep(2.5)
+    page.run_js(js_click)
+    time.sleep(random.uniform(2.8, 4.5))
     page.wait.doc_loaded(timeout=15)
 
 
@@ -216,12 +203,7 @@ def is_item_invalid(page: ChromiumPage) -> bool:
 
 
 def strict_guard_check(page: ChromiumPage, target_url: str):
-    """
-    【核心死锁拦截器】
-    只要触发以下任一条件，立刻发出警报并死锁暂停脚本，绝不往下执行，也绝不保存文件：
-    1. 命中黑名单（验证码拦截、captchacappuzzle、将满足描述的所有图片、访问异常提示、punish 等）[cite: 3, 4, 5]
-    2. 未命中白名单（页面既不是下架商品，也找不到“加入购物车/立即购买/宝贝详情”等正常商品元素）
-    """
+    """正反双重死锁检测：一旦发现验证码或左下角『访问异常提示』，立即停止等待人工解除[cite: 3, 4, 5, 6]"""
     while True:
         try:
             url = page.url.lower()
@@ -232,68 +214,86 @@ def strict_guard_check(page: ChromiumPage, target_url: str):
             time.sleep(2)
             continue
 
-        # 如果是明确的商品下架页，放行交给外层 is_item_invalid 跳过
         if is_item_invalid(page):
             return
 
-        # 1. 检查是否命中黑名单（九宫格验证码 / 滑块 / 访问异常 / 登录）
-        hit_bad = [m for m in BAD_PAGE_MARKERS if (m in title or m in body_text or m in full_html[:15000] or m in url)]
+        hit_bad = [m for m in BAD_PAGE_MARKERS if (m in title or m in body_text or m in full_html[:20000] or m in url)]
         is_login_or_punish = any(k in url for k in ["login.taobao", "login.tmall", "punish", "sec.taobao", "alisec"])
-
-        # 2. 检查是否具备正常商品页的白名单特征（防止新型未知验证码漏网）
         has_valid_item_feature = any(v in body_text or v in full_html for v in VALID_ITEM_MARKERS)
 
         if hit_bad or is_login_or_punish or not has_valid_item_feature:
-            print("\a")  # 终端蜂鸣提示音
-            print("\n" + "=" * 65)
+            print("\a")
+            print("\n" + "=" * 68)
             if "访问异常提示" in body_text or "系统检测到当前访问存在异常" in body_text:
-                print("🛑 【紧急停止！触发淘宝软风控：访问异常提示】")
-                print("👉 解决步骤：")
-                print("   1. 电脑切换连接【手机个人热点】（或重启光猫换IP），或者原地休息 10~15 分钟。")
-                print("   2. 在 Chrome 浏览器里手动刷新当前商品页，确保看到正常价格和『加入购物车』。")
+                print("🛑 【死锁停止！检测到左下角『访问异常提示』软风控】[cite: 6]")
+                print("💡 为什么会越封越快：当前账号/IP 已被打上短期惩罚标记，继续硬刷会每 5 个封一次！")
+                print("👉 彻底解除办法：")
+                print("   1. 手机热点开关一次飞行模式换个新 IP（最快）或换另一个淘宝号登录；")
+                print("   2. 若不换号，请让浏览器静止休息 15~20 分钟等信誉分恢复；")
+                print("   3. 在浏览器手动刷新当前页，往下拉确认左下角不再出现『访问异常提示』且详情长图正常显示。")
             else:
-                reason = f"检测到特征 {hit_bad}" if hit_bad else f"页面缺少正常商品特征 (当前标题: {title})"
-                print(f"🚨 【紧急停止！触发验证码拦截】原因: {reason}")
-                print("👉 解决步骤：")
-                print("   1. 请立即切换到 Chrome 浏览器窗口，手动完成【九宫格拖放拼图】或【滑块验证】！")
-                print("   2. 验证通过后，确认浏览器已显示正常的耳机商品详情页。")
-            print("=" * 65)
+                reason = f"命中风控特征 {hit_bad}" if hit_bad else f"缺少商品交易按钮 (标题: {title})"
+                print(f"🚨 【死锁停止！检测到验证码/登录拦截】原因: {reason}")
+                print("👉 请在 Chrome 中手动完成九宫格/滑块验证，并确认看到正常的耳机商品详情页！")
+            print("=" * 68)
 
-            input("⏳ 处理完成后，请按【回车键】重新检测当前页面...")
+            input("⏳ 确认浏览器中商品与详情长图已 100% 恢复正常后，按【回车键】继续...")
             time.sleep(2.5)
 
-            # 如果验证完跳到了淘宝首页或空白页，自动重新打开刚才那个目标商品
             if "item.htm" not in page.url and "detail.tmall" not in page.url:
-                print("   🔄 正在重新打开当前目标商品页...")
-                navigate_with_referer(page, target_url)
+                page.get(target_url)
                 time.sleep(3.5)
-
-            # 继续下一轮 while 循环严格复检，直到真正看到正常商品页才放行！
             continue
 
-        # 通过黑名单+白名单双重检验，确认是 100% 正常的商品详情页
         break
 
 
-def smooth_scroll_to_load_details(page: ChromiumPage, target_url: str):
-    """平滑分段滚动，每滚一步都实时监测是否突然跳出验证码"""
-    print("   ⏬ 正在分段滚动加载详情大图与规格表...")
-    for step in range(1, 10):
-        strict_guard_check(page, target_url)
-        scroll_y = step * 950 + random.randint(-80, 80)
-        try:
-            page.run_js(f"window.scrollTo({{top: {scroll_y}, behavior: 'smooth'}});")
-        except Exception:
-            time.sleep(2)
-            strict_guard_check(page, target_url)
-        time.sleep(random.uniform(1.0, 1.5))
+def human_like_mouse_and_scroll(page: ChromiumPage, target_url: str):
+    """
+    【核心反规律升级】
+    摒弃死板的 window.scrollTo 循环！
+    改用 DrissionPage 原生真实鼠标移动 (actions.move) + 不规则物理滚轮 (page.scroll) + 偶尔往回倒滚，
+    向淘宝 baxia 传感器灌入大量真实的 mousemove 与 wheel 人类行为熵！
+    """
+    print("   🖱️ 正在模拟真人鼠标移动与不规则滚轮阅读详情...")
 
-    time.sleep(random.uniform(2.0, 10.0))
+    # 1. 首屏随机晃动鼠标（模拟看主图和看价格/SKU）
     try:
-        page.run_js("window.scrollTo({top: 0, behavior: 'smooth'});")
+        for _ in range(random.randint(2, 4)):
+            dx = random.randint(-180, 220)
+            dy = random.randint(-100, 180)
+            page.actions.move(dx, dy, duration=random.uniform(0.2, 0.6))
+            time.sleep(random.uniform(0.3, 0.8))
     except Exception:
         pass
-    time.sleep(random.uniform(0.8, 1.2))
+
+    # 2. 不规则次数（7 ~ 13 次）、不规则步长向下滚动，中间夹杂鼠标微移与回滚
+    total_steps = random.randint(8, 13)
+    for step in range(total_steps):
+        strict_guard_check(page, target_url)
+
+        # 随机滚动距离（有时滚得快 800px，有时仔细看滚 350px）
+        scroll_dist = random.randint(420, 880)
+        page.scroll.down(scroll_dist)
+
+        # 25% 的概率稍微往回滚一点点（人类看长图常有的回看动作）
+        if random.random() < 0.25 and step > 2:
+            time.sleep(random.uniform(0.4, 0.8))
+            page.scroll.up(random.randint(100, 260))
+
+        # 滚动间隙随机动一下鼠标，喂给淘宝前端风控传感器真实坐标流
+        if random.random() < 0.5:
+            try:
+                page.actions.move(random.randint(-80, 80), random.randint(-50, 50), duration=0.3)
+            except Exception:
+                pass
+
+        # 停顿时间服从人类对数正态感（有时0.7秒略过，有时停2.5秒细看）
+        time.sleep(random.uniform(0.8, 2.2))
+
+    # 3. 到底部后再停顿 2 秒等待最后的长图渲染，并检查一次左下角有没有刷出“访问异常提示”[cite: 6]
+    time.sleep(2.0)
+    strict_guard_check(page, target_url)
 
 
 # ================= 4. 主执行入口 =================
@@ -302,19 +302,22 @@ def main():
         print(f"❌ 找不到 `{INPUT_CSV}`，请先确认队列文件存在！")
         return
 
-    # 启动时先强制清理第 61 号及之后的脏数据，锁定从 item_061.html 开始
     captured_ids, index_records = rollback_and_clean(start_num=ROLLBACK_START_NUM)
     next_file_num = len(index_records) + 1
 
     df = pd.read_csv(INPUT_CSV)
-    print(f"📂 已加载候选队列 `{INPUT_CSV}`（共 {len(df)} 条），现在从 item_{next_file_num:03d}.html 开始采集！")
+    print(f"📂 已加载队列 `{INPUT_CSV}`（共 {len(df)} 条），将从 item_{next_file_num:03d}.html 继续采集！")
 
     co = ChromiumOptions()
     co.set_local_port(9222)
     page = ChromiumPage(co)
-    print("🌐 已连接 Chrome 浏览器！")
+    print("🌐 已连接 Chrome！先打开淘宝搜索母页预热...")
+    page.get("https://s.taobao.com/search?q=%E5%A4%B4%E6%88%B4%E5%BC%8F%E8%80%B3%E6%9C%BA")
+    time.sleep(3)
 
     session_counter = 0
+    # 动态随机设定下一次喝水休息的间隔（比如抓 14 个休一次，下次抓 21 个休一次，绝不固定 30 个！）
+    next_break_threshold = random.randint(12, 22)
 
     for idx, row in df.iterrows():
         if len(index_records) >= TARGET_COUNT:
@@ -325,7 +328,6 @@ def main():
         title = str(row["title"])
         url = str(row["item_url"])
 
-        # 跳过前 60 个已经成功保存的商品 ID
         if item_id in captured_ids:
             continue
 
@@ -338,27 +340,26 @@ def main():
         print(f"\n[{len(index_records)+1}/{TARGET_COUNT}] 正在采集 -> {file_name} | ID: {item_id} | {title[:25]}...")
 
         try:
-            navigate_with_referer(page, url)
-            time.sleep(random.uniform(3.5, 5.0))
+            # 1. 从搜索母页模拟点击进入商品页
+            open_item_from_search_mother_tab(page, url, next_file_num)
 
-            # 第一道拦截：刚打开页面时立刻检查是否跳了九宫格验证码
+            # 2. 首屏死锁检测
             strict_guard_check(page, url)
 
             if is_item_invalid(page):
-                print("   ❌ 商品已下架或失效，自动跳过并由下一条递补！")
+                print("   ❌ 商品已下架或失效，自动退回搜索页并跳过！")
+                page.back()
+                time.sleep(2)
                 continue
 
-            # 第二道拦截：滚动加载途中实时检查
-            smooth_scroll_to_load_details(page, url)
+            # 3. 真人鼠标轨迹 + 不规则滚轮阅读（触发详情长图并检测左下角『访问异常提示』[cite: 6]）
+            human_like_mouse_and_scroll(page, url)
 
-            # 第三道拦截：导出 HTML 前最后一次复核
-            strict_guard_check(page, url)
-
+            # 4. 导出完整 HTML
             full_html = page.run_js(INLINE_DOM_JS)
 
-            # 写入硬盘前终极校验：如果导出的源码里有验证码字样，或文件体积过小（<30KB），死锁重来
             if any(m in full_html for m in BAD_PAGE_MARKERS) or len(full_html) < 30000:
-                print("   🚨 导出源码校验未通过（疑似验证码页或空白页），已拦截写入！")
+                print("   🚨 导出源码中检测到『访问异常提示』或验证码特征，已拦截保存！")
                 strict_guard_check(page, url)
                 full_html = page.run_js(INLINE_DOM_JS)
 
@@ -391,14 +392,23 @@ def main():
 
             print(f"   ✅ 保存成功: {file_name} ({record['file_size_kb']} KB)")
 
-            # 每采满 30 个商品自动长休眠 90~120 秒，避免连续请求在第 60 个左右触发九宫格验证码
-            if session_counter % 30 == 0:
-                long_break = random.uniform(90.0, 125.0)
-                print(f"   ☕ 已连续采集 {session_counter} 个，自动中场休息 {long_break:.0f} 秒冷却风控...")
+            # 5. 看完商品后模拟真人按返回键退回搜索列表页，准备看下一个
+            page.back()
+
+            # 6. 非线性随机休眠（彻底打破固定周期规律）
+            if session_counter >= next_break_threshold:
+                long_break = random.uniform(75.0, 140.0)
+                print(f"   ☕ 已连续浏览 {session_counter} 个商品，模拟真人离开电脑休息 {long_break:.0f} 秒...")
                 time.sleep(long_break)
+                session_counter = 0
+                next_break_threshold = random.randint(12, 22)
             else:
-                sleep_sec = random.uniform(14.0, 22.0)
-                print(f"   💤 休眠 {sleep_sec:.1f} 秒...")
+                # 80% 概率正常停顿 15~26 秒，20% 概率模拟停下来发呆 30~45 秒
+                if random.random() < 0.8:
+                    sleep_sec = random.uniform(15.0, 26.0)
+                else:
+                    sleep_sec = random.uniform(30.0, 48.0)
+                print(f"   💤 拟人随机停顿 {sleep_sec:.1f} 秒...")
                 time.sleep(sleep_sec)
 
         except Exception as e:
