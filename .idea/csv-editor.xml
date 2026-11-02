@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\taobao_target_queue.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\一亩田\一亩田_鲜辣椒行情.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\上海证券交易所\etf_data.csv">
           <value>
             <Attribute>
@@ -46,6 +60,27 @@
           </value>
         </entry>
         <entry key="\微博\weibo_comments.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\淘宝\index_table.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\淘宝\taobao_raw_pool.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\淘宝\taobao_target_queue.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

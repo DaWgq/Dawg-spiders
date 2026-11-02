@@ -4,5 +4,8 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/企业环境信息依法披露系统" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/北部湾大学" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/小红书" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/小红书/Spider_XHS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/抖音/DouYin_Spider" vcs="Git" />
   </component>
 </project>
